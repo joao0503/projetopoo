@@ -1,6 +1,7 @@
 # ProjetoPOO
 Projeto do 3º semestre de Ciência da Computação pela Universidade Federal do Semiárido - UFERSA;
-Montando uma "Oficina" hipotética estudando os conceitos de programação orientada a objetos
+
+Montando uma "Oficina" hipotética estudando os conceitos de programação orientada a objetos.
 
 --->ORIENTAÇÕES DO PROJETO
 
