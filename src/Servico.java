@@ -5,6 +5,12 @@ public class Servico {
 	private double valor;
 	private int status;
 
+    public Servico(String nome, double valor, int status) {
+        setNome(nome);
+        setValor(valor);
+        setStatus(status);
+    }
+
     public String getNome() {
         return nome;
     }
