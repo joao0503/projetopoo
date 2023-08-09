@@ -3,6 +3,7 @@ Projeto do 3º semestre de Ciência da Computação pela Universidade Federal do
 Montando uma "Oficina" hipotética estudando os conceitos de programação orientada a objetos
 
 --->ORIENTAÇÕES DO PROJETO
+
 Contexto: Sr. Zeze é o dono de uma pequena oficina com 5 funcionários. Nessa oficina, todos os
 dados são controlados em papel. Entretanto, sr. Zezé não tem mais espaço para colocar papel.
 Portanto, ele quer se desfazer da papelada e passar a controlar as ocorrências da oficina de maneira
