@@ -7,7 +7,7 @@ public class Cliente {
 	private String endereco;
 	private String cpf;
 	private List<Automovel> automoveis;
-
+	
 	public Cliente(String nome, String endereco, String cpf, 
 			List<Automovel> automoveis) {
 		setNome(nome);
@@ -20,7 +20,7 @@ public class Cliente {
 		return nome;
 	}
 	public void setNome(String nome) {
-		if(nome != null && nome.equals("")) {
+		if(nome != null) {
 			this.nome = nome;
 		} else {
 			System.out.println("Nome inválido");
