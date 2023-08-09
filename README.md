@@ -14,9 +14,15 @@ a) Cadastrar, alterar ou deletar: Clientes (Nome, endereço, cpf ), Automóveis 
 ano, quilometragem e proprietário), Peças (nome, preço, fabricante), Serviços (Nome, valor<ex:
 Troca de óleo, 20 reais>), Orçamentos (peças, serviços e valores para um determinado
 automóvel) ;
+
 b) Pesquisar: Automóveis (por placa e por dono), Serviços (Nome), Peças (nome ou fabricante)
+
 c) Pesquisar orçamentos (por veículo, por cliente ou por período);
+
 d) Finalizar serviço e registrar pagamento;
+
 e) Gerar relatórios (orçamentos consolidados por período);
+
 f) Apenas o gerente pode alterar o estoque de peças e o catálogo de serviços.
-obs. Deve ser possível identificar os veículos pertencentes a cada cliente.
+
+*obs. Deve ser possível identificar os veículos pertencentes a cada cliente.
