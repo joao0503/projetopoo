@@ -1,6 +1,4 @@
-package src;
-
-import java.time.LocalDate;
+package model.entity;
 
 public class Automovel {
 	private String marca;
@@ -8,33 +6,42 @@ public class Automovel {
 	private String placa;
 	// Provavelmente devemos definir o ano como tipo Date posteriormente,
 	// quando for configurado os tipos no banco de dados
-	private Integer ano;
+	//private Integer ano;
 	private Integer quilometragem;
 	private Cliente proprietario;
+	private Orcamento orcamentoTotal;
+	private Long id;
 	// Implementar servicoesEmAndamento quando a classe estiver
 	// feita
 	//private List<Servico> servicosEmAndamento;
 	
 	public Automovel(String marca, String cor, String placa, 
-			Integer ano, Integer quilometragem, Cliente proprietario) {
+			Integer ano, Integer quilometragem, Cliente proprietario, 
+			Orcamento orcamentoTotal, Long id) {
 		setMarca(marca);
 		setCor(cor);
 		setPlaca(placa);
-		setAno(ano);
+		//setAno(ano);
 		setQuilometragem(quilometragem);
 		setProprietario(proprietario);
+		setOrcamentoTotal(orcamentoTotal);
+		setId(id);
 	}
 	
-	public Automovel(String marca, Integer ano) {
+	public Automovel() {
+		
+	}
+	
+	/*public Automovel(String marca, Integer ano) {
 		setMarca(marca);
 		setAno(ano);
-	}
+	}*/
 	
 	public String getMarca() {
 		return marca;
 	}
 	public void setMarca(String marca) {
-		if(marca != null) {
+		if(marca != null && !marca.isEmpty()) {
 			this.marca = marca;
 		} else {
 			System.out.println("Marca do automóvel inválida");
@@ -64,7 +71,7 @@ public class Automovel {
 		}
 	}
 	
-	public Integer getAno() {
+	/*public Integer getAno() {
 		return ano;
 	}
 	public void setAno(Integer ano) {
@@ -78,7 +85,7 @@ public class Automovel {
 		} else {
 			System.out.println("Ano do automóvel inválido");
 		}
-	}
+	}*/
 	
 	public Integer getQuilometragem() {
 		return quilometragem;
@@ -104,8 +111,25 @@ public class Automovel {
 		} else {
 			System.out.println("Proprietário do automóvel inválido");
 		}
-		
 	}
 	
+	public Orcamento getOrcamentoTotal() {
+		return orcamentoTotal;
+	}
+	public void setOrcamentoTotal(Orcamento orcamentoTotal) {
+		if(orcamentoTotal != null) {
+				this.orcamentoTotal = orcamentoTotal;
+		}
+	}
 	
+	public Long getId() {
+		return id;
+	}
+	
+	public void setId(Long id) {
+		if(id > 0) {
+			this.id = id;
+		}
+		
+	}
 }

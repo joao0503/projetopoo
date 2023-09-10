@@ -1,15 +1,18 @@
-package src;
+package model.entity;
 
 public class Orcamento{
     private String peca;
     private String servico;
     private double valor;
+    private Long id;
 
     public Orcamento(String peca, String servico, double valor){
         setPeca(peca);
         setServico(servico);
         setValor(valor);
     }
+
+    public Orcamento(){}
 
     public String getPeca(){ return this.peca;}
     public void setPeca(String peca){
@@ -29,4 +32,13 @@ public class Orcamento{
             this.valor = valor;
         }
     }
+    public Long getId() {
+		return id;
+	}
+	
+	public void setId(Long id) {
+		if(id > 0) {
+			this.id = id;
+		}
+	}
 }

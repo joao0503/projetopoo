@@ -1,4 +1,4 @@
-package src;
+package model.entity;
 
 import java.util.List;
 
@@ -20,19 +20,18 @@ public class Cliente {
 		return nome;
 	}
 	public void setNome(String nome) {
-		if(nome != null) {
+		if(nome != null && !nome.isEmpty()) {
 			this.nome = nome;
 		} else {
 			System.out.println("Nome inválido");
 		}
-		
 	}
 	
 	public String getEndereco() {
 		return endereco;
 	}
 	public void setEndereco(String endereco) {
-		if(endereco != null) {
+		if(endereco != null && !endereco.isEmpty()) {
 			this.endereco = endereco;
 		} else {
 			System.out.println("Endereço inválido");
@@ -45,7 +44,7 @@ public class Cliente {
 	public void setCpf(String cpf) {
 		// É possível fazer um verificador de cpf existente, 
 		//mas não sei se faz parte do escopo da disciplina
-		if(cpf != null) {
+		if(cpf.length() >= 11) {
 			this.cpf = cpf;
 		} else {
 			System.out.println("CPF inválido");
@@ -57,10 +56,7 @@ public class Cliente {
 		return automoveis;
 	}
 	public void setAutomoveis(List<Automovel> automoveis) {
-		// ainda não foi implementado o tratamento completo da lista
-		// pois ainda não foi mostrado esse conteúdo na disciplina.
-		// Ainda não está nessa etapa.
-		if(automoveis != null) {
+		if(!automoveis.isEmpty()) {
 			this.automoveis = automoveis;
 		} else {
 			System.out.println("Automóvel inválido");

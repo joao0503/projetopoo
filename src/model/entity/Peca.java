@@ -1,42 +1,37 @@
-package src;
+package model.entity;
 
 public class Peca {
 	private String nome;
-	private String serial;
+	private int quantidadePeca;
 	private String fabricante;
 	private double preco;
-	private String diretorioImagem;
 	
-	public Peca(String nome, String serial, String fabricante, 
-			double preco, String diretorioImagem) {
+	public Peca(String nome, int quantidadePeca, String fabricante, 
+			double preco) {
 		setNome(nome);
-		setSerial(serial);
+		setQuantidadePeca(quantidadePeca);
 		setFabricante(fabricante);
 		setPreco(preco);
-		setDiretorioImagem(diretorioImagem);
 	}
 	
 	public String getNome() {
 		return nome;
 	}
 	public void setNome(String nome) {
-		if(nome != null) {
+		if(nome != null && !nome.isEmpty()) {
 			this.nome = nome;
 		} else {
 			System.out.println("Nome inválido");
 		}
-		
 	}
 	
-	
-	public String getSerial() {
-		return serial;
+	public int getQuantidadePeca() {
+		return quantidadePeca;
 	}
-	public void setSerial(String serial) {
-		if(serial != null) {
-			this.serial = serial;
-		} else {
-			System.out.println("Serial inválido");
+	
+	public void setQuantidadePeca(int quantidadePeca) {
+		if(quantidadePeca > 0) {
+			this.quantidadePeca = quantidadePeca;
 		}
 	}
 	
@@ -65,14 +60,4 @@ public class Peca {
 	}
 	
 	
-	public String getDiretorioImagem() {
-		return diretorioImagem;
-	}
-	public void setDiretorioImagem(String diretorioImagem) {
-		if(diretorioImagem != null) {
-			this.diretorioImagem = diretorioImagem;
-		} else {
-			System.out.println("Diretório inválido");
-		}
-	}
 }

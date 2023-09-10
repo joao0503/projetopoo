@@ -1,9 +1,10 @@
-package src;
+package model.entity;
 
 public class Servico {
 	private String nome;
 	private double valor;
 	private int status;
+    private Long id;
 
     public Servico(String nome, double valor, int status) {
         setNome(nome);
@@ -42,4 +43,13 @@ public class Servico {
             this.status = status;
         }
     }
+    public Long getId() {
+		return id;
+	}
+	
+	public void setId(Long id) {
+		if(id > 0) {
+			this.id = id;
+		}
+	}
 }
