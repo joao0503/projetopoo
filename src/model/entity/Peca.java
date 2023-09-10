@@ -5,6 +5,7 @@ public class Peca {
 	private int quantidadePeca;
 	private String fabricante;
 	private double preco;
+	private Long id;
 	
 	public Peca(String nome, int quantidadePeca, String fabricante, 
 			double preco) {
@@ -13,6 +14,8 @@ public class Peca {
 		setFabricante(fabricante);
 		setPreco(preco);
 	}
+
+	public Peca(){}
 	
 	public String getNome() {
 		return nome;
@@ -58,6 +61,14 @@ public class Peca {
 			System.out.println("Preço inválido");
 		}
 	}
+	public Long getId() {
+		return id;
+	}
 	
+	public void setId(Long id) {
+		if(id > 0) {
+			this.id = id;
+		}
+	}
 	
 }
