@@ -1,40 +1,62 @@
 package model.entity;
 
-public class Funcionario extends Usuario{
-    private String nome;
-    private String cpf;
+import java.util.ArrayList;
+import java.util.List;
 
-    public Funcionario(String usuario, String senha) {
-        super(usuario,senha);
-		setNome(nome);
-		setCpf(cpf);
+public class Funcionario extends Usuario {
+
+	//private List<Cliente> clientesDoFuncionario;
+	private boolean ehFuncionario;
+	private ArrayList<Servico> servicosDoFuncionario;
+	private Long funcionarioId;
+	
+    public Funcionario(List<Cliente> clientesDoFuncionario, String nome, String cpf, String endereco, 
+    		String usuario, String senha, Long pessoaId, Long usuarioId, Long funcionarioId) {
+        super(nome, cpf, endereco, usuario, senha, pessoaId, usuarioId);
+        //setClientesDoFuncionario(clientesDoFuncionario);
+        setFuncionarioId(funcionarioId);
     }
 
-	public Funcionario(){}
-
-	public String getNome() {
-		return nome;
+	public Funcionario() {}
+	
+	
+	/*public List<Cliente> getClientesDoFuncionario() {
+		return clientesDoFuncionario;
 	}
-
-	public void setNome(String nome) {
-		if(nome != null && !nome.isEmpty()) {
-			this.nome = nome;
-		} else {
-			System.out.println("Nome inválido");
+	public void setClientesDoFuncionario(List<Cliente> clientesDoFuncionario) {
+		if(clientesDoFuncionario != null && !clientesDoFuncionario.isEmpty()) {
+			this.clientesDoFuncionario = clientesDoFuncionario;
+		}
+	}*/
+	
+	// improvisando login temporariamente
+	public boolean getEhFuncionario() {
+		return ehFuncionario;
+	}
+	public void setEhFuncionario(boolean autenti) {
+		if(autenti) {
+			this.ehFuncionario = autenti;
 		}
 	}
-
-	public String getCpf() {
-		return cpf;
+	
+	
+	public List<Servico> getServicosDoFuncionario() {
+		return servicosDoFuncionario;
 	}
-
-	public void setCpf(String cpf) {
-		if(cpf.length() >= 11) {
-			this.cpf = cpf;
-		} else {
-			System.out.println("CPF inválido");
+	public void setServicosDoFuncionario(ArrayList<Servico> servicosDoFuncionario) {
+		if(servicosDoFuncionario != null && !servicosDoFuncionario.isEmpty()) {
+			this.servicosDoFuncionario = servicosDoFuncionario;
 		}
 	}
-    
-    
+	
+	
+
+	public Long getFuncionarioId() {
+		return funcionarioId;
+	}
+	public void setFuncionarioId(Long funcionarioId) {
+		if(funcionarioId > 0 ) {
+			this.funcionarioId = funcionarioId;
+		}
+	}
 }

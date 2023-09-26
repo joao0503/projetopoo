@@ -1,41 +1,36 @@
 package model.entity;
 
+import java.time.LocalDate;
+
 public class Automovel {
 	private String marca;
+	private String modelo;
+	private Integer anoDoModelo;
 	private String cor;
 	private String placa;
-	// Provavelmente devemos definir o ano como tipo Date posteriormente,
-	// quando for configurado os tipos no banco de dados
-	//private Integer ano;
 	private Integer quilometragem;
-	private Cliente proprietario;
-	private Orcamento orcamentoTotal;
-	private Long id;
-	// Implementar servicoesEmAndamento quando a classe estiver
-	// feita
-	//private List<Servico> servicosEmAndamento;
+	private Long automovelId;
+	private Long clienteId;
 	
-	public Automovel(String marca, String cor, String placa, 
-			Integer ano, Integer quilometragem, Cliente proprietario, 
-			Orcamento orcamentoTotal, Long id) {
+	public Automovel(String marca, String modelo, Integer anoDoModelo, String cor, 
+			String placa, Integer quilometragem, Cliente proprietario, 
+			Long id, Long automovelId, Long clienteId) {
 		setMarca(marca);
 		setCor(cor);
 		setPlaca(placa);
-		//setAno(ano);
+		setAnoDoModelo(anoDoModelo);
 		setQuilometragem(quilometragem);
-		setProprietario(proprietario);
-		setOrcamentoTotal(orcamentoTotal);
-		setId(id);
+		//setProprietario(proprietario);
+		//setOrcamentoTotal(orcamentoTotal);
+		setAutomovelId(automovelId);
+		setClienteId(clienteId);
+		
 	}
 	
 	public Automovel() {
 		
 	}
 	
-	/*public Automovel(String marca, Integer ano) {
-		setMarca(marca);
-		setAno(ano);
-	}*/
 	
 	public String getMarca() {
 		return marca;
@@ -46,8 +41,18 @@ public class Automovel {
 		} else {
 			System.out.println("Marca do automóvel inválida");
 		}
-		
 	}
+	
+	
+	public String getModelo() {
+		return modelo;
+	}
+	public void setModelo(String modelo) {
+		if(modelo != null && !modelo.isEmpty()) {
+			this.modelo = modelo;
+		}
+	}
+	
 	
 	public String getCor() {
 		return cor;
@@ -60,6 +65,7 @@ public class Automovel {
 		}
 	}
 	
+	
 	public String getPlaca() {
 		return placa;
 	}
@@ -71,21 +77,23 @@ public class Automovel {
 		}
 	}
 	
-	/*public Integer getAno() {
-		return ano;
+	
+	public Integer getAnoDoModelo() {
+		return anoDoModelo;
 	}
-	public void setAno(Integer ano) {
+	public void setAnoDoModelo(Integer anoDoModelo) {
         LocalDate dataAtual = LocalDate.now();
         int anoAtual = dataAtual.getYear();
       
         System.out.println("Ano atual: " + anoAtual);
         
-		if(ano > 0 && ano <= anoAtual) {
-			this.ano = ano;
+		if(anoDoModelo > 0 && anoDoModelo <= anoAtual) {
+			this.anoDoModelo = anoDoModelo;
 		} else {
 			System.out.println("Ano do automóvel inválido");
 		}
-	}*/
+	}
+	
 	
 	public Integer getQuilometragem() {
 		return quilometragem;
@@ -96,10 +104,10 @@ public class Automovel {
 		} else {
 			System.out.println("Quilometragem do automóvel inválida");
 		}
-		
 	}
 	
-	public Cliente getProprietario() {
+	
+	/*public Cliente getProprietario() {
 		return proprietario;
 	}
 	public void setProprietario(Cliente proprietario) {
@@ -111,25 +119,34 @@ public class Automovel {
 		} else {
 			System.out.println("Proprietário do automóvel inválido");
 		}
-	}
+	}*/
 	
-	public Orcamento getOrcamentoTotal() {
+	/*public Orcamento getOrcamentoTotal() {
 		return orcamentoTotal;
 	}
 	public void setOrcamentoTotal(Orcamento orcamentoTotal) {
 		if(orcamentoTotal != null) {
 				this.orcamentoTotal = orcamentoTotal;
 		}
-	}
+	}*/
 	
-	public Long getId() {
-		return id;
-	}
 	
-	public void setId(Long id) {
-		if(id > 0) {
-			this.id = id;
+	public Long getClienteId() {
+		return clienteId;
+	}
+	public void setClienteId(Long clienteId) {
+		if(clienteId > 0) {
+			this.clienteId = clienteId;
 		}
-		
+	}
+	
+	
+	public Long getAutomovelId() {
+		return automovelId;
+	}
+	public void setAutomovelId(Long automovelId) {
+		if(automovelId > 0) {
+			this.automovelId = automovelId;
+		}
 	}
 }

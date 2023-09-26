@@ -9,18 +9,18 @@ import java.util.List;
 
 import model.entity.Cliente;
 
-public class ClienteDao extends BaseDaoImpl<Cliente> {
+public class ClienteDAO extends PessoaDAO<Cliente> {
 
 	@Override
 	public void inserir(Cliente entity) {
+
+		// Ao user o super, vou aproveitar o id da superclasse para ja usar aqui
+		super.inserir(entity);
 		Connection con = getConnection();
-		String sql = "INSERT INTO tb_cliente (nome, endereco, cpf)"
-				+ "values (?,?,?)";
+		String sql = "insert into tb_clientes (pessoa_id) values (?)";
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setString(1, entity.getNome());
-			ps.setString(2, entity.getEndereco());
-			ps.setString(3, entity.getCpf());
+			ps.setLong(1, entity.getPessoaId());
 			ps.executeUpdate();
 			ps.close();
 		} catch (SQLException e) {
@@ -35,10 +35,11 @@ public class ClienteDao extends BaseDaoImpl<Cliente> {
     @Override
     public void deletar(Cliente entity) {
         Connection con = getConnection();
-        String sql = "DELETE FROM tb_cliente WHERE id = ?";
+        String sql = "delete from tb_clientes where cliente_id = ?";
         try {
+        	super.deletar(entity);
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setLong(1, entity.getId());
+            ps.setLong(1, entity.getClienteId());
             ps.executeUpdate();
             ps.close();
         } catch (SQLException e) {
@@ -51,13 +52,11 @@ public class ClienteDao extends BaseDaoImpl<Cliente> {
     @Override
     public void alterar(Cliente entity) {
         Connection con = getConnection();
-        String sql = "UPDATE tb_cliente SET nome = ?, endereco = ?, cpf = ? WHERE id = ?";
+        String sql = "update tb_clientes set pessoa_id where cliente_id = ?";
         try {
+        	super.alterar(entity);
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, entity.getNome());
-            ps.setString(2, entity.getEndereco());
-            ps.setString(3, entity.getCpf());
-            ps.setLong(6, entity.getId());
+            ps.setLong(1, entity.getPessoaId());
             ps.executeUpdate();
             ps.close();
         } catch (SQLException e) {
@@ -70,19 +69,17 @@ public class ClienteDao extends BaseDaoImpl<Cliente> {
     @Override
     public Cliente buscar(Cliente entity) {
         Connection con = getConnection();
-        String sql = "SELECT * FROM tb_cliente WHERE id = ?";
+        String sql = "select * from tb_clientes where id = ?";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setLong(1, entity.getId());
+            ps.setLong(1, entity.getClienteId());
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 Cliente cliente = new Cliente();
                 cliente.setNome(rs.getString("nome"));
                 cliente.setEndereco(rs.getString("endereco"));
                 cliente.setCpf(rs.getString("cpf"));
-                cliente.setId(rs.getLong("id"));
-                //automovel.setProprietario(rs.getString("proprietario"));
-                //automovel.setOrcamentoTotal(rs.getString("orcamentoTotal"));
+                cliente.setClienteId(rs.getLong("id"));
                 return cliente;
             }
         } catch (SQLException e) {
@@ -96,7 +93,7 @@ public class ClienteDao extends BaseDaoImpl<Cliente> {
     @Override
     public List<Cliente> listar() {
         Connection con = getConnection();
-        String sql = "SELECT * FROM tb_cliente";
+        String sql = "select * from tb_clientes";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
@@ -106,8 +103,7 @@ public class ClienteDao extends BaseDaoImpl<Cliente> {
                 cliente.setNome(rs.getString("nome"));
                 cliente.setEndereco(rs.getString("endereco"));
                 cliente.setCpf(rs.getString("cpf"));
-                //cliente.setAutomoveis(rs.getString("automoveis"));
-                cliente.setId(rs.getLong("id"));
+                cliente.setClienteId(rs.getLong("id"));
                 clientes.add(cliente);
             }
             return clientes;

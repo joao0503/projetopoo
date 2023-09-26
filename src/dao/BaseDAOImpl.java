@@ -5,24 +5,23 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.List;
 
-public abstract class BaseDaoImpl<E> implements BaseDao<E>{
-	final static String URL = "jdbc:mysql://localhost/poo";
-	final static String USER = "pw";
-	final static String PASS = "melhormateria";
+public abstract class BaseDAOImpl<E> implements BaseDAO<E>{
+	
+	final static String URL = "jdbc:postgresql://localhost:5432/oficina_db";
+	final static String USER = "postgres";
+	final static String PASS = "123";
 	static Connection con = null ;
+	
 	public static Connection getConnection() {
 		if(con == null) {
 			try {
 				con = DriverManager.getConnection(URL,USER,PASS);
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
-				
 			}
 			return con;
 		}
 		else return con;
-			
 	}
 	
 	public static void closeConnection() {
@@ -46,4 +45,5 @@ public abstract class BaseDaoImpl<E> implements BaseDao<E>{
 	public abstract E buscar(E entity);
 
 	public abstract List<E> listar();
+	
 }

@@ -1,37 +1,35 @@
 package model.entity;
 
-public class Gerente extends Usuario{
-	private String nome;
-    private String cpf;
-	final boolean isGerente = true;
+public class Gerente extends Usuario {
+	private boolean ehGerente;
+	private Long gerenteId;
 
-    public Gerente(String usuario, String senha) {
-        super(usuario, senha);
-		setNome(nome);
-		setCpf(cpf);
+    public Gerente(String nome, String cpf, String endereco, String usuario, String senha, Long pessoaId,
+    		Long usuarioId, Long gerenteId) {
+        super(nome, cpf, endereco, usuario, senha, usuarioId, pessoaId);
+        setEhGerente(ehGerente);
+        setGerenteId(gerenteId);
     }
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		if(nome != null && !nome.isEmpty()) {
-			this.nome = nome;
-		} else {
-			System.out.println("Nome inválido");
-		}
-	}
-
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		if(cpf.length() >= 11) {
-			this.cpf = cpf;
-		} else {
-			System.out.println("CPF inválido");
-		}
-	}
+    
+    public Gerente() {}
+    
+    
+    public Long getGerenteId() {
+    	return gerenteId;
+    }
+    public void setGerenteId(Long gerenteId) {
+    	if(gerenteId > 0) {
+    		this.gerenteId = gerenteId;
+    	}
+    }
+    
+    
+    public boolean getEhGerente() {
+    	return ehGerente;
+    }
+    public void setEhGerente(boolean autenti) {
+    	if(autenti) {
+    		this.ehGerente = autenti;
+    	}
+    }
 }

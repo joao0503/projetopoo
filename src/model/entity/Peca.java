@@ -5,14 +5,15 @@ public class Peca {
 	private int quantidadePeca;
 	private String fabricante;
 	private double preco;
-	private Long id;
+	private Long pecaId;
 	
 	public Peca(String nome, int quantidadePeca, String fabricante, 
-			double preco) {
+			double preco, Long pecaId) {
 		setNome(nome);
 		setQuantidadePeca(quantidadePeca);
 		setFabricante(fabricante);
 		setPreco(preco);
+		setPecaId(pecaId);
 	}
 
 	public Peca(){}
@@ -61,14 +62,23 @@ public class Peca {
 			System.out.println("Preço inválido");
 		}
 	}
-	public Long getId() {
-		return id;
+	public Long getPecaId() {
+		return pecaId;
 	}
 	
-	public void setId(Long id) {
-		if(id > 0) {
-			this.id = id;
+	public void setPecaId(Long pecaId) {
+		if(pecaId >= 0) {
+			this.pecaId = pecaId;
 		}
+	}
+	
+	@Override
+	public String toString() {
+		return "Nome: " + getNome() + "\n"
+		+ "Quantidade de peças: " + getQuantidadePeca() + "\n"
+		+ "Fabricante: " + getFabricante() + "\n"
+	    + "Preço: " + getPreco() + "\n"
+	    + "Id: " + getPecaId() + "\n";
 	}
 	
 }

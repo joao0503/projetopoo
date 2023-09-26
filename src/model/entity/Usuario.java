@@ -1,13 +1,16 @@
 package model.entity;
 
-public abstract class Usuario {
+public abstract class Usuario extends Pessoa {
 	private String usuario;
 	private String senha;
-	private Long id;
+	private Long usuarioId;
 
-	public Usuario(String usuario, String senha) {
+	public Usuario(String nome, String cpf, String endereco, String usuario, String senha, Long pessoaId, 
+			Long usuarioId) {
+		super(nome, cpf, endereco, pessoaId);
 		setUsuario(usuario);
 		setSenha(senha);
+		setUsuarioId(usuarioId);
 	}
 
 	public Usuario(){}
@@ -22,6 +25,7 @@ public abstract class Usuario {
 		}
 	}
 
+	
 	public String getSenha() {
 		return senha;
 	}
@@ -31,14 +35,15 @@ public abstract class Usuario {
 			this.senha = senha;
 		}
 	}
-
-	public Long getId() {
-		return id;
+	
+	
+	public Long getUsuarioId() {
+		return usuarioId;
 	}
 	
-	public void setId(Long id) {
-		if(id > 0) {
-			this.id = id;
+	public void setUsuarioId(Long usuarioId) {
+		if(usuarioId > 0) {
+			this.usuarioId = usuarioId;
 		}
 	}
 }

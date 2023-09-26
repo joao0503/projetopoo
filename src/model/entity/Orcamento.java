@@ -1,44 +1,63 @@
 package model.entity;
 
 public class Orcamento{
-    private String peca;
-    private String servico;
+	// comentei peca porque uma oficina é uma empresa que realiza serviços, logo uma peca
+	// faz parte de um serviço, caso queira saber o gasto em uma peca, basta pegar a peca
+	// do servico.
+    //private Peca peca;
+    private Servico servico;
     private double valor;
-    private Long id;
+    private Long automovelId;
+    private Long orcamentoId;
 
-    public Orcamento(String peca, String servico, double valor){
-        setPeca(peca);
+    public Orcamento(Peca peca, Servico servico, double valor){
+        //setPeca(peca);
         setServico(servico);
         setValor(valor);
+        setAutomovelId(automovelId);
+        setOrcamentoId(orcamentoId);
     }
 
     public Orcamento(){}
 
-    public String getPeca(){ return this.peca;}
-    public void setPeca(String peca){
-        if (peca != null && !peca.isEmpty()){ // verificar depois se a peça existe na lista de peças
-            this.peca = peca;
-        }
+
+    public Servico getServico(){ 
+    	return this.servico;
     }
-    public String getServico(){ return this.servico;}
-    public void setServico(String servico){
-        if (servico != null && !servico.isEmpty()){ // verificar depois se o serviço existe na lista de serviço
+    public void setServico(Servico servico){
+        if (servico != null){ // verificar depois se o serviço existe na lista de serviço
             this.servico = servico;
         }
     }
-    public double getValor(){ return this.valor;}
+    
+    
+    public double getValor(){ 
+    	return this.valor;
+    }
     public void setValor(double valor){
         if ( valor > 0  && valor < 10000){
             this.valor = valor;
         }
     }
-    public Long getId() {
-		return id;
+    
+    
+    
+	public Long getAutomovelId() {
+		return automovelId;
+	}
+	public void setAutomovelId(Long automovelId) {
+		if(automovelId > 0) {
+			this.automovelId = automovelId;
+		}
 	}
 	
-	public void setId(Long id) {
-		if(id > 0) {
-			this.id = id;
+    
+    public Long getOrcamentoId() {
+		return orcamentoId;
+	}
+	public void setOrcamentoId(Long orcamentoId) {
+		if(orcamentoId > 0) {
+			this.orcamentoId = orcamentoId;
 		}
 	}
 }
