@@ -19,7 +19,7 @@ public class GerenteDAO extends UsuarioDAO<Gerente>{
 	// Não é necessária se deletar
     @Override
     public void deletar(Gerente ger) {
-    	if(ger.getEhGerente()) {
+    	//if(ger.getEhGerente()) {
             Connection con = getConnection();
             String sql = "delete from tb_gerente where gerente_id = ?";
             try {
@@ -33,7 +33,7 @@ public class GerenteDAO extends UsuarioDAO<Gerente>{
             } finally {
                 closeConnection();
             }
-    	}
+    	//}
     }
 	
     
@@ -41,7 +41,7 @@ public class GerenteDAO extends UsuarioDAO<Gerente>{
     // Caso o gerente queira alterar seus dados
     @Override
     public void alterar(Gerente ger) {
-    	if(ger.getEhGerente()) {
+    	//if(ger.getEhGerente()) {
             Connection con = getConnection();
             String sql = "update tb_gerente set salario = ? where gerente_id = ?";
             try {
@@ -55,7 +55,7 @@ public class GerenteDAO extends UsuarioDAO<Gerente>{
             } finally {
                 closeConnection();
             }
-    	}
+    	//}
     }
 
     
@@ -78,7 +78,7 @@ public class GerenteDAO extends UsuarioDAO<Gerente>{
                 ger.setUsuario(rs.getString("usuario"));
                 ger.setSenha(rs.getString("senha"));
                 ger.setUsuarioId(rs.getLong("usuario_id"));
-                ger.setEhGerente(rs.getBoolean("eh_gerente"));
+                //ger.setEhGerente(rs.getBoolean("eh_gerente"));
                 ger.setGerenteId(rs.getLong("gerente_id"));
                 return ger;
             }
@@ -111,7 +111,7 @@ public class GerenteDAO extends UsuarioDAO<Gerente>{
                 ger.setUsuario(rs.getString("usuario"));
                 ger.setSenha(rs.getString("senha"));
                 ger.setUsuarioId(rs.getLong("usuario_id"));
-                ger.setEhGerente(rs.getBoolean("eh_gerente"));
+                //ger.setEhGerente(rs.getBoolean("eh_gerente"));
                 ger.setGerenteId(rs.getLong("gerente_id"));
                 gerentes.add(ger);
             }

@@ -17,8 +17,6 @@ public class AutomovelDAO extends BaseDAOImpl<Automovel>{
 	public void inserir(Automovel entity) {
 		Connection con = getConnection();
 		
-		// teste aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-		
 		String sql = "insert into tb_automoveis (marca, modelo, ano_modelo, cor, placa, quilometragem, cliente_id)"
 				+ "values (?,?,?,?,?,?)";
 		try {

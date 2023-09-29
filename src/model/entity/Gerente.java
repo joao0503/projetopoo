@@ -1,13 +1,13 @@
 package model.entity;
 
 public class Gerente extends Usuario {
-	private boolean ehGerente;
+	//private boolean ehGerente;
 	private Long gerenteId;
 
     public Gerente(String nome, String cpf, String endereco, String usuario, String senha, Long pessoaId,
     		Long usuarioId, Long gerenteId) {
         super(nome, cpf, endereco, usuario, senha, usuarioId, pessoaId);
-        setEhGerente(ehGerente);
+        //setEhGerente(ehGerente);
         setGerenteId(gerenteId);
     }
     
@@ -24,12 +24,12 @@ public class Gerente extends Usuario {
     }
     
     
-    public boolean getEhGerente() {
+    /*public boolean getEhGerente() {
     	return ehGerente;
     }
     public void setEhGerente(boolean autenti) {
     	if(autenti) {
     		this.ehGerente = autenti;
     	}
-    }
+    }*/
 }
