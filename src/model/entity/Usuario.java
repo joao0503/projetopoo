@@ -1,12 +1,12 @@
 package model.entity;
 
-public abstract class Usuario extends Pessoa {
+public class Usuario extends Pessoa {
 	private String usuario;
 	private String senha;
 	private Long usuarioId;
 
-	public Usuario(String nome, String cpf, String endereco, String usuario, String senha, Long pessoaId, 
-			Long usuarioId) {
+	public Usuario(String nome, String cpf, String endereco, String usuario, String senha, 
+			Long pessoaId, Long usuarioId) {
 		super(nome, cpf, endereco, pessoaId);
 		setUsuario(usuario);
 		setSenha(senha);
