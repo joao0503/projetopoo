@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 
+import model.entity.Funcionario;
+import model.entity.Gerente;
 import model.entity.Usuario;
 
 public class UsuarioDAO<E extends Usuario> extends PessoaDAO<E>{
@@ -135,5 +137,17 @@ public class UsuarioDAO<E extends Usuario> extends PessoaDAO<E>{
             closeConnection();
         }
         return rs;
+    }
+    
+    // simulando autenticação
+    public Usuario autent(Usuario usu) {
+    	if(usu.getUsuario().equals("gerente") && usu.getSenha().equals("geren")) {
+    		return new Gerente();
+    	}
+    	if(usu.getUsuario().equals("funcionario") 
+    			&& usu.getSenha().equals("funcio")) {
+    		return new Funcionario();
+    	}
+    	return null;
     }
 }
