@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -9,26 +14,26 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="1115.0" style="-fx-background-color: #FF993A;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UsuarioController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #FF993A;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UsuarioController">
    <children>
-      <Pane layoutX="142.0" layoutY="47.0" prefHeight="617.0" prefWidth="814.0" style="-fx-background-color: D9D9D9;">
+      <Pane layoutX="150.0" layoutY="73.0" prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: ffffff;">
          <children>
-            <Label layoutX="368.0" layoutY="36.0" text="Login" textFill="#ff993a">
+            <Label layoutX="211.0" layoutY="24.0" text="Login" textFill="#ff993a">
                <font>
                   <Font size="32.0" />
                </font>
             </Label>
-            <TextField fx:id="usuario" layoutX="318.0" layoutY="201.0" prefHeight="25.0" prefWidth="178.0" promptText="Nome de usuário" />
-            <Label layoutX="271.0" layoutY="205.0" text="Usuário:" />
-            <Label layoutX="271.0" layoutY="245.0" text="Senha:" />
-            <Button layoutX="355.0" layoutY="296.0" mnemonicParsing="false" onAction="#autenticar" prefHeight="25.0" prefWidth="104.0" style="-fx-background-color: FF993A;" text="Entrar" textFill="#434040" />
-            <ImageView fitHeight="86.0" fitWidth="160.0" layoutX="362.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
+            <TextField fx:id="usuario" layoutX="183.0" layoutY="201.0" prefHeight="25.0" prefWidth="178.0" promptText="Nome de usuário" />
+            <Label layoutX="136.0" layoutY="205.0" text="Usuário:" />
+            <Label layoutX="136.0" layoutY="245.0" text="Senha:" />
+            <Button layoutX="208.0" layoutY="296.0" mnemonicParsing="false" onAction="#autenticar" prefHeight="25.0" prefWidth="104.0" style="-fx-background-color: FF993A;" text="Entrar" textFill="#434040" />
+            <ImageView fitHeight="86.0" fitWidth="160.0" layoutX="205.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@icon%20_person_.png" />
                </image>
             </ImageView>
-            <Label layoutX="395.0" layoutY="266.0" onMouseClicked="#irParaTelaRecuperarSenha" prefHeight="17.0" prefWidth="104.0" text="Esqueceu a senha?" textFill="#ff993a" />
-            <PasswordField fx:id="senha" layoutX="318.0" layoutY="241.0" prefHeight="25.0" prefWidth="178.0" promptText="Senha" />
+            <Label layoutX="260.0" layoutY="266.0" onMouseClicked="#irParaTelaRecuperarSenha" prefHeight="17.0" prefWidth="104.0" text="Esqueceu a senha?" textFill="#ff993a" />
+            <PasswordField fx:id="senha" layoutX="183.0" layoutY="241.0" prefHeight="25.0" prefWidth="178.0" promptText="Senha" />
             <Label fx:id="erroAutenticacao" alignment="CENTER" layoutX="319.0" layoutY="184.0" prefHeight="17.0" prefWidth="178.0" text="Mensagem" textAlignment="CENTER" textFill="#e10e0e" visible="false" />
          </children>
       </Pane>
