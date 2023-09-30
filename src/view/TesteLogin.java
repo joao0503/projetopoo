@@ -1,19 +1,14 @@
 package view;
 
 import javafx.application.Application;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import model.entity.Usuario;
 
 public class TesteLogin extends Application {
 	private static Stage primaryStage;
-	
-	@FXML static Label nomeUsuario;
-	@FXML static Label mensagemAutentic;
 	
 	
 	public static Stage getPrimaryStage() {
@@ -37,13 +32,21 @@ public class TesteLogin extends Application {
 		primaryStage.setScene(cena);
 	}
 	
-	public static void telaPrincipalGerente(Usuario usu) throws Exception{
+	public static void telaRecuperarSenha() throws Exception {
+		Parent root = FXMLLoader.load(TesteLogin.class.getResource("VE/RecuperarSenha.fxml"));
+		
+		Scene cena = new Scene(root);
+	
+		primaryStage.setScene(cena);
+	}
+	
+	public static void telaPrincipalGerente(Usuario usu) throws Exception {
 		System.out.println("Chamando TelaPrincipal Gerente");
 		Parent root = FXMLLoader.load(TesteLogin.class.getResource("VE/TelaPrincipal.fxml"));
 		
 		Scene cena = new Scene(root);
 		
-		System.out.println(usu.getNome());
+		//System.out.println(usu.getNome());
 		
 		// ver qual o problema em nomeUsuario
 		//nomeUsuario.setText(usu.getNome());
@@ -53,11 +56,14 @@ public class TesteLogin extends Application {
 	
 	public static void telaPrincipalFuncionario(Usuario usu) throws Exception {
 		System.out.println("Chamando TelaPrincipal Funcionário");
-		Parent root = FXMLLoader.load(TesteLogin.class.getResource("VE/TelaPrincipal.fxml"));
 		
+		Parent root = FXMLLoader.load(TesteLogin.class.getResource("VE/TelaPrincipal.fxml"));
+
 		Scene cena = new Scene(root);
 		
-		System.out.println(usu.getNome());
+		//nomeUsuario.setText("Funcionário Teste");
+		//mensagemAutentic.setText("Autenticado");
+		//System.out.println(usu.getNome());
 		
 		// ver qual o problema em nomeUsuario
 		//nomeUsuario.setText(usu.getNome());
@@ -85,7 +91,7 @@ public class TesteLogin extends Application {
 	}
 	
 	public static void telaServicos() throws Exception {
-		Parent root = FXMLLoader.load(TesteLogin.class.getResource("VE/TelaPrincipal.fxml"));
+		Parent root = FXMLLoader.load(TesteLogin.class.getResource("VE/TelaServicos.fxml"));
 		
 		Scene cena = new Scene(root);
 		
