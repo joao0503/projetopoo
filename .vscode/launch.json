@@ -6,24 +6,42 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TesteLogin",
+            "request": "launch",
+            "mainClass": "view.TesteLogin",
+            "projectName": "projetopoo_a4dc216f",
+            "vmArgs": "--module-path \"C:/Users/20181024010039/Desktop/UFERSA/javafx-sdk-21/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "ConfirmarExcluir",
+            "request": "launch",
+            "mainClass": "view.ConfirmarExcluir",
+            "projectName": "projetopoo_a4dc216f",
+            "vmArgs": "--module-path \"C:/Users/20181024010039/Desktop/UFERSA/javafx-sdk-21/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
             "name": "ConfirmarExcluir",
             "request": "launch",
             "mainClass": "view.ConfirmarExcluir",
             "projectName": "projetopoo_dab7bbcd",
-            "vmArgs": "--module-path \"E:/Downloads/javaFX/javafx-sdk-17.0.8/lib\" --add-modules javafx.controls,javafx.fxml"
+            "vmArgs": "--module-path \"C:/Users/20181024010039/Desktop/UFERSA/javafx-sdk-21/lib\" --add-modules javafx.controls,javafx.fxml"
         },
         {
             "type": "java",
             "name": "Current File",
             "request": "launch",
-            "mainClass": "${file}"
+            "mainClass": "${file}",
+            "vmArgs": "--module-path \"C:/Users/20181024010039/Desktop/UFERSA/javafx-sdk-21/lib\" --add-modules javafx.controls,javafx.fxml"
         },
         {
             "type": "java",
             "name": "Oficina",
             "request": "launch",
             "mainClass": "application.Oficina",
-            "projectName": "projetopoo_dab7bbcd"
+            "projectName": "projetopoo_dab7bbcd",
+            "vmArgs": "--module-path \"C:/Users/20181024010039/Desktop/UFERSA/javafx-sdk-21/lib\" --add-modules javafx.controls,javafx.fxml"
         },
         {
             "type": "java",
@@ -31,7 +49,7 @@
             "request": "launch",
             "mainClass": "view.Teste",
             "projectName": "projetopoo_dab7bbcd",
-            "vmArgs": "--module-path \"E:/Downloads/javaFX/javafx-sdk-17.0.8/lib\" --add-modules javafx.controls,javafx.fxml"
+            "vmArgs": "--module-path \"C:/Users/20181024010039/Desktop/UFERSA/javafx-sdk-21/lib\" --add-modules javafx.controls,javafx.fxml"
         }
     ]
 }
