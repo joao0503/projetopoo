@@ -17,6 +17,7 @@ public class ConfirmarExcluir extends Application{
 
         primaryStage.setTitle("Confirmar Exclusão");
         primaryStage.setScene(cena);
+        cena.getWindow().centerOnScreen();
         primaryStage.show();
     }
     

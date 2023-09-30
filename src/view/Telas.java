@@ -30,6 +30,7 @@ public class Telas extends Application {
 		Scene cena = new Scene(root);
 	
 		primaryStage.setScene(cena);
+		cena.getWindow().centerOnScreen();
 	}
 	
 	public static void telaRecuperarSenha() throws Exception {
@@ -38,6 +39,7 @@ public class Telas extends Application {
 		Scene cena = new Scene(root);
 	
 		primaryStage.setScene(cena);
+		cena.getWindow().centerOnScreen();
 	}
 	
 	public static void telaPrincipalGerente(Usuario usu) throws Exception {
@@ -52,6 +54,7 @@ public class Telas extends Application {
 		//nomeUsuario.setText(usu.getNome());
 		//mensagemAutentic.setText("Gerente " + mensagemAutentic.getText());
 		primaryStage.setScene(cena);
+		cena.getWindow().centerOnScreen();
 	}
 	
 	public static void telaPrincipalFuncionario(Usuario usu) throws Exception {
@@ -70,6 +73,7 @@ public class Telas extends Application {
 		//mensagemAutentic.setText("Funcionário " + mensagemAutentic.getText());
 		
 		primaryStage.setScene(cena);
+		cena.getWindow().centerOnScreen();
 	}
 	
 	public static void telaClientes() throws Exception {
@@ -88,6 +92,7 @@ public class Telas extends Application {
 		
 		
 		primaryStage.setScene(cena);
+		cena.getWindow().centerOnScreen();
 	}
 	
 	public static void telaServicos() throws Exception {
@@ -97,6 +102,7 @@ public class Telas extends Application {
 		
 		
 		primaryStage.setScene(cena);
+		cena.getWindow().centerOnScreen();
 	}
 	
 	public static void telaOrcamentos() throws Exception {
@@ -106,6 +112,7 @@ public class Telas extends Application {
 		
 		
 		primaryStage.setScene(cena);
+		cena.getWindow().centerOnScreen();
 	}
 	
 	public static void telaPecas() throws Exception {
@@ -115,6 +122,7 @@ public class Telas extends Application {
 		
 		
 		primaryStage.setScene(cena);
+		cena.getWindow().centerOnScreen();
 	}
 	
 	public static void telaLoginAut() throws Exception {
@@ -124,6 +132,7 @@ public class Telas extends Application {
 		
 		
 		primaryStage.setScene(cena);
+		cena.getWindow().centerOnScreen();
 	}
 	
 

@@ -4,13 +4,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.PasswordField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class ConfirmarExcluirController {
 
-    @FXML private TextField senhaAdm;
+    @FXML private PasswordField senhaAdm;
     @FXML private Label labelErro;
     @FXML private Pane pane;
     @FXML private Stage stage;
@@ -34,7 +34,7 @@ public class ConfirmarExcluirController {
     }
 
     public void fecharTela(){
-        stage = (Stage) pane.getScene().getWindow();
+        stage = (Stage) pane.getScene().getWindow(); // esse "pane" ta dando problema
         stage.close();
     }
 
