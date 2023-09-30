@@ -6,6 +6,14 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ConfirmarExcluir",
+            "request": "launch",
+            "mainClass": "view.ConfirmarExcluir",
+            "projectName": "projetopoo_dab7bbcd",
+            "vmArgs": "--module-path \"E:/Downloads/javaFX/javafx-sdk-17.0.8/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
