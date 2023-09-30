@@ -6,84 +6,91 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UsuarioController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: FF993A;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TelaPrincipalController">
    <children>
-      <Pane layoutX="35.0" layoutY="150.0" prefHeight="236.0" prefWidth="530.0" />
-      <ImageView fitHeight="344.0" fitWidth="576.0" layoutX="13.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" />
-      <Label layoutX="149.0" prefHeight="40.0" prefWidth="307.0" text="OFICINA DO SR. ZEZÉ" textAlignment="CENTER">
+      <Pane layoutY="54.0" prefHeight="116.0" prefWidth="1280.0" style="-fx-background-color: D9D9D9;">
+         <children>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="1159.0" layoutY="14.0" onMouseClicked="#irParaTelaLogin" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@exit%201.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="1129.0" layoutY="83.0" prefHeight="27.0" prefWidth="130.0" text="Trocar usuário" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="clientesImg" fitHeight="70.0" fitWidth="70.0" layoutX="57.0" layoutY="15.0" onMouseClicked="#irParaTelaClientes" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icon%20_people_.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="automoveisImg" fitHeight="70.0" fitWidth="70.0" layoutX="181.0" layoutY="14.0" onMouseClicked="#irParaTelaAutomoveis" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@steering-wheel%201.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="57.0" layoutY="83.0" prefHeight="20.0" prefWidth="70.0" text="Clientes" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="161.0" layoutY="83.0" prefHeight="27.0" prefWidth="107.0" text=" Automoveis" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="servicosImg" fitHeight="70.0" fitWidth="70.0" layoutX="307.0" layoutY="14.0" onMouseClicked="#irParaTelaServicos" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@settings-sliders%201.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="307.0" layoutY="83.0" prefHeight="27.0" prefWidth="70.0" text="Serviços">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="loginImg" fitHeight="70.0" fitWidth="70.0" layoutX="672.0" layoutY="14.0" onMouseClicked="#irParaTelaLoginAut" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@do-utilizador%201.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="555.0" layoutY="83.0" prefHeight="27.0" prefWidth="70.0" text="Peças" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="pecasImg" fitHeight="70.0" fitWidth="70.0" layoutX="555.0" layoutY="17.0" onMouseClicked="#irParaTelaPecas" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icon%20_cog_.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="417.0" layoutY="83.0" prefHeight="27.0" prefWidth="107.0" text="Orçamentos" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="orcamentosImg" fitHeight="70.0" fitWidth="70.0" layoutX="436.0" layoutY="14.0" onMouseClicked="#irParaTelaOrcamentos" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@usd-circle%201.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="644.0" layoutY="83.0" prefHeight="27.0" prefWidth="119.0" text="Funcionários" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label alignment="CENTER" layoutX="477.0" layoutY="14.0" prefHeight="40.0" prefWidth="307.0" text="OFICINA DO SR. ZEZÉ" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="28.0" />
          </font>
       </Label>
-      <ImageView fx:id="clientesImg" fitHeight="70.0" fitWidth="70.0" layoutX="23.0" layoutY="44.0" onMouseClicked="#irParaTelaClientes" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="552.0" fitWidth="1280.0" layoutX="62.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@icon%20_people_.png" />
+            <Image url="@telaprincipal2.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="automoveisImg" fitHeight="70.0" fitWidth="70.0" layoutX="123.0" layoutY="46.0" onMouseClicked="#irParaTelaAutomoveis" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@icon%20_car_.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="servicosImg" fitHeight="70.0" fitWidth="70.0" layoutX="226.0" layoutY="42.0" onMouseClicked="#irParaTelaServicos" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@icon%20_briefcase_.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="loginImg" fitHeight="70.0" fitWidth="70.0" layoutX="516.0" layoutY="45.0" onMouseClicked="#irParaTelaLoginAut" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@icon%20_person_.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="orcamentosImg" fitHeight="70.0" fitWidth="70.0" layoutX="334.0" layoutY="42.0" onMouseClicked="#irParaTelaOrcamentos" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@icon%20_dollar_.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="pecasImg" fitHeight="70.0" fitWidth="70.0" layoutX="415.0" layoutY="45.0" onMouseClicked="#irParaTelaPecas" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@icon%20_cog_.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="23.0" layoutY="110.0" prefHeight="20.0" prefWidth="70.0" text="Clientes" textAlignment="CENTER">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="104.0" layoutY="110.0" prefHeight="27.0" prefWidth="107.0" text=" Automoveis" textAlignment="CENTER">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="222.0" layoutY="110.0" prefHeight="27.0" prefWidth="70.0" text="Serviços">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="301.0" layoutY="110.0" prefHeight="27.0" prefWidth="107.0" text="Orçamentos" textAlignment="CENTER">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="425.0" layoutY="110.0" prefHeight="27.0" prefWidth="70.0" text="Peças " textAlignment="CENTER">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="527.0" layoutY="110.0" prefHeight="27.0" prefWidth="52.0" text="Login" textAlignment="CENTER">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="mensagemAutentic" layoutX="15.0" layoutY="274.0" prefHeight="95.0" prefWidth="570.0" text="autenticado com sucesso!">
-         <font>
-            <Font name="System Bold" size="28.0" />
-         </font>
-      </Label>
-      <Label fx:id="nomeUsuario" layoutX="17.0" layoutY="190.0" prefHeight="95.0" prefWidth="570.0" text="Nome">
-         <font>
-            <Font name="System Bold" size="28.0" />
-         </font>
-      </Label>
    </children>
 </Pane>

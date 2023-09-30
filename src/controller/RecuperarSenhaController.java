@@ -7,7 +7,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import model.entity.Usuario;
-import view.TesteLogin;
+import view.Telas;
 
 public class RecuperarSenhaController {
 	@FXML private TextField usuarioOuEmail;
@@ -15,7 +15,7 @@ public class RecuperarSenhaController {
 	
 	public void voltarAoLogin(MouseEvent event) throws Exception {
 		try {
-			TesteLogin.telaLogin();
+			Telas.telaLogin();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

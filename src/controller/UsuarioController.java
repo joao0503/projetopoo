@@ -9,7 +9,7 @@ import javafx.scene.input.MouseEvent;
 import model.entity.Funcionario;
 import model.entity.Gerente;
 import model.entity.Usuario;
-import view.TesteLogin;
+import view.Telas;
 
 public class UsuarioController {
 	
@@ -46,26 +46,16 @@ public class UsuarioController {
 				System.out.println("Entrou em gerente");
 				System.out.println("Você é um gerente");
 				
-				TesteLogin.telaPrincipalGerente(autenticado);
-				
-				//erroAutenticacao.setText("Gerente logado");
-				//erroAutenticacao.setVisible(true);
+				Telas.telaPrincipalGerente(autenticado);
 			}
 			
 			if(autenticado instanceof Funcionario) {
-				System.out.println("Entrou em funcionário");
 				System.out.println("Você é um funcionário");
 				
-				TesteLogin.telaPrincipalFuncionario(autenticado);
-				
-
-				
-				//erroAutenticacao.setText("Funcionário logado");
-				//erroAutenticacao.setVisible(true);	
+				Telas.telaPrincipalFuncionario(autenticado);
 			}
 			
 		} catch(Exception e) {
-			// colocar aqui uma exceção criada, se existir
 			System.out.println("Entrou no catch");
 			erroAutenticacao.setText("Usuário ou senha incorretos!");
 			erroAutenticacao.setVisible(true);
@@ -77,34 +67,10 @@ public class UsuarioController {
 	public void irParaTelaRecuperarSenha(MouseEvent event) throws Exception {
 		try {
 			System.out.println("Chegou aqui em irParaTelaRecuperarSenha");
-			TesteLogin.telaRecuperarSenha();
+			Telas.telaRecuperarSenha();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 		
-	}
-	
-	public void irParaTelaClientes(MouseEvent event) throws Exception {
-		TesteLogin.telaClientes();
-	}
-	
-	public void irParaTelaAutomoveis(MouseEvent event) throws Exception {
-		TesteLogin.telaAutomoveis();
-	}
-	
-	public void irParaTelaServicos(MouseEvent event) throws Exception {
-		TesteLogin.telaServicos();
-	}
-	
-	public void irParaTelaOrcamentos(MouseEvent event) throws Exception {
-		TesteLogin.telaOrcamentos();
-	}
-	
-	public void irParaTelaPecas(MouseEvent event) throws Exception {
-		TesteLogin.telaPecas();
-	}
-	
-	public void irParaTelaLoginAut(MouseEvent event) throws Exception {
-		TesteLogin.telaLoginAut();
 	}
 }

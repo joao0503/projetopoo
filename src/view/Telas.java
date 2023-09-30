@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.entity.Usuario;
 
-public class TesteLogin extends Application {
+public class Telas extends Application {
 	private static Stage primaryStage;
 	
 	
@@ -15,7 +15,7 @@ public class TesteLogin extends Application {
 		return primaryStage;
 	}
 	public static void setPrimaryStage(Stage primaryStage) {
-		TesteLogin.primaryStage = primaryStage;
+		Telas.primaryStage = primaryStage;
 	}
 	public void start(Stage primaryStage) throws Exception {
 		setPrimaryStage(primaryStage);
@@ -25,7 +25,7 @@ public class TesteLogin extends Application {
 	}
 	
 	public static void telaLogin() throws Exception {
-		Parent root = FXMLLoader.load(TesteLogin.class.getResource("VE/LoginUsuario.fxml"));
+		Parent root = FXMLLoader.load(Telas.class.getResource("VE/LoginUsuario.fxml"));
 		
 		Scene cena = new Scene(root);
 	
@@ -33,7 +33,7 @@ public class TesteLogin extends Application {
 	}
 	
 	public static void telaRecuperarSenha() throws Exception {
-		Parent root = FXMLLoader.load(TesteLogin.class.getResource("VE/RecuperarSenha.fxml"));
+		Parent root = FXMLLoader.load(Telas.class.getResource("VE/RecuperarSenha.fxml"));
 		
 		Scene cena = new Scene(root);
 	
@@ -42,7 +42,7 @@ public class TesteLogin extends Application {
 	
 	public static void telaPrincipalGerente(Usuario usu) throws Exception {
 		System.out.println("Chamando TelaPrincipal Gerente");
-		Parent root = FXMLLoader.load(TesteLogin.class.getResource("VE/TelaPrincipal.fxml"));
+		Parent root = FXMLLoader.load(Telas.class.getResource("VE/TelaPrincipal.fxml"));
 		
 		Scene cena = new Scene(root);
 		
@@ -57,7 +57,7 @@ public class TesteLogin extends Application {
 	public static void telaPrincipalFuncionario(Usuario usu) throws Exception {
 		System.out.println("Chamando TelaPrincipal Funcionário");
 		
-		Parent root = FXMLLoader.load(TesteLogin.class.getResource("VE/TelaPrincipal.fxml"));
+		Parent root = FXMLLoader.load(Telas.class.getResource("VE/TelaPrincipal.fxml"));
 
 		Scene cena = new Scene(root);
 		
@@ -73,7 +73,7 @@ public class TesteLogin extends Application {
 	}
 	
 	public static void telaClientes() throws Exception {
-		Parent root = FXMLLoader.load(TesteLogin.class.getResource("VE/TelaPrincipal.fxml"));
+		Parent root = FXMLLoader.load(Telas.class.getResource("VE/AdicionarCliente.fxml"));
 		
 		Scene cena = new Scene(root);
 		
@@ -82,7 +82,7 @@ public class TesteLogin extends Application {
 	}
 	
 	public static void telaAutomoveis() throws Exception {
-		Parent root = FXMLLoader.load(TesteLogin.class.getResource("VE/TelaPrincipal.fxml"));
+		Parent root = FXMLLoader.load(Telas.class.getResource("VE/TelaPrincipal.fxml"));
 		
 		Scene cena = new Scene(root);
 		
@@ -91,7 +91,7 @@ public class TesteLogin extends Application {
 	}
 	
 	public static void telaServicos() throws Exception {
-		Parent root = FXMLLoader.load(TesteLogin.class.getResource("VE/TelaServicos.fxml"));
+		Parent root = FXMLLoader.load(Telas.class.getResource("VE/TelaServicos.fxml"));
 		
 		Scene cena = new Scene(root);
 		
@@ -100,7 +100,7 @@ public class TesteLogin extends Application {
 	}
 	
 	public static void telaOrcamentos() throws Exception {
-		Parent root = FXMLLoader.load(TesteLogin.class.getResource("VE/TelaPrincipal.fxml"));
+		Parent root = FXMLLoader.load(Telas.class.getResource("VE/TelaPrincipal.fxml"));
 		
 		Scene cena = new Scene(root);
 		
@@ -109,7 +109,7 @@ public class TesteLogin extends Application {
 	}
 	
 	public static void telaPecas() throws Exception {
-		Parent root = FXMLLoader.load(TesteLogin.class.getResource("VE/TelaPrincipal.fxml"));
+		Parent root = FXMLLoader.load(Telas.class.getResource("VE/AdicionarPeca.fxml"));
 		
 		Scene cena = new Scene(root);
 		
@@ -118,7 +118,7 @@ public class TesteLogin extends Application {
 	}
 	
 	public static void telaLoginAut() throws Exception {
-		Parent root = FXMLLoader.load(TesteLogin.class.getResource("VE/TelaPrincipal.fxml"));
+		Parent root = FXMLLoader.load(Telas.class.getResource("VE/TelaPrincipal.fxml"));
 		
 		Scene cena = new Scene(root);
 		
@@ -130,7 +130,6 @@ public class TesteLogin extends Application {
 	public static void main(String ... args) {
 		launch();
 	}
-
 }
 
 
