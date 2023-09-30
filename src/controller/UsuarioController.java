@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import model.entity.Funcionario;
 import model.entity.Gerente;
 import model.entity.Usuario;
@@ -15,6 +16,10 @@ public class UsuarioController {
 	@FXML private TextField usuario;
 	@FXML private TextField senha;
 	@FXML private Label erroAutenticacao;
+	//@FXML private Label esqueceuSenha;
+	
+	//@FXML private Label nomeUsuario;
+	//@FXML private Label mensagemAutentic;
 	//@FXML private Button botaoEntrar;
 	
 	// instanciar aqui o bo para autenticar
@@ -53,6 +58,8 @@ public class UsuarioController {
 				
 				TesteLogin.telaPrincipalFuncionario(autenticado);
 				
+
+				
 				//erroAutenticacao.setText("Funcionário logado");
 				//erroAutenticacao.setVisible(true);	
 			}
@@ -67,27 +74,37 @@ public class UsuarioController {
 		
 	}
 	
-	public void irParaTelaClientes(ActionEvent event) throws Exception {
+	public void irParaTelaRecuperarSenha(MouseEvent event) throws Exception {
+		try {
+			System.out.println("Chegou aqui em irParaTelaRecuperarSenha");
+			TesteLogin.telaRecuperarSenha();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void irParaTelaClientes(MouseEvent event) throws Exception {
 		TesteLogin.telaClientes();
 	}
 	
-	public void irParaTelaAutomoveis(ActionEvent event) throws Exception {
+	public void irParaTelaAutomoveis(MouseEvent event) throws Exception {
 		TesteLogin.telaAutomoveis();
 	}
 	
-	public void irParaTelaServicos(ActionEvent event) throws Exception {
+	public void irParaTelaServicos(MouseEvent event) throws Exception {
 		TesteLogin.telaServicos();
 	}
 	
-	public void irParaTelaOrcamentos(ActionEvent event) throws Exception {
+	public void irParaTelaOrcamentos(MouseEvent event) throws Exception {
 		TesteLogin.telaOrcamentos();
 	}
 	
-	public void irParaTelaPecas(ActionEvent event) throws Exception {
+	public void irParaTelaPecas(MouseEvent event) throws Exception {
 		TesteLogin.telaPecas();
 	}
 	
-	public void irParaTelaLoginAut(ActionEvent event) throws Exception {
+	public void irParaTelaLoginAut(MouseEvent event) throws Exception {
 		TesteLogin.telaLoginAut();
 	}
 }
