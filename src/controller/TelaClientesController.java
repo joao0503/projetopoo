@@ -6,8 +6,6 @@ import javafx.fxml.FXML;
 
 import javafx.scene.control.TextField;
 
-import javafx.stage.Stage;
-
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 
@@ -17,8 +15,6 @@ public class TelaClientesController extends TelaPrincipalController{
     @FXML private TextField searchBar;
     @FXML private TableView tabelaClientes;
     @FXML private Button botaoNovoCliente;
-
-    Stage primaryStage = Telas.getPrimaryStage();
 
     public void buscar(ActionEvent event){
 
