@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TreeTableColumn?>
@@ -8,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="fundoAdicionarPeca" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="543.0" prefWidth="660.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="fundoAdicionarPeca" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="543.0" prefWidth="660.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AdicionarClienteController">
    <children>
       <Text fill="#ee7200" layoutX="33.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do Cliente:">
          <font>
@@ -30,7 +34,7 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Text fill="#ee7200" layoutX="33.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Automóveis registrados:">
+      <Text fill="#ee7200" layoutX="33.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Automóveis registrados:">
          <font>
             <Font size="18.0" />
          </font>
@@ -38,12 +42,7 @@
       <TextField fx:id="campoNomeCliente" layoutX="33.0" layoutY="124.0" prefHeight="25.0" prefWidth="379.0" />
       <TextField fx:id="campoCPF" layoutX="467.0" layoutY="124.0" prefHeight="25.0" prefWidth="159.0" />
       <TextField fx:id="campoEndereco" layoutX="33.0" layoutY="198.0" prefHeight="25.0" prefWidth="379.0" />
-      <Button fx:id="botaoAdicionarCliente" layoutX="487.0" layoutY="196.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="119.0" text="Adicionar">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Button>
-      <TreeTableView fx:id="tabelaAutomoveis" layoutX="29.0" layoutY="315.0" prefHeight="200.0" prefWidth="594.0">
+      <TreeTableView fx:id="tabelaAutomoveis" layoutX="29.0" layoutY="274.0" prefHeight="200.0" prefWidth="594.0">
         <columns>
           <TreeTableColumn fx:id="colunaMarca" prefWidth="170.0" text="Marca" />
           <TreeTableColumn fx:id="colunaAno" minWidth="7.0" prefWidth="78.0" text="Ano" />
@@ -52,5 +51,10 @@
             <TreeTableColumn fx:id="colunaQuilometragem" prefWidth="123.0" text="Quilometragem" />
         </columns>
       </TreeTableView>
+      <Button fx:id="botaoAddCliente" layoutX="266.0" layoutY="486.0" mnemonicParsing="false" onAction="#addCliente" prefHeight="30.0" prefWidth="119.0" text="Salvar">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

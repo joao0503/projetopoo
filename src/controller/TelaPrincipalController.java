@@ -3,7 +3,7 @@ package controller;
 import javafx.scene.input.MouseEvent;
 import view.Telas;
 
-public class TelaPrincipalController {
+public class TelaPrincipalController{
 	
 	public void irParaTelaClientes(MouseEvent event) throws Exception {
 		Telas.telaClientes();

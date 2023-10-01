@@ -10,7 +10,6 @@ import model.entity.Usuario;
 public class Telas extends Application {
 	private static Stage primaryStage;
 	
-	
 	public static Stage getPrimaryStage() {
 		return primaryStage;
 	}
