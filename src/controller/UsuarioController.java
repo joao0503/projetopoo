@@ -34,16 +34,13 @@ public class UsuarioController {
 		
 		// mandar o objeto usuar criado para o bo, quando ele for implementado 
 		try {
-			System.out.println("Entrou no try");
 			// ex: UsuarioVO autenticado = usuBO.autenticar(usuar);
 			Usuario autenticado = usuDAO.autent(usuar);
 			System.out.println("O usuario autenticado é: " + autenticado.getUsuario() + " " + 
 					autenticado.getSenha());
-			System.out.println("Entrou no try depois de autenticado");
 			autenticado.setNome("Ana");
 			System.out.println("O nome do autenticado é: " + autenticado.getNome());
 			if(autenticado instanceof Gerente) {
-				System.out.println("Entrou em gerente");
 				System.out.println("Você é um gerente");
 				
 				Telas.telaPrincipalGerente(autenticado);
