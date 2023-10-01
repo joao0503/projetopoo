@@ -114,6 +114,6 @@
             <TableColumn prefWidth="487.0" text="Proprietário" />
         </columns>
       </TableView>
-      <Button fx:id="botaoDetalhesAutomovel" layoutX="1199.0" layoutY="264.0" mnemonicParsing="false" onAction="#infoCliente" text="Detalhes" />
+      <Button fx:id="botaoDetalhesAutomovel" layoutX="1199.0" layoutY="264.0" mnemonicParsing="false" onAction="#infoAutomovel" text="Detalhes" />
    </children>
 </Pane>

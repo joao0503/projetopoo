@@ -8,7 +8,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-public class ConfirmarExcluirController {
+public class ConfirmarExcluirController{
 
     @FXML private PasswordField senhaAdm;
     @FXML private Label labelErro;

@@ -9,7 +9,7 @@ import javafx.scene.paint.Color;
 import model.entity.Usuario;
 import view.Telas;
 
-public class RecuperarSenhaController {
+public class RecuperarSenhaController{
 	@FXML private TextField usuarioOuEmail;
 	@FXML private Label mensagemVerificacao;
 	
