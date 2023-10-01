@@ -77,12 +77,14 @@ public class Telas extends Application {
 	}
 	
 	public static void telaClientes() throws Exception {
-		Parent root = FXMLLoader.load(Telas.class.getResource("VE/AdicionarCliente.fxml"));
+		Parent root = FXMLLoader.load(Telas.class.getResource("VE/TelaClientes.fxml"));
 		
 		Scene cena = new Scene(root);
-		
-		
+
 		primaryStage.setScene(cena);
+		cena.getWindow().centerOnScreen();
+
+		
 	}
 	
 	public static void telaAutomoveis() throws Exception {

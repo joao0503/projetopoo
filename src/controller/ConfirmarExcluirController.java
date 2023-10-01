@@ -12,7 +12,7 @@ public class ConfirmarExcluirController {
 
     @FXML private PasswordField senhaAdm;
     @FXML private Label labelErro;
-    @FXML private Pane pane;
+    @FXML private Pane pane;  // tentativa de fechar a tela
     @FXML private Stage stage;
 
     
