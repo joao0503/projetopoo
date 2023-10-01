@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TelaClientesController">
+   <children>
+      <Pane layoutY="54.0" prefHeight="91.0" prefWidth="1280.0" style="-fx-background-color: D9D9D9;">
+         <children>
+            <ImageView fitHeight="45.0" fitWidth="50.0" layoutX="1159.0" layoutY="14.0" onMouseClicked="#irParaTelaLogin" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@exit%201.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="1118.0" layoutY="60.0" prefHeight="27.0" prefWidth="130.0" text="Trocar usuário" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="clientesImg" fitHeight="45.0" fitWidth="50.0" layoutX="57.0" layoutY="15.0" onMouseClicked="#irParaTelaClientes" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icon%20_people_.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="automoveisImg" fitHeight="45.0" fitWidth="50.0" layoutX="181.0" layoutY="14.0" onMouseClicked="#irParaTelaAutomoveis" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@steering-wheel%201.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="48.0" layoutY="60.0" prefHeight="20.0" prefWidth="70.0" text="Clientes" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="151.0" layoutY="60.0" prefHeight="27.0" prefWidth="107.0" text=" Automoveis" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="servicosImg" fitHeight="45.0" fitWidth="50.0" layoutX="307.0" layoutY="14.0" onMouseClicked="#irParaTelaServicos" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@settings-sliders%201.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="298.0" layoutY="60.0" prefHeight="27.0" prefWidth="70.0" text="Serviços">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="loginImg" fitHeight="45.0" fitWidth="50.0" layoutX="672.0" layoutY="14.0" onMouseClicked="#irParaTelaLoginAut" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@do-utilizador%201.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="545.0" layoutY="60.0" prefHeight="27.0" prefWidth="70.0" text="Peças" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="pecasImg" fitHeight="45.0" fitWidth="50.0" layoutX="555.0" layoutY="17.0" onMouseClicked="#irParaTelaPecas" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icon%20_cog_.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="407.0" layoutY="60.0" prefHeight="27.0" prefWidth="107.0" text="Orçamentos" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="orcamentosImg" fitHeight="45.0" fitWidth="50.0" layoutX="436.0" layoutY="14.0" onMouseClicked="#irParaTelaOrcamentos" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@usd-circle%201.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="638.0" layoutY="60.0" prefHeight="27.0" prefWidth="119.0" text="Funcionários" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f67f10" height="58.0" stroke="#f67f10" strokeType="INSIDE" width="1280.0" />
+      <Label alignment="CENTER" layoutX="500.0" layoutY="14.0" prefHeight="40.0" prefWidth="307.0" text="Oficina do Sr. Zezé" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <TextField fx:id="searchBar" layoutX="27.0" layoutY="176.0" prefHeight="34.0" prefWidth="946.0" promptText="Pesquisar...">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Button fx:id="botaoBuscar" layoutX="982.0" layoutY="179.0" mnemonicParsing="false" onAction="#buscar" text="Buscar">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <TableView fx:id="tabelaPecas" layoutX="27.0" layoutY="237.0" prefHeight="458.0" prefWidth="1162.0">
+        <columns>
+          <TableColumn prefWidth="87.0" text="Quantidade" />
+          <TableColumn prefWidth="467.0" text="Nome" />
+            <TableColumn prefWidth="404.0" text="Fabricante" />
+            <TableColumn prefWidth="203.0" text="Preço(R$)" />
+        </columns>
+      </TableView>
+      <Button fx:id="botaoRemoverPeca" layoutX="1199.0" layoutY="264.0" mnemonicParsing="false" onAction="#removerPeca" text="Remover" />
+      <Button fx:id="botaoAddPeca" layoutX="1081.0" layoutY="179.0" mnemonicParsing="false" onAction="#addPeca" text="Nova Peça">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
