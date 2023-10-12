@@ -7,7 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -25,7 +24,7 @@ public class TelaClientesController extends TelaPrincipalController{
     }
 
     public void addCliente(ActionEvent event) throws Exception{
-        Parent root = FXMLLoader.load(Telas.class.getResource("VE/TelaClientes.fxml"));
+        Parent root = FXMLLoader.load(Telas.class.getResource("VE/AdicionarCliente.fxml"));
 		Stage stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setOpacity(1);
