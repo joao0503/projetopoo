@@ -3,37 +3,23 @@ package model.VO;
 import java.util.ArrayList;
 
 public class FuncionarioVO extends UsuarioVO {
-
-	//private List<Cliente> clientesDoFuncionario;
 	private double salario;
-	//private boolean ehFuncionario;
 	private ArrayList<ServicoVO> servicosDoFuncionario;
 	private Long funcionarioId;
 	
-    public FuncionarioVO(double salario, ArrayList<ServicoVO> servicosDoFuncionario, String nome, 
-    		String cpf, String endereco, String email, String usuario, String senha, 
-    		Long pessoaId, Long usuarioId, String numeroCelular, Long funcionarioId) {
-        super(nome, cpf, endereco, email, numeroCelular, usuario, pessoaId, senha, 
+	
+    public FuncionarioVO(String nome, String cpf, String endereco, String numeroCelular, Long pessoaId, 
+			String usuario, String senha, String email, Integer tipoDeUsuario, Long usuarioId, 
+			double salario, ArrayList<ServicoVO> servicosDoFuncionario, Long funcionarioId) {
+        super(nome, cpf, endereco, numeroCelular, pessoaId, usuario, senha, email, tipoDeUsuario, 
         		usuarioId);
         //setClientesDoFuncionario(clientesDoFuncionario);
         setSalario(salario);
         setServicosDoFuncionario(servicosDoFuncionario);
         setFuncionarioId(funcionarioId);
     }
-
+    
 	public FuncionarioVO() {}
-	
-	
-	/*public List<Cliente> getClientesDoFuncionario() {
-		return clientesDoFuncionario;
-	}
-	public void setClientesDoFuncionario(List<Cliente> clientesDoFuncionario) {
-		if(clientesDoFuncionario != null && !clientesDoFuncionario.isEmpty()) {
-			this.clientesDoFuncionario = clientesDoFuncionario;
-		}
-	}*/
-	
-	// improvisando login temporariamente
 	
 	
 	public double getSalario() {
@@ -44,16 +30,6 @@ public class FuncionarioVO extends UsuarioVO {
 			this.salario = salario;
 		}
 	}
-	
-	
-	/*public boolean getEhFuncionario() {
-		return ehFuncionario;
-	}
-	public void setEhFuncionario(boolean autenti) {
-		if(autenti) {
-			this.ehFuncionario = autenti;
-		}
-	}*/
 	
 	
 	public ArrayList<ServicoVO> getServicosDoFuncionario() {

@@ -57,10 +57,11 @@ public class UsuarioDAO<VO extends UsuarioVO> extends PessoaDAO<VO>{
     @Override
     public void deletar(VO vo) {
         Connection con = getConnection();
-        String sql = "delete from usuarios where usuario_id = ?";
+        //String sql = "delete from usuarios where usuario_id = ?";
+        String sql = "delete from usuarios where pessoa_id = ?";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setLong(1, vo.getUsuarioId());
+            ps.setLong(1, vo.getPessoaId());
             ps.executeUpdate();
             ps.close();
         } catch (SQLException e) {
@@ -73,8 +74,7 @@ public class UsuarioDAO<VO extends UsuarioVO> extends PessoaDAO<VO>{
     @Override
     public void alterar(VO vo) {
         Connection con = getConnection();
-        String sql = "update usuarios set usuario = ?, senha = ?, pessoa_id = ? "
-        		+ "where usuario_id = ?";
+        String sql = "update usuarios set usuario = ?, senha = ? where pessoa_id = ?";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, vo.getUsuario());
@@ -100,15 +100,15 @@ public class UsuarioDAO<VO extends UsuarioVO> extends PessoaDAO<VO>{
         //String sql = "select * from pessoas inner join usuarios on pessoas.pessoa_id"
         //		+ " = usuarios.pessoa_id where pessoas.pessoa_id = ?";
         
-        String sql = "select * from usuarios where usuario_id = ?";
+        String sql = "select * from usuarios where pessoa_id = ?";
         try {
             ps = con.prepareStatement(sql);
-            ps.setLong(1, vo.getUsuarioId());
+            ps.setLong(1, vo.getPessoaId());
             rs = ps.executeQuery();
         	if(rs.next()) {
         		//UsuarioVO usu = new UsuarioVO();
         		vo.setUsuario(rs.getString("nome_usuario"));
-        		vo.setCpf(rs.getString("senha"));
+        		vo.setSenha(rs.getString("senha"));
         		vo.setEmail(rs.getString("email"));
         		vo.setUsuarioId(rs.getLong("usuario_id"));
         		return vo;
@@ -126,7 +126,7 @@ public class UsuarioDAO<VO extends UsuarioVO> extends PessoaDAO<VO>{
     //public List<UsuarioVO> listar() {
     public List<?> listar() {
         Connection con = getConnection();
-        String sql = "select * from tb_usuarios";
+        String sql = "select * from usuarios";
         Statement st;
         ResultSet rs = null;
         List<UsuarioVO> usuarios = new ArrayList<UsuarioVO>();
@@ -167,6 +167,7 @@ public class UsuarioDAO<VO extends UsuarioVO> extends PessoaDAO<VO>{
         		vo.setCpf(rs.getString("senha"));
         		vo.setEmail(rs.getString("email"));
         		vo.setUsuarioId(rs.getLong("usuario_id"));
+        		vo.setTipoDeUsuario(rs.getInt("tipo_id"));
         		return vo;
         	}
         } catch (SQLException e) {

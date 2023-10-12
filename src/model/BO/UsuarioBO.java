@@ -64,9 +64,13 @@ public class UsuarioBO<VO extends UsuarioVO> implements BaseBO<VO> {
 	}
 
 	
-	@Override
 	public VO buscarPorId(VO vo) throws NaoEncontradoException {
-		return null;
+	    if (vo instanceof UsuarioVO) {
+	        UsuarioVO usuario = usuarioDAO.buscar(vo);
+	        return (VO) usuario;
+	    } else {
+	        return null;
+	    }
 	}
 	
 

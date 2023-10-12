@@ -10,8 +10,8 @@ public class PessoaVO {
 	public PessoaVO(String nome, String cpf, String endereco, String numeroCelular, 
 			Long pessoaId) {
 		setNome(nome);
-		setEndereco(endereco);
 		setCpf(cpf);
+		setEndereco(endereco);
 		setNumeroCelular(numeroCelular);
 		setPessoaId(pessoaId);
 	}
@@ -32,11 +32,11 @@ public class PessoaVO {
 		return cpf;
 	}
 	public void setCpf(String cpf) {
-		if(cpf.length() >= 11 && cpf.length() <= 14) {
+		//if(cpf.length() >= 11 && cpf.length() <= 14) {
 			this.cpf = cpf;
-		} else {
-			System.out.println("CPF inválido!");
-		}
+		//} else {
+			//System.out.println("CPF inválido!");
+		//}
 	}
 	
 	
@@ -54,9 +54,9 @@ public class PessoaVO {
 		return numeroCelular;
 	}
 	public void setNumeroCelular(String numeroCelular) {
-		if(numeroCelular != null && !numeroCelular.isEmpty()) {
+		//if(numeroCelular != null && !numeroCelular.isEmpty()) {
 			this.numeroCelular = numeroCelular;
-		}
+		//}
 	}
 	
 	public Long getPessoaId() {
@@ -67,5 +67,11 @@ public class PessoaVO {
 		if(pessoaId > 0) {
 			this.pessoaId = pessoaId;
 		}
+	}
+	
+	@Override
+	public String toString() {
+		return "Nome: " + getNome() + "\nCpf: " + getCpf() + "\nEndereco: " + getEndereco() 
+		+ "\nNumero de Celular: " + getNumeroCelular() + "\nPessoaId: " + getPessoaId();
 	}
 }

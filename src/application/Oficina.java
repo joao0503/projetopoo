@@ -3,12 +3,18 @@ package application;
 import java.util.ArrayList;
 import java.util.List;
 
+import exception.NaoEncontradoException;
+import model.BO.PessoaBO;
+import model.BO.UsuarioBO;
 import model.DAO.PecaDAO;
+import model.VO.FuncionarioVO;
 import model.VO.PecaVO;
+import model.VO.PessoaVO;
+import model.VO.UsuarioVO;
 
 public class Oficina {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws NaoEncontradoException {
 		System.out.println("Oficina mecânica de Sr. Zezé");
 		
 		// Mostrando como testar o DAO:
@@ -80,5 +86,32 @@ public class Oficina {
     	System.out.println("\nA peça buscada é: " + "\n" + pecaBuscada.toString());
     	
     	// listar todas já foi mostrada anteriormente
+    	
+    	// testando PessoaBO
+    	PessoaBO pesBO = new PessoaBO();
+    	PessoaVO pessoa = new PessoaVO();
+    	pessoa.setPessoaId((long) 1);
+    	pessoa = pesBO.buscarPorId(pessoa);
+    	System.out.println("Dados da pessoa com id " + pessoa.getPessoaId() + ": \n" 
+    			+ pessoa.toString() + "\n\n");
+    	
+    	// testando UsuarioBO do tipo UsuarioVO
+    	UsuarioBO<UsuarioVO> usuBO = new UsuarioBO<UsuarioVO>();
+    	UsuarioVO usuario = new UsuarioVO();
+    	usuario.setPessoaId((long) 1);
+    	usuario = usuBO.buscarPorId(usuario);
+    	//System.out.println("Dados da pessoa: \n" + usuario.toString());
+    	System.out.println("Dados do usuário com id " + usuario.getPessoaId() + ": \n" 
+    			+ usuario.toString() + "\n\n");
+    	
+    	
+    	// testando UsuarioBO do tipo FuncionarioVO
+    	UsuarioBO<FuncionarioVO> usuFunBO = new UsuarioBO<FuncionarioVO>();
+    	FuncionarioVO fun = new FuncionarioVO();
+    	fun.setPessoaId((long) 1);
+    	fun = usuFunBO.buscarPorId(fun);
+    	//System.out.println("Dados da pessoa: \n" + usuario.toString());
+    	System.out.println("Dados do usuário com id " + fun.getPessoaId() + ": \n" 
+    			+ fun.toString());
 	}
 }

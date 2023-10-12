@@ -4,15 +4,28 @@ public class UsuarioVO extends PessoaVO {
 	private String usuario;
 	private String senha;
 	private String email;
+	private Integer tipoDeUsuario;
 	private Long usuarioId;
 
-	public UsuarioVO(String nome, String cpf, String endereco, String numeroCelular, 
-			String usuario, String senha, Long pessoaId, String email, 
-			Long usuarioId) {
+	/*public UsuarioVO(String nome, String cpf, String endereco, String numeroCelular, Long pessoaId, 
+			String usuario, String senha, String email, Integer tipoDeUsuario, Long usuarioId) {
 		super(nome, cpf, endereco, numeroCelular, pessoaId);
 		setUsuario(usuario);
 		setSenha(senha);
 		setEmail(email);
+		setTipoDeUsuario(tipoDeUsuario);
+		setUsuarioId(usuarioId);
+	}*/
+	
+	//a a aaa  aa  aaa
+	
+	public UsuarioVO(String nome, String cpf, String endereco, String numeroCelular, Long pessoaId, 
+			String usuario, String senha, String email, Integer tipoDeUsuario, Long usuarioId) {
+		super(nome, cpf, endereco, numeroCelular, pessoaId);
+		setUsuario(usuario);
+		setSenha(senha);
+		setEmail(email);
+		setTipoDeUsuario(tipoDeUsuario);
 		setUsuarioId(usuarioId);
 	}
 
@@ -39,6 +52,17 @@ public class UsuarioVO extends PessoaVO {
 		}
 	}
 	
+	
+	public Integer getTipoDeUsuario() {
+		return tipoDeUsuario;
+	}
+	public void setTipoDeUsuario(Integer tipoDeUsuario) {
+		if(tipoDeUsuario > 0) {
+			this.tipoDeUsuario = tipoDeUsuario;
+		}
+	}
+	
+	
 	public String getEmail() {
 		return email;
 	}
@@ -55,5 +79,13 @@ public class UsuarioVO extends PessoaVO {
 		if(usuarioId > 0) {
 			this.usuarioId = usuarioId;
 		}
+	}
+	
+	
+
+	@Override
+	public String toString() {
+		return super.toString() + "\nUsuário: " + getUsuario() + "\nSenha: " + getSenha() 
+		+ "\nEmail: " + getEmail() + "\nTipo de Usuário" + getTipoDeUsuario() + "\nUsuarioId " + getUsuarioId();
 	}
 }

@@ -1,13 +1,14 @@
 package model.VO;
 
 public class GerenteVO extends UsuarioVO {
-	//private boolean ehGerente;
 	private double bonus;
 	private Long gerenteId;
 
-    public GerenteVO(String nome, String cpf, String endereco, String usuario, String senha, Long pessoaId,
-    		Long usuarioId, String numeroCelular, double bonus, Long gerenteId) {
-        super(nome, cpf, endereco, usuario, senha, numeroCelular, usuarioId, numeroCelular, pessoaId);
+    public GerenteVO(String nome, String cpf, String endereco, String numeroCelular, Long pessoaId, 
+			String usuario, String senha, String email, Integer tipoDeUsuario, Long usuarioId, 
+			double bonus, Long gerenteId) {
+        super(nome, cpf, endereco, numeroCelular, pessoaId, usuario, senha, email, tipoDeUsuario, 
+        		usuarioId);
         //setEhGerente(ehGerente);
         setBonus(bonus);
         setGerenteId(gerenteId);
@@ -25,6 +26,7 @@ public class GerenteVO extends UsuarioVO {
     	}
     }
     
+    
     public Long getGerenteId() {
     	return gerenteId;
     }
@@ -33,14 +35,4 @@ public class GerenteVO extends UsuarioVO {
     		this.gerenteId = gerenteId;
     	}
     }
-    
-    
-    /*public boolean getEhGerente() {
-    	return ehGerente;
-    }
-    public void setEhGerente(boolean autenti) {
-    	if(autenti) {
-    		this.ehGerente = autenti;
-    	}
-    }*/
 }
