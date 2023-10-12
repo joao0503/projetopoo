@@ -5,7 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import model.entity.Usuario;
+import model.VO.UsuarioVO;
 
 public class Telas extends Application {
 	private static Stage primaryStage;
@@ -41,7 +41,7 @@ public class Telas extends Application {
 		cena.getWindow().centerOnScreen();
 	}
 	
-	public static void telaPrincipalGerente(Usuario usu) throws Exception {
+	public static void telaPrincipalGerente(UsuarioVO usu) throws Exception {
 		System.out.println("Chamando TelaPrincipal Gerente");
 		Parent root = FXMLLoader.load(Telas.class.getResource("VE/TelaPrincipal.fxml"));
 		
@@ -56,7 +56,7 @@ public class Telas extends Application {
 		cena.getWindow().centerOnScreen();
 	}
 	
-	public static void telaPrincipalFuncionario(Usuario usu) throws Exception {
+	public static void telaPrincipalFuncionario(UsuarioVO usu) throws Exception {
 		System.out.println("Chamando TelaPrincipal Funcionário");
 		
 		Parent root = FXMLLoader.load(Telas.class.getResource("VE/TelaPrincipal.fxml"));

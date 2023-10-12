@@ -3,8 +3,8 @@ package application;
 import java.util.ArrayList;
 import java.util.List;
 
-import dao.PecaDAO;
-import model.entity.Peca;
+import model.DAO.PecaDAO;
+import model.VO.PecaVO;
 
 public class Oficina {
 
@@ -18,22 +18,22 @@ public class Oficina {
 		
 		// PecasDAO:
 		// inserindo algumas peças no banco de dados
-		Peca pe = new Peca("Motor", 5, "Ford", 1200.52, 0L);
+		PecaVO pe = new PecaVO("Motor", 5, "Ford", 1200.52, 0L);
 		PecaDAO pdao = new PecaDAO();
 		pdao.inserir(pe);
 		
-		Peca pe2 = new Peca("Pneu", 589, "BorrachaX", 129.75, 0L);
+		PecaVO pe2 = new PecaVO("Pneu", 589, "BorrachaX", 129.75, 0L);
 		pdao.inserir(pe2);
 		
-		Peca pe3 = new Peca("Retrovisor", 128, "Retrovy", 55.90, 0L);
+		PecaVO pe3 = new PecaVO("Retrovisor", 128, "Retrovy", 55.90, 0L);
 		pdao.inserir(pe3);
 		
 		// mostrando as peças que estão no banco de dados
-		List<Peca> pecas = new ArrayList<Peca>();
+		List<PecaVO> pecas = new ArrayList<PecaVO>();
 		pecas = pdao.listar();
 		
     	System.out.println("As peças no banco de dados são: ");
-    	for(Peca p : pecas) {
+    	for(PecaVO p : pecas) {
     		System.out.println(p.toString());
     	}
     	
@@ -47,7 +47,7 @@ public class Oficina {
     	pecas = pdao.listar();
 
     	System.out.println("As peças no banco de dados depois de deletar uma delas são: ");
-    	for(Peca p : pecas) {
+    	for(PecaVO p : pecas) {
     		System.out.println(p.toString());
     	}
     	
@@ -68,15 +68,15 @@ public class Oficina {
     	pecas = pdao.listar();
     	
     	System.out.println("As peças no banco de dados depois de alterar uma delas são: ");
-    	for(Peca p : pecas) {
+    	for(PecaVO p : pecas) {
     		System.out.println(p.toString());
     	}
     	
     	// buscando por id, simulando:
-    	Peca pecaTeste = new Peca();
+    	PecaVO pecaTeste = new PecaVO();
     	pecaTeste.setPecaId(2L);
     	
-    	Peca pecaBuscada = pdao.buscar(pecaTeste);
+    	PecaVO pecaBuscada = pdao.buscar(pecaTeste);
     	System.out.println("\nA peça buscada é: " + "\n" + pecaBuscada.toString());
     	
     	// listar todas já foi mostrada anteriormente
