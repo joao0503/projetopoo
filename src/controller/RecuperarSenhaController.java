@@ -6,7 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
-import model.entity.Usuario;
+import model.VO.UsuarioVO;
 import view.Telas;
 
 public class RecuperarSenhaController{
@@ -25,7 +25,7 @@ public class RecuperarSenhaController{
 	public void solicitarRecuperacao(ActionEvent event) throws Exception {
 		// simulação de recuperação
 		try {
-			Usuario usu = new Usuario();
+			UsuarioVO usu = new UsuarioVO();
 			usu.setUsuario(usuarioOuEmail.getText());
 			System.out.println(usu.getUsuario());
 			mensagemVerificacao.setText("Email de recuperação enviado para o email de: " 

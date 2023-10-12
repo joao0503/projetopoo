@@ -1,16 +1,18 @@
 package controller;
-import view.Telas;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+<<<<<<< HEAD
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+=======
+>>>>>>> 9a640f7013a79065c8f649884a82c8b2ce66d4fe
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 
 
 public class TelaClientesController extends TelaPrincipalController{

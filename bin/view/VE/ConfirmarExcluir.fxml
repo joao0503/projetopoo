@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="265.0" prefWidth="446.0" style="-fx-background-color: 000000;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ConfirmarExcluirController">
+   <children>
+      <Label layoutX="23.0" layoutY="42.0" prefHeight="47.0" prefWidth="400.0" text="Deseja realmente excluir esse item?" textAlignment="CENTER" textFill="#ee7200">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Button fx:id="btExcluir" layoutX="60.0" layoutY="183.0" mnemonicParsing="false" onAction="#excluir" prefHeight="32.0" prefWidth="130.0" style="-fx-background-color: f2f2f2;" text="Excluir" textFill="#fa0000">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btVoltar" cancelButton="true" layoutX="257.0" layoutY="183.0" mnemonicParsing="false" onAction="#fecharTela" prefHeight="32.0" prefWidth="130.0" style="-fx-background-color: f2f2f2;" text="Voltar" textFill="#ff993a">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Label fx:id="labelErro" layoutX="48.0" layoutY="89.0" text="Erro: senha incorreta" textFill="RED" visible="false" />
+      <PasswordField fx:id="senhaAdm" layoutX="44.0" layoutY="120.0" prefHeight="25.0" prefWidth="365.0" promptText="Senha do administrador">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </PasswordField>
+   </children>
+</Pane>
