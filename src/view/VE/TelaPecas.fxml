@@ -94,12 +94,12 @@
             <Font size="28.0" />
          </font>
       </Label>
-      <TextField fx:id="searchBar" layoutX="27.0" layoutY="176.0" prefHeight="34.0" prefWidth="946.0" promptText="Pesquisar...">
+      <TextField fx:id="searchBar" layoutX="27.0" layoutY="176.0" prefHeight="34.0" prefWidth="798.0" promptText="Filtrar...">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
-      <Button fx:id="botaoBuscar" layoutX="982.0" layoutY="179.0" mnemonicParsing="false" onAction="#buscar" text="Buscar">
+      <Button fx:id="botaoDetalhes" layoutX="949.0" layoutY="179.0" mnemonicParsing="false" onAction="#detalharPeca" text="Detalhes">
          <font>
             <Font size="13.0" />
          </font>
@@ -112,8 +112,8 @@
             <TableColumn prefWidth="203.0" text="Preço(R$)" />
         </columns>
       </TableView>
-      <Button fx:id="botaoRemoverPeca" layoutX="1199.0" layoutY="264.0" mnemonicParsing="false" onAction="#removerPeca" text="Remover" />
-      <Button fx:id="botaoAddPeca" layoutX="1081.0" layoutY="179.0" mnemonicParsing="false" onAction="#addPeca" text="Nova Peça">
+      <Button fx:id="botaoRemoverPeca" layoutX="1027.0" layoutY="179.0" mnemonicParsing="false" onAction="#removerPeca" prefHeight="29.0" prefWidth="68.0" text="Remover" />
+      <Button fx:id="botaoAddPeca" layoutX="1110.0" layoutY="179.0" mnemonicParsing="false" onAction="#addPeca" text="Nova Peça">
          <font>
             <Font size="13.0" />
          </font>
