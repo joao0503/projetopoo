@@ -1,6 +1,7 @@
 package view;
 
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -84,6 +85,15 @@ public class Telas extends Application {
 		cena.getWindow().centerOnScreen();
 
 		
+	}
+
+	public static void telaAdicionarCliente() throws Exception {
+		Parent root = FXMLLoader.load(Telas.class.getResource("VE/AdicionarCliente.fxml"));
+		
+		Scene cena = new Scene(root);
+	
+		primaryStage.setScene(cena);
+		cena.getWindow().centerOnScreen();
 	}
 	
 	public static void telaAutomoveis() throws Exception {

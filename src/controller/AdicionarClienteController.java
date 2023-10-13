@@ -11,7 +11,7 @@ public class AdicionarClienteController {
     @FXML TextField campoCPF;
     @FXML TreeTableView tabelaAutomoveis;
     
-    public void addCliente(ActionEvent event){
+    public void salvarCliente(ActionEvent event){
         System.out.println("add cliente"); // falta basicamente tudo aqui
     }
 }
