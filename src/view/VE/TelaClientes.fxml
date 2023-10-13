@@ -104,7 +104,7 @@
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="botaoExcluir" layoutX="1016.0" layoutY="179.0" mnemonicParsing="false" onAction="#excluirCliente" text="Excluir">
+      <Button fx:id="botaoExcluir" layoutX="999.0" layoutY="179.0" mnemonicParsing="false" onAction="#removerCliente" text="Remover">
          <font>
             <Font size="13.0" />
          </font>
@@ -116,6 +116,6 @@
             <TableColumn prefWidth="218.0" text="CPF" />
         </columns>
       </TableView>
-      <Button fx:id="botaoDetalhesCliente" layoutX="948.0" layoutY="179.0" mnemonicParsing="false" onAction="#infoCliente" prefHeight="29.0" prefWidth="62.0" text="Detalhes" />
+      <Button fx:id="botaoDetalhesCliente" layoutX="931.0" layoutY="179.0" mnemonicParsing="false" onAction="#infoCliente" prefHeight="29.0" prefWidth="62.0" text="Detalhes" />
    </children>
 </Pane>

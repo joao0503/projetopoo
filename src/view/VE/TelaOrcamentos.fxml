@@ -94,16 +94,11 @@
             <Font size="28.0" />
          </font>
       </Label>
-      <TextField fx:id="searchBar" layoutX="27.0" layoutY="176.0" prefHeight="34.0" prefWidth="798.0" promptText="Pesquisar...">
+      <TextField fx:id="searchBar" layoutX="27.0" layoutY="176.0" prefHeight="34.0" prefWidth="798.0" promptText="Filtrar...">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
-      <Button fx:id="botaoExcluir" layoutX="1134.0" layoutY="179.0" mnemonicParsing="false" onAction="#excluirOrcamento" text="Excluir">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Button>
       <TableView fx:id="tabelaOrcamentos" layoutX="27.0" layoutY="237.0" prefHeight="458.0" prefWidth="1162.0">
         <columns>
           <TableColumn prefWidth="415.0" text="Automóvel" />
@@ -112,6 +107,6 @@
             <TableColumn prefWidth="203.0" text="Data" />
         </columns>
       </TableView>
-      <Button fx:id="botaoDetalhesCliente" layoutX="1064.0" layoutY="179.0" mnemonicParsing="false" onAction="#infoOrcamento" prefHeight="29.0" prefWidth="62.0" text="Detalhes" />
+      <Button fx:id="botaoDetalhesCliente" layoutX="1127.0" layoutY="179.0" mnemonicParsing="false" onAction="#infoOrcamento" prefHeight="29.0" prefWidth="62.0" text="Detalhes" />
    </children>
 </Pane>
