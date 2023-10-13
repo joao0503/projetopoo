@@ -5,13 +5,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeTableView;
 
-public class AdicionarClienteController {
+public class AdicionarPecaController {
     @FXML TextField campoNomeCLiente;
     @FXML TextField campoEndereco;
     @FXML TextField campoCPF;
-    @FXML TreeTableView tabelaAutomoveis;
     
-    public void salvarCliente(ActionEvent event){
-        System.out.println("add cliente"); // falta basicamente tudo aqui
+    public void salvarPeca(ActionEvent event){
+        System.out.println("salvar peca"); // falta basicamente tudo aqui
     }
 }
