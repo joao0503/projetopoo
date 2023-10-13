@@ -31,8 +31,8 @@ public class GerenteVO extends UsuarioVO {
     	return gerenteId;
     }
     public void setGerenteId(Long gerenteId) {
-    	if(gerenteId > 0) {
-    		this.gerenteId = gerenteId;
-    	}
+    	//if(gerenteId > 0) {
+    	this.gerenteId = gerenteId;
+    	//}
     }
 }

@@ -1,11 +1,15 @@
 package model.VO;
 
+import java.util.Date;
+
 public class ServicoVO {
 	private String nome;
 	private double valor;
 	private int status;
 	// duas opções: criar o serviço com uma peça ou com uma lista de peças.
 	private PecaVO peca;
+	private Date dataInicio;
+	private Date dataFim;
 	private Long funcionarioId;
 	private Long clienteId;
 	private Long automovelId;

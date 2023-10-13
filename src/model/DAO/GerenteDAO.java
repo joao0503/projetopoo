@@ -14,7 +14,7 @@ public class GerenteDAO extends UsuarioDAO<GerenteVO> {
 	// Só pode ter 1 gerente, então não precisa inserir gerente
 	@Override
 	public void inserir(GerenteVO vo) {
-		super.inserir(vo);
+		//super.inserir(vo);
 		Connection con = getConnection();
 		String sql = "insert into funcionarios (salario, servico_id) values (?, ?)";
 

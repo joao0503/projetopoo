@@ -9,11 +9,11 @@ import exception.NaoEncontradoException;
 import model.DAO.PessoaDAO;
 import model.VO.PessoaVO;
 
-public class PessoaBO implements BaseBO<PessoaVO>{
+public class PessoaBO<VO extends PessoaVO> implements BaseBO<VO>{
 	static private PessoaDAO<PessoaVO> pessoaDAO = new PessoaDAO<PessoaVO>();
 	
 	@Override
-	public void cadastrar(PessoaVO vo) throws InserirException {
+	public void cadastrar(VO vo) throws InserirException {
 		try {
 			if(vo.getNome().isEmpty()) {
 				throw new InserirException("Não foi possível cadastrar a pessoa "
@@ -21,7 +21,7 @@ public class PessoaBO implements BaseBO<PessoaVO>{
 			} else {
 				PessoaVO pessoa = new PessoaVO();
 				pessoa = pessoaDAO.buscarPorCPF(vo);
-				if(pessoa != null) {
+				if(pessoa == null) {
 					pessoaDAO.inserir(vo);
 				} else {
 					throw new InserirException("Não foi possível cadastrar porque já "
@@ -37,7 +37,8 @@ public class PessoaBO implements BaseBO<PessoaVO>{
 	
 	
 	@Override
-	public void remover(PessoaVO vo) throws InserirException {
+	public void remover(VO vo) throws InserirException {
+		// talvez possamos usar deleção em cascata no bd para deltar tudo
 		try {
 			// ao buscar com pessoaDAO, o vo que
 			PessoaVO pessoa = new PessoaVO();
@@ -56,7 +57,7 @@ public class PessoaBO implements BaseBO<PessoaVO>{
 	
 	
 	@Override
-	public void atualizar(PessoaVO vo) {
+	public void atualizar(VO vo) throws InserirException {
 		try {
 			PessoaVO pessoa = new PessoaVO();
 			pessoa = pessoaDAO.buscar(vo);
@@ -74,15 +75,20 @@ public class PessoaBO implements BaseBO<PessoaVO>{
 	
 	
 	@Override
-	public PessoaVO buscarPorId(PessoaVO vo) throws NaoEncontradoException {
-		PessoaVO pessoa = new PessoaVO();
-		pessoa = pessoaDAO.buscar(vo);
-		return pessoa;
+	public VO buscarPorId(VO vo) throws NaoEncontradoException {
+		try {
+			PessoaVO pessoa = new PessoaVO();
+			pessoa = pessoaDAO.buscar(vo);
+			return (VO) pessoa;
+		} catch(Exception e) {
+			throw new NaoEncontradoException("Pessoa com id " + vo.getPessoaId() 
+			+" não foi encontrada no banco de dados");
+		}
 	}
 	
 	
 	@Override
-	public List<?> listarTodos(){
+	public List<?> listarTodos() throws SQLException {
 		List<?> pessoas = new ArrayList<PessoaVO>();
 		pessoas = pessoaDAO.listar();
 		return pessoas;
