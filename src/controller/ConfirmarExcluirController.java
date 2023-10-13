@@ -5,17 +5,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class ConfirmarExcluirController{
 
     @FXML private PasswordField senhaAdm;
     @FXML private Label labelErro;
-    @FXML private Pane pane;  // tentativa de fechar a tela
     @FXML private Stage stage;
 
-    
     
     public void excluir(ActionEvent event){
 
@@ -31,11 +28,6 @@ public class ConfirmarExcluirController{
                 System.out.println("erro");
             }
             
-    }
-
-    public void fecharTela(){
-        stage = (Stage) pane.getScene().getWindow(); // esse "pane" ta dando problema
-        stage.close();
     }
 
     private void Info(){
