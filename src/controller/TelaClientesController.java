@@ -6,8 +6,6 @@ import view.Telas;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 
-
-
 public class TelaClientesController extends TelaPrincipalController{
 
     @FXML private TextField searchBar;
