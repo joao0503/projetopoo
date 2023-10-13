@@ -17,7 +17,7 @@ public class PessoaBO<VO extends PessoaVO> implements BaseBO<VO>{
 		try {
 			if(vo.getNome().isEmpty()) {
 				throw new InserirException("Não foi possível cadastrar a pessoa "
-						+ "porque o nome da pessoa está vázio");
+						+ "porque o nome da pessoa está vazio");
 			} else {
 				PessoaVO pessoa = new PessoaVO();
 				pessoa = pessoaDAO.buscarPorCPF(vo);
