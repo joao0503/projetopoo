@@ -46,8 +46,8 @@ public class FuncionarioVO extends UsuarioVO {
 		return funcionarioId;
 	}
 	public void setFuncionarioId(Long funcionarioId) {
-		if(funcionarioId > 0 ) {
-			this.funcionarioId = funcionarioId;
-		}
+		//if(funcionarioId > 0 ) {
+		this.funcionarioId = funcionarioId;
+		//}
 	}
 }

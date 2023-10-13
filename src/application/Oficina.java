@@ -3,6 +3,7 @@ package application;
 import java.util.ArrayList;
 import java.util.List;
 
+import exception.InserirException;
 import exception.NaoEncontradoException;
 import model.BO.PessoaBO;
 import model.BO.UsuarioBO;
@@ -14,7 +15,7 @@ import model.VO.UsuarioVO;
 
 public class Oficina {
 
-	public static void main(String[] args) throws NaoEncontradoException {
+	public static void main(String[] args) throws NaoEncontradoException, InserirException {
 		System.out.println("Oficina mecânica de Sr. Zezé");
 		
 		// Mostrando como testar o DAO:
@@ -87,31 +88,51 @@ public class Oficina {
     	
     	// listar todas já foi mostrada anteriormente
     	
-    	// testando PessoaBO
-    	PessoaBO pesBO = new PessoaBO();
+    	
+    	// testando BOs
+    	// testando buscar de PessoaBO do tipo PessoaVO
+    	PessoaBO<PessoaVO> pesBO = new PessoaBO<PessoaVO>();
     	PessoaVO pessoa = new PessoaVO();
     	pessoa.setPessoaId((long) 1);
     	pessoa = pesBO.buscarPorId(pessoa);
-    	System.out.println("Dados da pessoa com id " + pessoa.getPessoaId() + ": \n" 
+    	System.out.println("Dados da pessoa do tipo PessoaVO com id " + pessoa.getPessoaId() + ": \n" 
     			+ pessoa.toString() + "\n\n");
     	
-    	// testando UsuarioBO do tipo UsuarioVO
+    	// testando buscar de PessoaBO do tipo FuncionarioVO
+    	PessoaBO<FuncionarioVO> pesBOFun = new PessoaBO<FuncionarioVO>();
+    	FuncionarioVO fu = new FuncionarioVO();
+    	fu.setPessoaId((long) 1);
+    	fu = pesBOFun.buscarPorId(fu);
+    	System.out.println("Dados da pessoa do tipo FuncionarioVO com id " + pessoa.getPessoaId() 
+    	+ ": \n" 
+    			+ fu.toString() + "\n\n");
+    	
+    	
+    	// testando inserir de UsuarioBO
     	UsuarioBO<UsuarioVO> usuBO = new UsuarioBO<UsuarioVO>();
+    	UsuarioVO usuarioo = new UsuarioVO("Mario teste inserir usu", "192.123.921-99",
+    			"Rua test usu", "84 99912-2525", null, "usuarioboTestee", "senhausubo", 
+    			"usutestee@gmail.com", (int) 2, null);
+    	usuBO.cadastrar(usuarioo);
+    	
+    	
+    	
+    	// testando buscar de UsuarioBO do tipo UsuarioVO
     	UsuarioVO usuario = new UsuarioVO();
-    	usuario.setPessoaId((long) 1);
+    	usuario.setPessoaId((long) 8);
     	usuario = usuBO.buscarPorId(usuario);
     	//System.out.println("Dados da pessoa: \n" + usuario.toString());
-    	System.out.println("Dados do usuário com id " + usuario.getPessoaId() + ": \n" 
+    	System.out.println("Dados do usuário do tipo UsuarioVO com id " + usuario.getPessoaId() + ": \n" 
     			+ usuario.toString() + "\n\n");
     	
     	
-    	// testando UsuarioBO do tipo FuncionarioVO
+    	// testando buscar de UsuarioBO do tipo FuncionarioVO
     	UsuarioBO<FuncionarioVO> usuFunBO = new UsuarioBO<FuncionarioVO>();
     	FuncionarioVO fun = new FuncionarioVO();
-    	fun.setPessoaId((long) 1);
+    	fun.setPessoaId((long) 8);
     	fun = usuFunBO.buscarPorId(fun);
     	//System.out.println("Dados da pessoa: \n" + usuario.toString());
-    	System.out.println("Dados do usuário com id " + fun.getPessoaId() + ": \n" 
+    	System.out.println("Dados do usuário do tipo FuncionarioVO com id " + fun.getPessoaId() + ": \n" 
     			+ fun.toString());
 	}
 }

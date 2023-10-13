@@ -36,9 +36,9 @@ public abstract class BaseDAOImpl<VO> implements BaseDAO<VO>{
 		
 	}
 	
-	public abstract void inserir(VO entity);
-	public abstract void deletar(VO entity) ;
-	public abstract void alterar(VO entity);
-	public abstract VO buscar(VO entity);
+	public abstract void inserir(VO vo);
+	public abstract void deletar(VO vo);
+	public abstract void alterar(VO vo);
+	public abstract VO buscar(VO vo);
 	public abstract List<?> listar();
 }

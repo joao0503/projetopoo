@@ -14,7 +14,7 @@ public class ClienteDAO extends PessoaDAO<ClienteVO> {
 	@Override
 	public void inserir(ClienteVO vo) {
 		// Ao user o super, vou aproveitar o id da superclasse para ja usar aqui
-		super.inserir(vo);
+		//super.inserir(vo);
 		Connection con = getConnection();
 		String sql = "insert into clientes (desconto, pessoa_id) values (?, ?)";
 		try {

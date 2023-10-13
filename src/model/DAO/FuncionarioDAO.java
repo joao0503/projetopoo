@@ -15,7 +15,7 @@ public class FuncionarioDAO extends UsuarioDAO<FuncionarioVO> {
 	
 	@Override
 	public void inserir(FuncionarioVO vo) {
-		super.inserir(vo);
+		//super.inserir(vo);
 		Connection con = getConnection();
 		String sql = "insert into funcionarios (salario) values (?, ?)";
 		try {
@@ -98,15 +98,16 @@ public class FuncionarioDAO extends UsuarioDAO<FuncionarioVO> {
             ps.setLong(1, vo.getPessoaId());
             rs = ps.executeQuery();
             if(rs.next()) {
-            	vo.setNome(rs.getString("nome"));
-            	vo.setCpf(rs.getString("cpf"));
-            	vo.setEndereco(rs.getString("endereco"));
-            	vo.setPessoaId(rs.getLong("pessoa_id"));
-            	vo.setUsuario(rs.getString("usuario"));
-            	vo.setSenha(rs.getString("senha"));
-            	vo.setUsuarioId(rs.getLong("usuario_id"));
+            	//vo.setNome(rs.getString("nome"));
+            	//vo.setCpf(rs.getString("cpf"));
+            	//vo.setEndereco(rs.getString("endereco"));
+            	//vo.setPessoaId(rs.getLong("pessoa_id"));
+            	//vo.setUsuario(rs.getString("usuario"));
+            	//vo.setSenha(rs.getString("senha"));
+            	//vo.setUsuarioId(rs.getLong("usuario_id"));
                 // implementar a lista de servicos do funcionario, se for 
             	//interessante para manipular os servicos
+            	vo.setSalario(rs.getDouble("salario"));
             	vo.setFuncionarioId(rs.getLong("funcionario_id"));
             	return vo;
             }
