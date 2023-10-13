@@ -9,7 +9,6 @@ import exception.NaoEncontradoException;
 import model.DAO.FuncionarioDAO;
 import model.DAO.UsuarioDAO;
 import model.VO.FuncionarioVO;
-import model.VO.PessoaVO;
 import model.VO.UsuarioVO;
 
 public class FuncionarioBO extends UsuarioBO<FuncionarioVO> {
@@ -18,15 +17,22 @@ public class FuncionarioBO extends UsuarioBO<FuncionarioVO> {
 
 	@Override
 	public void cadastrar(FuncionarioVO vo) throws InserirException {
-		super.cadastrar(vo);
-		UsuarioVO usuario = new UsuarioVO();
-		usuario = usuDAO.buscar(vo);
 		try {
-			if (usuario != null) {
-
+			super.cadastrar(vo);
+			
+			UsuarioVO usuario = new UsuarioVO();
+			usuario = usuDAO.buscar(vo);
+			List<FuncionarioVO> funcionarios = new ArrayList<FuncionarioVO>();
+			funcionarios = funcDAO.listar();
+			if(usuario != null) {
+				if(funcionarios.size() < 5) {
+					funcDAO.inserir(vo);
+				} else {
+					throw new InserirException("Não foi possível cadastrar o funcionario porque"
+							+ "não pode haver mais que 5 funcionários.");
+				}
 			} else {
-				throw new NaoEncontradoException("Não foi encontrado nenhum usuário com o id de "
-						+ "pessoa " + vo.getPessoaId());
+				throw new InserirException("Não foi possível cadastrar o funcionario.");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -69,7 +75,7 @@ public class FuncionarioBO extends UsuarioBO<FuncionarioVO> {
 
 	@Override
 	public FuncionarioVO buscarPorId(FuncionarioVO vo) throws NaoEncontradoException {
-		PessoaVO funcionario = new FuncionarioVO();
+		FuncionarioVO funcionario = new FuncionarioVO();
 		funcionario = funcDAO.buscar(vo);
 		return (FuncionarioVO) funcionario;
 	}

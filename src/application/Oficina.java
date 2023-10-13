@@ -110,9 +110,9 @@ public class Oficina {
     	
     	// testando inserir de UsuarioBO
     	UsuarioBO<UsuarioVO> usuBO = new UsuarioBO<UsuarioVO>();
-    	UsuarioVO usuarioo = new UsuarioVO("Mario teste inserir usu", "192.123.921-99",
-    			"Rua test usu", "84 99912-2525", null, "usuarioboTestee", "senhausubo", 
-    			"usutestee@gmail.com", (int) 2, null);
+    	UsuarioVO usuarioo = new UsuarioVO("Mario teste inserir usu", "192.123.921-78",
+    			"Rua test usu", "84 99912-2525", null, "usuarioboTesteee", "senhausubo", 
+    			"usutesteee@gmail.com", (int) 2, null);
     	usuBO.cadastrar(usuarioo);
     	
     	
