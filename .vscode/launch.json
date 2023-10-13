@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Oficina",
+            "request": "launch",
+            "mainClass": "application.Oficina",
+            "projectName": "projetopoo_a4dc216f"
+        },
+        {
+            "type": "java",
             "name": "Telas",
             "request": "launch",
             "mainClass": "view.Telas",
