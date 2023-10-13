@@ -56,8 +56,8 @@ CREATE TABLE funcionarios (
 	usuario_id INT REFERENCES usuarios(usuario_id)
 );
 
-INSERT INTO funcionarios (salario, pessoa_id) VALUES (2900.75, 2);
-INSERT INTO funcionarios (salario, pessoa_id) VALUES (3279.89, 3);
+INSERT INTO funcionarios (salario, pessoa_id, usuario_id) VALUES (2900.75, 2, 2);
+INSERT INTO funcionarios (salario, pessoa_id, usuario_id) VALUES (3279.89, 3, 3);
 
 CREATE TABLE clientes (
 	cliente_id SERIAL PRIMARY KEY,
@@ -152,7 +152,7 @@ VALUES ('Troca de Pastilhas de Freio', 'Melhor pastilhas de freio que tiver', 80
 
 
 SELECT * FROM pessoas;
-SELECT * FROM tipos_usuario;
+--SELECT * FROM tipos_usuario;
 SELECT * FROM usuarios;
 SELECT * FROM gerente;
 SELECT * FROM funcionarios;
