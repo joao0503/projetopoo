@@ -69,7 +69,7 @@ public class GerenteBO extends UsuarioBO<GerenteVO> {
 	public GerenteVO buscarPorId(GerenteVO vo) throws NaoEncontradoException {
 		GerenteVO gerente = new GerenteVO();
 		gerente = gerDAO.buscar(vo);
-		return (GerenteVO) gerente;
+		return gerente;
 	}
 
 	@Override

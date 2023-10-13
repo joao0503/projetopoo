@@ -32,7 +32,8 @@ public class FuncionarioBO extends UsuarioBO<FuncionarioVO> {
 							+ "não pode haver mais que 5 funcionários.");
 				}
 			} else {
-				throw new InserirException("Não foi possível cadastrar o funcionario.");
+				throw new InserirException("Não foi possível cadastrar o funcionario porque ele já"
+						+ "existe.");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -77,7 +78,7 @@ public class FuncionarioBO extends UsuarioBO<FuncionarioVO> {
 	public FuncionarioVO buscarPorId(FuncionarioVO vo) throws NaoEncontradoException {
 		FuncionarioVO funcionario = new FuncionarioVO();
 		funcionario = funcDAO.buscar(vo);
-		return (FuncionarioVO) funcionario;
+		return funcionario;
 	}
 
 	@Override
