@@ -5,19 +5,9 @@ public class UsuarioVO extends PessoaVO {
 	private String senha;
 	private String email;
 	private Integer tipoDeUsuario;
+	// private String nomeDoTipo;
 	private Long usuarioId;
 
-	/*public UsuarioVO(String nome, String cpf, String endereco, String numeroCelular, Long pessoaId, 
-			String usuario, String senha, String email, Integer tipoDeUsuario, Long usuarioId) {
-		super(nome, cpf, endereco, numeroCelular, pessoaId);
-		setUsuario(usuario);
-		setSenha(senha);
-		setEmail(email);
-		setTipoDeUsuario(tipoDeUsuario);
-		setUsuarioId(usuarioId);
-	}*/
-	
-	//a a aaa  aa  aaa
 	
 	public UsuarioVO(String nome, String cpf, String endereco, String numeroCelular, Long pessoaId, 
 			String usuario, String senha, String email, Integer tipoDeUsuario, Long usuarioId) {
@@ -36,7 +26,7 @@ public class UsuarioVO extends PessoaVO {
 	}
 
 	public void setUsuario(String usuario) {
-		if(usuario != null && usuario.length() > 3) {
+		if(usuario.length() > 5) {
 			this.usuario = usuario;
 		}
 	}
@@ -47,7 +37,7 @@ public class UsuarioVO extends PessoaVO {
 	}
 
 	public void setSenha(String senha) {
-		if(senha != null && senha.length() > 4) {
+		if(senha.length() > 4) {
 			this.senha = senha;
 		}
 	}
@@ -57,9 +47,9 @@ public class UsuarioVO extends PessoaVO {
 		return tipoDeUsuario;
 	}
 	public void setTipoDeUsuario(Integer tipoDeUsuario) {
-		if(tipoDeUsuario > 0) {
-			this.tipoDeUsuario = tipoDeUsuario;
-		}
+		//if(tipoDeUsuario > 0) {
+		this.tipoDeUsuario = tipoDeUsuario;
+		//}
 	}
 	
 	
@@ -76,9 +66,9 @@ public class UsuarioVO extends PessoaVO {
 	}
 	
 	public void setUsuarioId(Long usuarioId) {
-		if(usuarioId > 0) {
-			this.usuarioId = usuarioId;
-		}
+		//if(usuarioId > 0) {
+		this.usuarioId = usuarioId;
+		//}
 	}
 	
 	

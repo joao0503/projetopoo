@@ -17,7 +17,7 @@ public class PessoaDAO<VO extends PessoaVO> extends BaseDAOImpl<VO> {
 	public void inserir(VO vo) {
 		Connection con = getConnection();
 		String sql = "insert into pessoas (nome, cpf, endereco, numero_celular)"
-				+ "values (?,?,?, ?)";
+				+ "values (?,?,?,?)";
 		try {
 			PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			ps.setString(1, vo.getNome());
@@ -147,11 +147,11 @@ public class PessoaDAO<VO extends PessoaVO> extends BaseDAOImpl<VO> {
     }
     
     
-    public PessoaVO buscarPorCPF(VO vo) {
+    public VO buscarPorCPF(VO vo) {
         Connection con = getConnection();
         PreparedStatement ps;
         ResultSet rs = null;
-        String sql = "select * from tb_pessoas where cpf = ?";
+        String sql = "select * from pessoas where cpf = ?";
         try {
             ps = con.prepareStatement(sql);
             ps.setString(1, vo.getCpf());
