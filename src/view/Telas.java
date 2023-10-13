@@ -135,13 +135,23 @@ public class Telas extends Application {
 		primaryStage.setScene(cena);
 		cena.getWindow().centerOnScreen();
 	}
+
+	public static void telaAdicionarPeca() throws Exception {
+		Parent root = FXMLLoader.load(Telas.class.getResource("VE/AdicionarPeca.fxml"));
+		
+		Scene cena = new Scene(root);
+		
+		
+		primaryStage.setScene(cena);
+		cena.getWindow().centerOnScreen();
+	}
 	
 	public static void telaLoginAut() throws Exception {
 		Parent root = FXMLLoader.load(Telas.class.getResource("VE/TelaPrincipal.fxml"));
 		
 		Scene cena = new Scene(root);
 		
-		
+
 		primaryStage.setScene(cena);
 		cena.getWindow().centerOnScreen();
 	}

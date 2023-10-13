@@ -39,7 +39,7 @@
          </font>
       </Button>
       <ImageView fx:id="campoImagem" fitHeight="180.0" fitWidth="200.0" layoutX="356.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" />
-      <Text fx:id="textoInserirImagem" layoutX="397.0" layoutY="188.0" onMouseClicked="#clickInserirImagem" strokeType="OUTSIDE" strokeWidth="0.0" text="Inserir Imagem" underline="true">
+      <Text fx:id="textoInserirImagem" layoutX="397.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inserir Imagem" underline="true">
          <font>
             <Font size="18.0" />
          </font>
