@@ -196,4 +196,33 @@ public class UsuarioDAO<VO extends UsuarioVO> extends PessoaDAO<VO>{
     	}
     	return null;
     }
+    
+
+    public UsuarioVO autentica(String nomeUsuario, String senha) {
+        Connection con = getConnection();
+        PreparedStatement ps;
+        ResultSet rs = null;
+        String sql = "select * from usuarios where nome_usuario = ? and senha = ?";
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setString(1, nomeUsuario);
+            ps.setString(2, senha);
+            rs = ps.executeQuery();
+        	if(rs.next()) {
+        		UsuarioVO usu = new UsuarioVO();
+        		usu.setUsuario(rs.getString("nome_usuario"));
+        		usu.setSenha(rs.getString("senha"));
+        		usu.setEmail(rs.getString("email"));
+        		usu.setUsuarioId(rs.getLong("usuario_id"));
+        		usu.setPessoaId(rs.getLong("pessoa_id"));
+        		usu.setTipoDeUsuario(rs.getInt("tipo_id"));
+        		return usu;
+        	}
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            closeConnection();
+        }
+        return null;
+    }
 }
