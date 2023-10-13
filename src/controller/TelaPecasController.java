@@ -4,8 +4,8 @@ import javafx.event.ActionEvent;
 import view.Telas;
 
 public class TelaPecasController extends TelaPrincipalController{
-    public void buscar(ActionEvent event){
-        System.out.println("buscou");
+    public void detalharPeca(ActionEvent event){
+        System.out.println("detalhar peca");
     }
 
     public void addPeca(ActionEvent event) throws Exception{

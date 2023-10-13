@@ -14,4 +14,12 @@ public class AdicionarClienteController {
     public void salvarCliente(ActionEvent event){
         System.out.println("add cliente"); // falta basicamente tudo aqui
     }
+
+    public void addAutomovel(ActionEvent event){
+
+    }
+
+    public void voltarParaClientes(ActionEvent event){
+        
+    }
 }

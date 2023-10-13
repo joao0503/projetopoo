@@ -9,8 +9,8 @@ public class TelaAutomoveisController extends TelaPrincipalController{
     @FXML TextField SearchBar;
     @FXML TableView tabelaAutomoveis;
     
-    public void buscar(ActionEvent event){
-        System.out.println("Chegou legal");
+    public void removerAutomovel(ActionEvent event){
+        
     }
 
     public void infoAutomovel(ActionEvent event){
