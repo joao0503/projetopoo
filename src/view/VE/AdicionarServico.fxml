@@ -24,7 +24,7 @@
       </Text>
       <TextField fx:id="campoDescricao" editable="false" layoutX="31.0" layoutY="117.0" prefHeight="25.0" prefWidth="322.0" />
       <TextField fx:id="campoValor" editable="false" layoutX="31.0" layoutY="191.0" prefHeight="25.0" prefWidth="119.0" />
-      <Button fx:id="botaoAdicionar" layoutX="99.0" layoutY="241.0" mnemonicParsing="false" onAction="#addServico" prefHeight="25.0" prefWidth="68.0" text="Adicionar" />
+      <Button fx:id="botaoAdicionarServico" layoutX="99.0" layoutY="241.0" mnemonicParsing="false" onAction="#addServico" prefHeight="25.0" prefWidth="68.0" text="Adicionar" />
       <Button fx:id="botaoVoltar" layoutX="229.0" layoutY="241.0" mnemonicParsing="false" onAction="#voltarParaServicos" prefHeight="25.0" prefWidth="55.0" text="Voltar" />
    </children>
 </Pane>

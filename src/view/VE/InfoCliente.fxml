@@ -12,16 +12,16 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="fundoAdicionarPeca" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="543.0" prefWidth="660.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InfoClienteController">
+<Pane fx:id="fundoAdicionarPeca" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="543.0" prefWidth="660.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InfoClienteController">
    <children>
       <Text fill="#ee7200" layoutX="33.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome do Cliente:">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Text fill="#ee7200" layoutX="152.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Informações do cliente" wrappingWidth="365.142578125">
+      <Text fill="#ee7200" layoutX="147.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Informações do cliente" wrappingWidth="305.142578125">
          <font>
-            <Font size="36.0" />
+            <Font size="30.0" />
          </font>
       </Text>
       <Text fill="#ee7200" layoutX="467.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF:">
@@ -42,7 +42,7 @@
       <TextField fx:id="campoNomeCliente" editable="false" layoutX="33.0" layoutY="124.0" prefHeight="25.0" prefWidth="379.0" />
       <TextField fx:id="campoCPF" editable="false" layoutX="467.0" layoutY="124.0" prefHeight="25.0" prefWidth="159.0" />
       <TextField fx:id="campoEndereco" editable="false" layoutX="33.0" layoutY="198.0" prefHeight="25.0" prefWidth="379.0" />
-      <Button fx:id="botaoNovoRegistro" layoutX="501.0" layoutY="260.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="119.0" text="Novo Registro">
+      <Button fx:id="botaoNovoRegistro" layoutX="501.0" layoutY="280.0" mnemonicParsing="false" onAction="#addRegistro" prefHeight="30.0" prefWidth="119.0" text="Novo Registro">
          <font>
             <Font size="14.0" />
          </font>
@@ -56,5 +56,8 @@
             <TreeTableColumn fx:id="colunaQuilometragem" prefWidth="123.0" text="Quilometragem" />
         </columns>
       </TreeTableView>
+      <Button fx:id="botaoEditarCliente" layoutX="466.0" layoutY="38.0" mnemonicParsing="false" onAction="#editarCliente" text="Editar" />
+      <Button fx:id="botaoExcluirAutomovel" layoutX="438.0" layoutY="284.0" mnemonicParsing="false" onAction="#excluirAutomovel" text="Excluir" />
+      <Button fx:id="botaoEditarAutomovel" layoutX="383.0" layoutY="284.0" mnemonicParsing="false" onAction="#editarAutomovel" text="Editar" />
    </children>
 </Pane>

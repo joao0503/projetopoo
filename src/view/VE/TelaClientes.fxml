@@ -104,7 +104,7 @@
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="botaoExcluir" layoutX="999.0" layoutY="179.0" mnemonicParsing="false" onAction="#removerCliente" text="Remover">
+      <Button fx:id="botaoRemoverCliente" layoutX="999.0" layoutY="179.0" mnemonicParsing="false" onAction="#removerCliente" text="Remover">
          <font>
             <Font size="13.0" />
          </font>

@@ -2,11 +2,16 @@ package controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class AdicionarServicoController {
-    @FXML TextField campoDescricao;
-    @FXML TextField campoPreco;
+    @FXML private TextField campoDescricao;
+    @FXML private TextField campoPreco;
+
+    @FXML private Button botaoAdicionarServico;
+    @FXML private Button botaoVoltar;
+    
 
     public void addServico(ActionEvent event){
 
