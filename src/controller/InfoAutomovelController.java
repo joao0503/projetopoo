@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import model.VO.ServicoVO;
 
 public class InfoAutomovelController {
     @FXML private TextField campoMarca;
@@ -13,13 +14,13 @@ public class InfoAutomovelController {
     @FXML private TextField campoQuilometragem;
     @FXML private TextField campoProprietário;
     @FXML private TextField campoPlaca;
-    @FXML private TableView tabelaServicos;
+    @FXML private TableView<ServicoVO> tabelaServicos;
 
-    @FXML private TableColumn colunaDescricao;
-    @FXML private TableColumn colunaValor;
-    @FXML private TableColumn colunaStatus;
-    @FXML private TableColumn colunaEncarregado;
-    @FXML private TableColumn colunaPeca;
+    @FXML private TableColumn<ServicoVO, String> colunaDescricao;
+    @FXML private TableColumn<ServicoVO, Double> colunaValor;
+    @FXML private TableColumn<ServicoVO, String> colunaStatus;
+    @FXML private TableColumn<ServicoVO, String> colunaEncarregado;
+    @FXML private TableColumn<ServicoVO, String> colunaPeca;
 
     @FXML private Button botaoEditarAuto;
     @FXML private Button botaoEditarServico;
