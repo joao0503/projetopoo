@@ -114,6 +114,15 @@ public class Telas extends Application {
 		primaryStage.setScene(cena);
 		cena.getWindow().centerOnScreen();
 	}
+
+	public static void telaAdicionarServico() throws Exception {
+		Parent root = FXMLLoader.load(Telas.class.getResource("VE/AdicionarServico.fxml"));
+		
+		Scene cena = new Scene(root);
+	
+		primaryStage.setScene(cena);
+		cena.getWindow().centerOnScreen();
+	}
 	
 	public static void telaOrcamentos() throws Exception {
 		Parent root = FXMLLoader.load(Telas.class.getResource("VE/TelaOrcamentos.fxml"));
