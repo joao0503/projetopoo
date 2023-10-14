@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.control.TreeTableView;
+import view.Telas;
 
 public class AdicionarClienteController {
     @FXML private TextField campoNomeCLiente;
@@ -33,7 +34,7 @@ public class AdicionarClienteController {
 
     }
 
-    public void voltarParaClientes(ActionEvent event){
-
+    public void voltarParaClientes(ActionEvent event) throws Exception {
+        Telas.telaClientes();
     }
 }
