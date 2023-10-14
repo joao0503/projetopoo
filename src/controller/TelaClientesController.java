@@ -23,6 +23,7 @@ public class TelaClientesController extends TelaPrincipalController implements I
 
     @FXML private TextField searchBar;
     @FXML private TableView<ClienteVO> tabelaClientes;
+    @FXML private TableColumn<ClienteVO, Long> id;
     @FXML private TableColumn<ClienteVO, String> nome;
     @FXML private TableColumn<ClienteVO, String> endereco;
     @FXML private TableColumn<ClienteVO, String> cpf;
@@ -35,6 +36,7 @@ public class TelaClientesController extends TelaPrincipalController implements I
     ObservableList<ClienteVO> todos = FXCollections.observableArrayList();
 
     public void initialize(URL location, ResourceBundle resources) {
+        id.setCellValueFactory(new PropertyValueFactory<>("clienteId"));
         nome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         endereco.setCellValueFactory(new PropertyValueFactory<>("endereco"));
         cpf.setCellValueFactory(new PropertyValueFactory<>("cpf"));
@@ -58,9 +60,16 @@ public class TelaClientesController extends TelaPrincipalController implements I
         Telas.telaAdicionarCliente();
     }
 
-    public void infoCliente(ActionEvent event){
-        System.out.println("Info do cliente");
-    }   
+    public void infoCliente(ActionEvent event) throws Exception{
+        ClienteVO cliente = tabelaClientes.getSelectionModel().getSelectedItem();
+        if (cliente != null) {
+            try {
+                Telas.telaEditarCliente(cliente);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     public void removerCliente(ActionEvent event) {
         

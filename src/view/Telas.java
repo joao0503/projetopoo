@@ -1,10 +1,12 @@
 package view;
 
+import controller.InfoClienteController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import model.VO.ClienteVO;
 import model.VO.UsuarioVO;
 
 public class Telas extends Application {
@@ -94,12 +96,24 @@ public class Telas extends Application {
 		primaryStage.setScene(cena);
 		cena.getWindow().centerOnScreen();
 	}
+
+	public static void telaEditarCliente(ClienteVO cliente) throws Exception {
+		FXMLLoader loader = new FXMLLoader(Telas.class.getResource("VE/InfoCliente.fxml"));
+		Parent root = loader.load();
+
+		InfoClienteController controller = loader.getController();
+		
+		controller.setCliente(cliente);
+
+		Scene cena = new Scene(root);
+		primaryStage.setScene(cena);
+		cena.getWindow().centerOnScreen();
+	}
 	
 	public static void telaAutomoveis() throws Exception {
 		Parent root = FXMLLoader.load(Telas.class.getResource("VE/TelaAutomoveis.fxml"));
 		
 		Scene cena = new Scene(root);
-		
 		
 		primaryStage.setScene(cena);
 		cena.getWindow().centerOnScreen();
