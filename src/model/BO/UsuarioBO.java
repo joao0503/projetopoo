@@ -10,6 +10,8 @@ import model.DAO.FuncionarioDAO;
 import model.DAO.GerenteDAO;
 import model.DAO.PessoaDAO;
 import model.DAO.UsuarioDAO;
+import model.VO.FuncionarioVO;
+import model.VO.GerenteVO;
 import model.VO.PessoaVO;
 import model.VO.UsuarioVO;
 

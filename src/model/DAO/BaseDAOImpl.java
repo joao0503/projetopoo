@@ -9,7 +9,7 @@ public abstract class BaseDAOImpl<VO> implements BaseDAO<VO>{
 	
 	final static String URL = "jdbc:postgresql://localhost:5432/oficina_db";
 	final static String USER = "postgres";
-	final static String PASS = "admin";
+	final static String PASS = "123";
 	static Connection con = null ;
 	
 	public static Connection getConnection() {
