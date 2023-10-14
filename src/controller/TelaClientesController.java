@@ -19,8 +19,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
 public class TelaClientesController extends TelaPrincipalController implements Initializable{
-    public ClienteBO clienteBO = new ClienteBO();
-
+    
     @FXML private TextField searchBar;
     @FXML private TableView<ClienteVO> tabelaClientes;
     @FXML private TableColumn<ClienteVO, Long> id;
@@ -31,6 +30,8 @@ public class TelaClientesController extends TelaPrincipalController implements I
     @FXML private Button botaoNovoCliente;
     @FXML private Button botaoDetalhesCliente;
     @FXML private Button botaoRemoverCliente;
+
+    public ClienteBO clienteBO = new ClienteBO();
 
     ObservableList<ClienteVO> lista = FXCollections.observableArrayList();
     ObservableList<ClienteVO> todos = FXCollections.observableArrayList();

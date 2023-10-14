@@ -10,7 +10,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.TreeTableColumn;
 import javafx.scene.control.TreeTableView;
 import model.BO.ClienteBO;
-import model.DAO.PessoaDAO;
 import model.VO.AutomovelVO;
 import model.VO.ClienteVO;
 import view.Telas;

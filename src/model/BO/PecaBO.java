@@ -75,8 +75,8 @@ public class PecaBO implements BaseBO<PecaVO>{
     }
 
     @Override
-    public List<?> listarTodos() throws SQLException {
-        List<?> peca = new ArrayList<PecaVO>();
+    public List<PecaVO> listarTodos(){
+        List<PecaVO> peca = new ArrayList<PecaVO>();
 		peca = pecaDAO.listar();
 		return peca;
     }
