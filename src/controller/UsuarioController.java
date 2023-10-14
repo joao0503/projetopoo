@@ -6,9 +6,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import model.BO.UsuarioBO;
-import model.DAO.UsuarioDAO;
-import model.VO.FuncionarioVO;
-import model.VO.GerenteVO;
 import model.VO.UsuarioVO;
 import view.Telas;
 
@@ -39,7 +36,7 @@ public class UsuarioController {
 			UsuarioVO autenticado = usuBO.autenticar(usuar.getUsuario(), usuar.getSenha());
 			System.out.println("O usuario autenticado é: " + autenticado.getUsuario() + " " + 
 					autenticado.getSenha());
-			autenticado.setNome("Ana");
+			//autenticado.setNome("Ana");
 			System.out.println("O nome do autenticado é: " + autenticado.getNome());
 			//if(autenticado instanceof GerenteVO) {
 			if(autenticado.getTipoDeUsuario() == 1) {
@@ -69,6 +66,5 @@ public class UsuarioController {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		
 	}
 }

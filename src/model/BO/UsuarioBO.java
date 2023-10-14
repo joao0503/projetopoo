@@ -10,8 +10,6 @@ import model.DAO.FuncionarioDAO;
 import model.DAO.GerenteDAO;
 import model.DAO.PessoaDAO;
 import model.DAO.UsuarioDAO;
-import model.VO.FuncionarioVO;
-import model.VO.GerenteVO;
 import model.VO.PessoaVO;
 import model.VO.UsuarioVO;
 
@@ -103,21 +101,7 @@ public class UsuarioBO<VO extends UsuarioVO> extends PessoaBO<VO> {
 	
 	public UsuarioVO autenticar(String nomeUsuario, String senha) throws NaoEncontradoException {
 		UsuarioVO usuario = new UsuarioVO();
-		usuario = usuarioDAO.autentica(nomeUsuario, senha);
-		
-		if(usuario.getTipoDeUsuario() == 1) {
-			GerenteVO gerente = new GerenteVO();
-			gerente = (GerenteVO) usuario;
-			gerente = gerenteDAO.buscar(gerente);
-			return gerente;
-		}
-		if(usuario.getTipoDeUsuario() == 2) {
-			FuncionarioVO funcionario = new FuncionarioVO();
-			funcionario = (FuncionarioVO) usuario;
-			funcionario = funcionarioDAO.buscar(funcionario);
-			return funcionario;
-		}
-		return null;
-		
+		usuario = usuarioDAO.autenticar(nomeUsuario, senha);
+		return usuario;
 	}
 }
