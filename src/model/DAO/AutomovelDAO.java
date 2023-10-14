@@ -17,7 +17,7 @@ public class AutomovelDAO extends BaseDAOImpl<AutomovelVO>{
 	public void inserir(AutomovelVO vo) {
 		Connection con = getConnection();
 		
-		String sql = "insert into tb_automoveis (marca, modelo, ano_modelo, cor, placa, quilometragem, cliente_id)"
+		String sql = "insert into automoveis (marca, modelo, ano_modelo, cor, placa, quilometragem, cliente_id)"
 				+ "values (?,?,?,?,?,?)";
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
@@ -42,7 +42,7 @@ public class AutomovelDAO extends BaseDAOImpl<AutomovelVO>{
     @Override
     public void deletar(AutomovelVO vo) {
         Connection con = getConnection();
-        String sql = "delete from tb_automovel where id = ?";
+        String sql = "delete from automoveis where id = ?";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setLong(1, vo.getAutomovelId());
@@ -59,7 +59,7 @@ public class AutomovelDAO extends BaseDAOImpl<AutomovelVO>{
     @Override
     public void alterar(AutomovelVO vo) {
         Connection con = getConnection();
-        String sql = "update tb_automoveis set marca = ?, modelo = ?, anoDoModelo = ?, cor = ?, placa = ?, quilometragem = ?, cliente_id = ? where automovel_id = ?";
+        String sql = "update automoveis set marca = ?, modelo = ?, anoDoModelo = ?, cor = ?, placa = ?, quilometragem = ?, cliente_id = ? where automovel_id = ?";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, vo.getMarca());
@@ -83,7 +83,7 @@ public class AutomovelDAO extends BaseDAOImpl<AutomovelVO>{
     @Override
     public AutomovelVO buscar(AutomovelVO vo) {
         Connection con = getConnection();
-        String sql = "select * from tb_automoveis where automovel_id = ?";
+        String sql = "select * from automoveis where automovel_id = ?";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setLong(1, vo.getAutomovelId());
@@ -111,7 +111,7 @@ public class AutomovelDAO extends BaseDAOImpl<AutomovelVO>{
     @Override
     public List<AutomovelVO> listar() {
         Connection con = getConnection();
-        String sql = "select * from tb_automoveis";
+        String sql = "select * from automoveis";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
@@ -140,7 +140,7 @@ public class AutomovelDAO extends BaseDAOImpl<AutomovelVO>{
     
     public AutomovelVO buscarAutomovelPorPlaca(String placa) {
         Connection con = getConnection();
-        String sql = "selct * from tb_automoveis where placa = ?";
+        String sql = "selct * from automoveis where placa = ?";
         AutomovelVO automovel = new AutomovelVO();
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -167,7 +167,7 @@ public class AutomovelDAO extends BaseDAOImpl<AutomovelVO>{
     
     public List<AutomovelVO> listarAutomoveisPorProprietario(ClienteVO cli) {
         Connection con = getConnection();
-        String sql = "select * from tb_automoveis where cliente_id = ?";
+        String sql = "select * from automoveis where cliente_id = ?";
         
         List<AutomovelVO> automoveis = new ArrayList<AutomovelVO>();
         

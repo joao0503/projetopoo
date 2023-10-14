@@ -5,7 +5,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="543.0" prefWidth="660.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InfoAutoController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="543.0" prefWidth="660.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InfoAutomovelController">
    <children>
       <Text fill="#ee7200" layoutX="149.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Informações do Automóvel" wrappingWidth="362.142578125">
          <font>
@@ -56,11 +56,11 @@
       <Button fx:id="botaoEditarAuto" layoutX="525.0" layoutY="50.0" mnemonicParsing="false" text="Editar" />
       <TableView fx:id="tabelaServicos" layoutX="15.0" layoutY="299.0" prefHeight="217.0" prefWidth="630.0">
         <columns>
-          <TableColumn prefWidth="145.0" text="Descrição" />
-          <TableColumn minWidth="0.0" prefWidth="68.0" text="Valor" />
-            <TableColumn prefWidth="130.0" text="Status" />
-            <TableColumn prefWidth="185.0" text="Encarregado" />
-            <TableColumn prefWidth="101.0" text="Peça" />
+          <TableColumn fx:id="colunaDescricao" prefWidth="145.0" text="Descrição" />
+          <TableColumn fx:id="colunaValor" minWidth="0.0" prefWidth="68.0" text="Valor" />
+            <TableColumn fx:id="colunaStatus" prefWidth="130.0" text="Status" />
+            <TableColumn fx:id="colunaEncarregado" prefWidth="185.0" text="Encarregado" />
+            <TableColumn fx:id="colunaPeca" prefWidth="101.0" text="Peça" />
         </columns>
       </TableView>
       <Button fx:id="botaoAddServico" layoutX="549.0" layoutY="259.0" mnemonicParsing="false" text="Novo serviço" />

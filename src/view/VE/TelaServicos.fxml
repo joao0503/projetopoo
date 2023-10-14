@@ -109,7 +109,7 @@
             <Font size="13.0" />
          </font>
       </Button>
-      <TableView fx:id="tabelaClientes" layoutX="216.0" layoutY="236.0" prefHeight="458.0" prefWidth="876.0">
+      <TableView fx:id="tabelaServicos" layoutX="216.0" layoutY="236.0" prefHeight="458.0" prefWidth="876.0">
         <columns>
           <TableColumn fx:id="colunaDescricao" prefWidth="637.0" text="Descrição" />
           <TableColumn fx:id="ccolunaValor" prefWidth="238.0" text="Valor" />
