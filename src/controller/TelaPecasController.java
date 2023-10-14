@@ -12,10 +12,10 @@ public class TelaPecasController extends TelaPrincipalController{
 
     @FXML private TextField searchBar;
     @FXML private TableView tabelaPecas;
-    @FXML private TableColumn Quantidade;
-    @FXML private TableColumn Nome;
-    @FXML private TableColumn Fabricante;
-    @FXML private TableColumn Preco;
+    @FXML private TableColumn colunaQuantidade;
+    @FXML private TableColumn colunaNome;
+    @FXML private TableColumn colunaFabricante;
+    @FXML private TableColumn colunaPreco;
 
     @FXML private Button botaoDetalhes;
     @FXML private Button botaoRemoverPeca;

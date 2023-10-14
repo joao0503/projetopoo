@@ -106,10 +106,10 @@
       </Button>
       <TableView fx:id="tabelaPecas" layoutX="27.0" layoutY="237.0" prefHeight="458.0" prefWidth="1162.0">
         <columns>
-          <TableColumn prefWidth="87.0" text="Quantidade" />
-          <TableColumn prefWidth="467.0" text="Nome" />
-            <TableColumn prefWidth="404.0" text="Fabricante" />
-            <TableColumn prefWidth="203.0" text="Preço(R$)" />
+          <TableColumn fx:id="colunaQuantidade" prefWidth="87.0" text="Quantidade" />
+          <TableColumn fx:id="colunaNome" prefWidth="467.0" text="Nome" />
+            <TableColumn fx:id="colunaFabricante" prefWidth="404.0" text="Fabricante" />
+            <TableColumn fx:id="colunaPreco" prefWidth="203.0" text="Preço(R$)" />
         </columns>
       </TableView>
       <Button fx:id="botaoRemoverPeca" layoutX="1027.0" layoutY="179.0" mnemonicParsing="false" onAction="#removerPeca" prefHeight="29.0" prefWidth="68.0" text="Remover" />

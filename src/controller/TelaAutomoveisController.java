@@ -13,11 +13,12 @@ public class TelaAutomoveisController extends TelaPrincipalController{
     @FXML private TextField SearchBar;
     @FXML private TableView tabelaAutomoveis;
 
-    @FXML private TableColumn Marca;
-    @FXML private TableColumn Ano;
-    @FXML private TableColumn Placa;
-    @FXML private TableColumn Cor;
-    @FXML private TableColumn Quilometragem;
+    @FXML private TableColumn colunaMarca;
+    @FXML private TableColumn colunaAno;
+    @FXML private TableColumn colunaPlaca;
+    @FXML private TableColumn colunaCor;
+    @FXML private TableColumn colunaQuilometragem;
+    @FXML private TableColumn colunaProprietario;
 
     @FXML private Button botaoDetalhesAutomovel;
     

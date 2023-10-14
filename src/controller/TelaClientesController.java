@@ -38,14 +38,10 @@ public class TelaClientesController extends TelaPrincipalController implements I
         nome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         endereco.setCellValueFactory(new PropertyValueFactory<>("endereco"));
         cpf.setCellValueFactory(new PropertyValueFactory<>("cpf"));
-        System.out.println("pica2");
         List<ClienteVO> clientes = new ArrayList<>();
 
         try {
             clientes = clienteBO.listarTodos();
-            for (ClienteVO cliente : clientes){
-                System.out.println(cliente.getNome() + cliente.getDesconto());
-            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -54,7 +50,7 @@ public class TelaClientesController extends TelaPrincipalController implements I
             tabelaClientes.setItems(lista);
             todos.addAll(clientes);
         } else {
-            System.out.println("pica3");
+            System.out.println("Deu erro confia.");
         }
     }
 
