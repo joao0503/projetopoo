@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import view.Telas;
 
 public class AdicionarPecaController {
     @FXML private TextField campoNomeCLiente;
@@ -21,7 +22,7 @@ public class AdicionarPecaController {
 
     }
 
-    public void voltarParaPecas(ActionEvent event){
-
+    public void voltarParaPecas(ActionEvent event) throws Exception {
+        Telas.telaPecas();
     }
 }

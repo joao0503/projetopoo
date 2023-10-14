@@ -6,13 +6,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import model.VO.ServicoVO;
+import view.Telas;
 
 public class TelaServicosController extends TelaPrincipalController{
 
     @FXML private TextField searchBar;
-    @FXML private TableView tabelaClientes;
-    @FXML private TableColumn Descricao;
-    @FXML private TableColumn Valor;
+    @FXML private TableView<ServicoVO> tabelaServicos;
+    @FXML private TableColumn<ServicoVO, String> colunaDescricao;
+    @FXML private TableColumn<ServicoVO, Double> colunaValor;
 
     @FXML private Button botaoDetalhes;
     @FXML private Button botaoExcluirServico;
@@ -26,7 +28,7 @@ public class TelaServicosController extends TelaPrincipalController{
 
     }
 
-    public void addServico(ActionEvent event){
-        
+    public void addServico(ActionEvent event) throws Exception {
+        Telas.telaAdicionarServico();
     }
 }

@@ -109,10 +109,10 @@
             <Font size="13.0" />
          </font>
       </Button>
-      <TableView fx:id="tabelaClientes" layoutX="216.0" layoutY="236.0" prefHeight="458.0" prefWidth="876.0">
+      <TableView fx:id="tabelaServicos" layoutX="216.0" layoutY="236.0" prefHeight="458.0" prefWidth="876.0">
         <columns>
-          <TableColumn prefWidth="637.0" text="Descrição" />
-          <TableColumn prefWidth="238.0" text="Valor" />
+          <TableColumn fx:id="colunaDescricao" prefWidth="637.0" text="Descrição" />
+          <TableColumn fx:id="ccolunaValor" prefWidth="238.0" text="Valor" />
         </columns>
       </TableView>
       <Button fx:id="botaoExcluirServico" layoutX="906.0" layoutY="179.0" mnemonicParsing="false" onAction="#excluirServico" text="Excluir">

@@ -13,8 +13,6 @@ public class ClienteDAO extends PessoaDAO<ClienteVO> {
 
 	@Override
 	public void inserir(ClienteVO vo) {
-		// Ao user o super, vou aproveitar o id da superclasse para ja usar aqui
-		//super.inserir(vo);
 		Connection con = getConnection();
 		String sql = "insert into clientes (desconto, pessoa_id) values (?, ?)";
 		try {
@@ -90,13 +88,12 @@ public class ClienteDAO extends PessoaDAO<ClienteVO> {
     }
 
     @Override
-    //public List<ClienteVO> listar() {
     public List<ClienteVO> listar() {
         Connection con = getConnection();
-        String sql = "select * from pessoas inner join clientes on "
-        		+ "pessoas.pessoa_id = clientes.pessoa_id";
+        String sql = "select * from pessoas inner join clientes on pessoas.pessoa_id = clientes.pessoa_id";
         ResultSet rs = null;
         List<ClienteVO> clientes = new ArrayList<ClienteVO>();
+        System.out.println(clientes);
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
@@ -107,8 +104,6 @@ public class ClienteDAO extends PessoaDAO<ClienteVO> {
                 cliente.setCpf(rs.getString("cpf"));
                 cliente.setClienteId(rs.getLong("cliente_id"));
                 clientes.add(cliente);
-                // setar os automoveis com o automovelDAO no lugar que vocês
-                // precisarem.
             }
             return clientes;
         } catch (SQLException e) {
