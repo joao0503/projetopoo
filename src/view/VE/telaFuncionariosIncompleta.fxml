@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.shape.*?>
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TelaPecasController">
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane layoutY="54.0" prefHeight="91.0" prefWidth="1280.0" style="-fx-background-color: D9D9D9;">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f67f10" height="58.0" stroke="#f67f10" strokeType="INSIDE" width="1280.0" />
+      <Label alignment="CENTER" layoutX="509.0" layoutY="7.0" prefHeight="40.0" prefWidth="307.0" text="Oficina do Sr. Zezé" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Pane layoutY="58.0" prefHeight="91.0" prefWidth="1280.0" style="-fx-background-color: D9D9D9;">
          <children>
             <ImageView fitHeight="45.0" fitWidth="50.0" layoutX="1159.0" layoutY="14.0" onMouseClicked="#irParaTelaLogin" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -56,7 +58,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <ImageView fx:id="loginImg" fitHeight="45.0" fitWidth="50.0" layoutX="672.0" layoutY="14.0" onMouseClicked="#irParaTelaLoginAut" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="loginImg" fitHeight="45.0" fitWidth="50.0" layoutX="678.0" layoutY="14.0" onMouseClicked="#irParaTelaLoginAut" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@do-utilizador%201.png" />
                </image>
@@ -88,35 +90,13 @@
             </Label>
          </children>
       </Pane>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f67f10" height="58.0" stroke="#f67f10" strokeType="INSIDE" width="1280.0" />
-      <Label alignment="CENTER" layoutX="500.0" layoutY="14.0" prefHeight="40.0" prefWidth="307.0" text="Oficina do Sr. Zezé" textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font size="28.0" />
-         </font>
-      </Label>
-      <TextField fx:id="searchBar" layoutX="27.0" layoutY="176.0" prefHeight="34.0" prefWidth="798.0" promptText="Filtrar...">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </TextField>
-      <Button fx:id="botaoDetalhes" layoutX="949.0" layoutY="179.0" mnemonicParsing="false" onAction="#detalharPeca" text="Detalhes">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Button>
-      <TableView fx:id="tabelaPecas" layoutX="27.0" layoutY="237.0" prefHeight="458.0" prefWidth="1162.0">
+      <TableView layoutX="68.0" layoutY="218.0" prefHeight="398.0" prefWidth="1150.0">
         <columns>
-          <TableColumn prefWidth="87.0" text="Quantidade" />
-          <TableColumn prefWidth="467.0" text="Nome" />
-            <TableColumn prefWidth="404.0" text="Fabricante" />
-            <TableColumn prefWidth="203.0" text="Preço(R$)" />
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
         </columns>
       </TableView>
-      <Button fx:id="botaoRemoverPeca" layoutX="1027.0" layoutY="179.0" mnemonicParsing="false" onAction="#removerPeca" prefHeight="29.0" prefWidth="68.0" text="Remover" />
-      <Button fx:id="botaoAddPeca" layoutX="1110.0" layoutY="179.0" mnemonicParsing="false" onAction="#addPeca" text="Nova Peça">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Button>
+      <Button layoutX="1106.0" layoutY="183.0" mnemonicParsing="false" text="Editar" />
+      <Button layoutX="1168.0" layoutY="183.0" mnemonicParsing="false" text="Excluir" />
    </children>
 </Pane>

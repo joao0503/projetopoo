@@ -94,17 +94,17 @@
             <Font size="28.0" />
          </font>
       </Label>
-      <TextField fx:id="searchBar" layoutX="27.0" layoutY="176.0" prefHeight="34.0" prefWidth="946.0" promptText="Pesquisar...">
+      <TextField fx:id="searchBar" layoutX="27.0" layoutY="176.0" prefHeight="34.0" prefWidth="798.0" promptText="Filtrar...">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
-      <Button fx:id="botaoNovoServico" layoutX="1082.0" layoutY="179.0" mnemonicParsing="false" onAction="#addServico" prefHeight="25.0" prefWidth="107.0" text="Novo Serviço">
+      <Button fx:id="botaoNovoServico" layoutX="985.0" layoutY="179.0" mnemonicParsing="false" onAction="#addServico" prefHeight="25.0" prefWidth="107.0" text="Novo Serviço">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="botaoBuscar" layoutX="982.0" layoutY="179.0" mnemonicParsing="false" onAction="#buscar" text="Buscar">
+      <Button fx:id="botaoDetalhes" layoutX="832.0" layoutY="179.0" mnemonicParsing="false" onAction="#detalharServico" text="Detalhes">
          <font>
             <Font size="13.0" />
          </font>
@@ -115,5 +115,10 @@
           <TableColumn prefWidth="238.0" text="Valor" />
         </columns>
       </TableView>
+      <Button fx:id="botaoExcluirServico" layoutX="906.0" layoutY="179.0" mnemonicParsing="false" onAction="#excluirServico" text="Excluir">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

@@ -51,10 +51,16 @@
             <TreeTableColumn fx:id="colunaQuilometragem" prefWidth="123.0" text="Quilometragem" />
         </columns>
       </TreeTableView>
-      <Button fx:id="botaoAddCliente" layoutX="266.0" layoutY="486.0" mnemonicParsing="false" onAction="#salvarCliente" prefHeight="30.0" prefWidth="119.0" text="Salvar">
+      <Button fx:id="botaoAddCliente" layoutX="189.0" layoutY="486.0" mnemonicParsing="false" onAction="#salvarCliente" prefHeight="30.0" prefWidth="119.0" text="Salvar">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
+      <Button fx:id="botaoVoltar" layoutX="353.0" layoutY="486.0" mnemonicParsing="false" onAction="#voltarParaClientes" prefHeight="30.0" prefWidth="119.0" text="Voltar">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="botaoNovoAutomovel" layoutX="534.0" layoutY="245.0" mnemonicParsing="false" onAction="#addAutomovel" text="Novo registro" />
    </children>
 </Pane>

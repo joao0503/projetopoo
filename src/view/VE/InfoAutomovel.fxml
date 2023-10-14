@@ -5,7 +5,6 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="543.0" prefWidth="660.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InfoAutoController">
    <children>
       <Text fill="#ee7200" layoutX="149.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Informações do Automóvel" wrappingWidth="362.142578125">
@@ -54,8 +53,7 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Button fx:id="botaoEditarAuto" layoutX="515.0" layoutY="51.0" mnemonicParsing="false" text="Editar" />
-      <Button fx:id="botaoExcluirAuto" layoutX="566.0" layoutY="51.0" mnemonicParsing="false" text="Excluir" />
+      <Button fx:id="botaoEditarAuto" layoutX="525.0" layoutY="50.0" mnemonicParsing="false" text="Editar" />
       <TableView fx:id="tabelaServicos" layoutX="15.0" layoutY="299.0" prefHeight="217.0" prefWidth="630.0">
         <columns>
           <TableColumn prefWidth="145.0" text="Descrição" />

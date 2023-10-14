@@ -1,10 +1,29 @@
 package controller;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 
 public class TelaServicosController extends TelaPrincipalController{
-    public void buscar(ActionEvent event){
+
+    @FXML private TextField searchBar;
+    @FXML private TableView tabelaClientes;
+    @FXML private TableColumn Descricao;
+    @FXML private TableColumn Valor;
+
+    @FXML private Button botaoDetalhes;
+    @FXML private Button botaoExcluirServico;
+    @FXML private Button botaoNovoServico;
+
+    public void detalharServico(ActionEvent event){
         System.out.println("buscou");
+    }
+
+    public void excluirServico(ActionEvent event){
+
     }
 
     public void addServico(ActionEvent event){

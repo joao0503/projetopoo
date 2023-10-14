@@ -5,7 +5,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+<<<<<<< HEAD
 import model.BO.UsuarioBO;
+=======
+import model.DAO.UsuarioDAO;
+import model.VO.FuncionarioVO;
+import model.VO.GerenteVO;
+>>>>>>> b1cb88491d130674b4b7b2eb3a69955cd9903dfe
 import model.VO.UsuarioVO;
 import view.Telas;
 
@@ -22,8 +28,7 @@ public class UsuarioController {
 	
 	// instanciar aqui o bo para autenticar
 	// generic que pode ser Funcionario
-	//UsuarioDAO<UsuarioVO> usuDAO = new UsuarioDAO<UsuarioVO>();
-	UsuarioBO<UsuarioVO> usuBO = new UsuarioBO<UsuarioVO>();
+	UsuarioDAO<UsuarioVO> usuDAO = new UsuarioDAO<UsuarioVO>();
 	public void autenticar(ActionEvent event) {
 		UsuarioVO usuar = new UsuarioVO();
 		usuar.setUsuario(usuario.getText());
@@ -31,22 +36,23 @@ public class UsuarioController {
 		System.out.println("O usuário em autenticar é: " + usuar.getUsuario() + " e a senha é: " 
 		+ usuar.getSenha());
 		
+		// mandar o objeto usuar criado para o bo, quando ele for implementado 
 		try {
-			//UsuarioVO autenticado = usuDAO.autent(usuar);
-			UsuarioVO autenticado = usuBO.autenticar(usuar.getUsuario(), usuar.getSenha());
+			// ex: UsuarioVO autenticado = usuBO.autenticar(usuar);
+			UsuarioVO autenticado = usuDAO.autent(usuar);
 			System.out.println("O usuario autenticado é: " + autenticado.getUsuario() + " " + 
 					autenticado.getSenha());
 			//autenticado.setNome("Ana");
 			System.out.println("O nome do autenticado é: " + autenticado.getNome());
-			//if(autenticado instanceof GerenteVO) {
-			if(autenticado.getTipoDeUsuario() == 1) {
+			if(autenticado instanceof GerenteVO) {
 				System.out.println("Você é um gerente");
 				
 				Telas.telaPrincipalGerente(autenticado);
 			}
-			//if(autenticado instanceof FuncionarioVO) {
-			if(autenticado.getTipoDeUsuario() == 2) {
+			
+			if(autenticado instanceof FuncionarioVO) {
 				System.out.println("Você é um funcionário");
+				
 				Telas.telaPrincipalFuncionario(autenticado);
 			}
 			
