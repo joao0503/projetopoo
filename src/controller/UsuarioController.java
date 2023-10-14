@@ -5,13 +5,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-<<<<<<< HEAD
-import model.BO.UsuarioBO;
-=======
 import model.DAO.UsuarioDAO;
 import model.VO.FuncionarioVO;
 import model.VO.GerenteVO;
->>>>>>> b1cb88491d130674b4b7b2eb3a69955cd9903dfe
 import model.VO.UsuarioVO;
 import view.Telas;
 
