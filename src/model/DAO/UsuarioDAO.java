@@ -198,7 +198,7 @@ public class UsuarioDAO<VO extends UsuarioVO> extends PessoaDAO<VO>{
     }
     
 
-    public UsuarioVO autentica(String nomeUsuario, String senha) {
+    public UsuarioVO autenticar(String nomeUsuario, String senha) {
         Connection con = getConnection();
         PreparedStatement ps;
         ResultSet rs = null;
