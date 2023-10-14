@@ -31,8 +31,8 @@
             <Label layoutX="260.0" layoutY="266.0" onMouseClicked="#irParaTelaRecuperarSenha" prefHeight="17.0" prefWidth="104.0" text="Esqueceu a senha?" textFill="#ff993a" />
             <Label fx:id="erroAutenticacao" alignment="CENTER" layoutX="319.0" layoutY="184.0" prefHeight="17.0" prefWidth="178.0" text="Mensagem" textAlignment="CENTER" textFill="#e10e0e" visible="false" />
             <Label layoutX="14.0" layoutY="321.0" prefHeight="25.0" prefWidth="648.0" text="Simulação temporária de login:" />
-            <Label layoutX="14.0" layoutY="346.0" prefHeight="25.0" prefWidth="648.0" text="funcionario - usuário: funcionario, senha: funcio" />
-            <Label layoutX="14.0" layoutY="361.0" prefHeight="25.0" prefWidth="648.0" text="gerente - usuário: gerente, senha: geren" />
+            <Label layoutX="14.0" layoutY="346.0" prefHeight="25.0" prefWidth="648.0" text="funcionario - usuário: usuario2, senha: senha2" />
+            <Label layoutX="14.0" layoutY="361.0" prefHeight="25.0" prefWidth="648.0" text="gerente - usuário: usuario1, senha: senha1" />
          </children>
       </Pane>
    </children>
