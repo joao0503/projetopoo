@@ -5,12 +5,18 @@ import java.util.List;
 
 import exception.InserirException;
 import exception.NaoEncontradoException;
+import model.BO.AutomovelBO;
+import model.BO.ClienteBO;
 import model.BO.PessoaBO;
+import model.BO.ServicoBO;
 import model.BO.UsuarioBO;
 import model.DAO.PecaDAO;
+import model.VO.AutomovelVO;
+import model.VO.ClienteVO;
 import model.VO.FuncionarioVO;
 import model.VO.PecaVO;
 import model.VO.PessoaVO;
+import model.VO.ServicoVO;
 import model.VO.UsuarioVO;
 
 public class Oficina {
@@ -134,5 +140,37 @@ public class Oficina {
     	//System.out.println("Dados da pessoa: \n" + usuario.toString());
     	System.out.println("Dados do usuário do tipo FuncionarioVO com id " + fun.getPessoaId() + ": \n" 
     			+ fun.toString());
+    	
+    	ClienteBO cliBO = new ClienteBO();
+    	List<ClienteVO> clientes = new ArrayList<ClienteVO>();
+    	clientes = cliBO.listarTodos();
+    	for(ClienteVO cli : clientes) {
+    		System.out.println("Nome: " + cli.getNome());
+    		System.out.println("Desconto: " + cli.getDesconto());
+    	}
+    	
+    	List<AutomovelVO> automoveis = new ArrayList<AutomovelVO>();
+    	AutomovelBO autoBO = new AutomovelBO();
+    	automoveis = autoBO.listarTodos();
+    	for(AutomovelVO cli : automoveis) {
+    		System.out.println("Marca do automovel: " + cli.getMarca());
+    		System.out.println("Modelo: " + cli.getModelo());
+    	}
+    	
+    	/* Vou testar o ServicoBO cadastrar
+    	 * PecaVO peca = new PecaVO();
+    	peca.setPecaId((long) 1);
+    	ServicoVO servico = new ServicoVO();
+    	servico.setPeca(peca);
+    	servico.setDataInicio("");
+    	System.out.println(servico.getDataInicio());
+    	
+    	servico.setFuncionarioId((long) 2);
+    	servico.setClienteId((long) 2);
+    	servico.setAutomovelId((long) 1);
+    	servico.setServicoId(null);
+    	
+    	ServicoBO servBO = new ServicoBO();
+    	servBO.cadastrar(servico);*/
 	}
 }

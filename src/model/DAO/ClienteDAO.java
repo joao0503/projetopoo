@@ -105,13 +105,12 @@ public class ClienteDAO extends PessoaDAO<ClienteVO> {
                 cliente.setNome(rs.getString("nome"));
                 cliente.setEndereco(rs.getString("endereco"));
                 cliente.setCpf(rs.getString("cpf"));
-                cliente.setClienteId(rs.getLong("id"));
+                cliente.setClienteId(rs.getLong("cliente_id"));
                 clientes.add(cliente);
                 // setar os automoveis com o automovelDAO no lugar que vocês
                 // precisarem.
             }
             return clientes;
-            //return clientes;
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

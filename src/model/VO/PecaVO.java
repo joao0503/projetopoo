@@ -67,9 +67,9 @@ public class PecaVO {
 	}
 	
 	public void setPecaId(Long pecaId) {
-		if(pecaId >= 0) {
+		//if(pecaId >= 0) {
 			this.pecaId = pecaId;
-		}
+		//}
 	}
 	
 	@Override

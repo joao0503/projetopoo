@@ -106,31 +106,7 @@ public class AutomovelVO {
 		}
 	}
 	
-	
-	/*public Cliente getProprietario() {
-		return proprietario;
-	}
-	public void setProprietario(Cliente proprietario) {
-		// implementar posteriormente o proprietário de forma 
-		//adequada considerando o uso do id, quando for usar banco
-		// de dados.
-		if(proprietario != null) {
-			this.proprietario = proprietario;
-		} else {
-			System.out.println("Proprietário do automóvel inválido");
-		}
-	}*/
-	
-	/*public Orcamento getOrcamentoTotal() {
-		return orcamentoTotal;
-	}
-	public void setOrcamentoTotal(Orcamento orcamentoTotal) {
-		if(orcamentoTotal != null) {
-				this.orcamentoTotal = orcamentoTotal;
-		}
-	}*/
-	
-	
+
 	public Long getClienteId() {
 		return clienteId;
 	}

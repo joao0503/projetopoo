@@ -1,26 +1,30 @@
 package model.VO;
 
-import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+//import java.util.Date;
 
 public class ServicoVO {
 	private String nome;
 	private double valor;
 	private int status;
-	// duas opções: criar o serviço com uma peça ou com uma lista de peças.
 	private PecaVO peca;
-	private Date dataInicio;
-	private Date dataFim;
+	private String dataInicio;
+	private String dataFim;
 	private Long funcionarioId;
 	private Long clienteId;
 	private Long automovelId;
     private Long servicoId;
 
-    public ServicoVO(String nome, double valor, int status, PecaVO peca, Long funcionarioId, Long clienteId, 
-    		Long servicoId) {
+    public ServicoVO(String nome, double valor, int status, PecaVO peca, String dataInicio, 
+    		Long funcionarioId, Long clienteId, Long servicoId) {
         setNome(nome);
         setValor(valor);
         setStatus(status);
         setPeca(peca);
+        setDataInicio(dataInicio);
+        //setDataFim(dataFim);
         setFuncionarioId(funcionarioId);
         setClienteId(clienteId);
         setServicoId(servicoId);
@@ -73,14 +77,47 @@ public class ServicoVO {
     	}
     }
     
+    
+	public String getDataInicio() {
+		return dataInicio;
+	}
+	public void setDataInicio(String dataInicio) {
+		if(dataInicio.isEmpty()) {
+	        Calendar calendario = Calendar.getInstance();
+	        //SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+	        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+	        this.dataInicio = formato.format(calendario.getTime());
+	        System.out.println("A dataInicio do serviço é: " + getDataInicio());
+		} else {
+			this.dataInicio = dataInicio;
+		}
+	}
+	
+	
+	
+	public String getDataFim() {
+		return dataInicio;
+	}
+	public void setDataFim(String dataFim) {
+		if(dataFim.isEmpty()) {
+	        Calendar calendario = Calendar.getInstance();
+	        //SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+	        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+	        this.dataFim = formato.format(calendario.getTime());
+	        System.out.println("A dataInicio do serviço é: " + getDataInicio());
+		} else {
+			this.dataFim = dataFim;
+		}
+	}
+    
 
     public Long getFuncionarioId() {
 		return funcionarioId;
 	}
 	public void setFuncionarioId(Long funcionarioId) {
-		if(funcionarioId > 0) {
+		//if(funcionarioId > 0) {
 			this.funcionarioId = funcionarioId;
-		}
+		//}
 	}
 	
 	
@@ -88,9 +125,9 @@ public class ServicoVO {
 		return clienteId;
 	}
 	public void setClienteId(Long clienteId) {
-		if(clienteId > 0) {
+		//if(clienteId > 0) {
 			this.clienteId = clienteId;
-		}
+		//}
 	}
     
     
@@ -99,9 +136,9 @@ public class ServicoVO {
 		return automovelId;
 	}
 	public void setAutomovelId(Long automovelId) {
-		if(automovelId > 0) {
+		//if(automovelId > 0) {
 			this.automovelId = automovelId;
-		}
+		//}
 	}
 	
 	
@@ -109,8 +146,8 @@ public class ServicoVO {
 		return servicoId;
 	}
 	public void setServicoId(Long servicoId) {
-		if(servicoId > 0) {
-			this.servicoId = servicoId;
-		}
+		//if(servicoId > 0) {
+		this.servicoId = servicoId;
+		//}
 	}
 }
