@@ -6,15 +6,18 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import model.VO.OrcamentoVO;
 
 public class TelaOrcamentosController extends TelaPrincipalController{
 
+    // essa tabela ta pegando info de outros VO, então tem que mudar tudo aq dps
     @FXML private TextField searchBar;
-    @FXML private TableView tabelaOrcamentos;
-    @FXML private TableColumn colunaAutomovel;
-    @FXML private TableColumn colunaPlaca;
-    @FXML private TableColumn colunaCliente;
-    @FXML private TableColumn colunaData;
+    @FXML private TableView<OrcamentoVO> tabelaOrcamentos;
+    @FXML private TableColumn<OrcamentoVO, String> colunaAutomovel;
+    @FXML private TableColumn<OrcamentoVO, String> colunaPlaca;
+    @FXML private TableColumn<OrcamentoVO, String> colunaCliente;
+    //@FXML private TableColumn<OrcamentoVO, String> colunaData;
+    
 
     @FXML private Button botaoDetalhesOrcamento;
 
