@@ -147,7 +147,7 @@ public class PessoaDAO<VO extends PessoaVO> extends BaseDAOImpl<VO> {
     }
     
     
-    public VO buscarPorCPF(VO vo) {
+    public PessoaVO buscarPorCPF(PessoaVO vo) {
         Connection con = getConnection();
         PreparedStatement ps;
         ResultSet rs = null;
