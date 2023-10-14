@@ -21,6 +21,10 @@ public class TelaClientesController extends TelaPrincipalController{
     @FXML private Button botaoDetalhesCliente;
     @FXML private Button botaoRemoverCliente;
 
+    public void addCliente(ActionEvent event) throws Exception{
+        Telas.telaAdicionarCliente();
+    }
+
     public void infoCliente(ActionEvent event){
         System.out.println("Info do cliente");
     }   
@@ -28,8 +32,4 @@ public class TelaClientesController extends TelaPrincipalController{
     public void removerCliente(ActionEvent event) {
         
     }   
-
-    public void addCliente(ActionEvent event){
-
-    }
 }
