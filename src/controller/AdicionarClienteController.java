@@ -14,11 +14,11 @@ public class AdicionarClienteController {
 
     @FXML private TreeTableView tabelaAutomoveis;
 
-    @FXML private TreeTableColumn Marca;
-    @FXML private TreeTableColumn Ano;
-    @FXML private TreeTableColumn Placa;
-    @FXML private TreeTableColumn Cor;
-    @FXML private TreeTableColumn Quilometragem;
+    @FXML private TreeTableColumn colunaMarca;
+    @FXML private TreeTableColumn colunaAno;
+    @FXML private TreeTableColumn colunaPlaca;
+    @FXML private TreeTableColumn colunaCor;
+    @FXML private TreeTableColumn colunaQuilometragem;
 
     @FXML private Button botaoNovoAutomovel;
     @FXML private Button botaoAddCliente;

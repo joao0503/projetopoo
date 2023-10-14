@@ -13,9 +13,9 @@ public class TelaClientesController extends TelaPrincipalController{
 
     @FXML private TextField searchBar;
     @FXML private TableView tabelaClientes;
-    @FXML private TableColumn Nome;
-    @FXML private TableColumn Endereco;
-    @FXML private TableColumn CPF;
+    @FXML private TableColumn colunaNome;
+    @FXML private TableColumn colunaEndereco;
+    @FXML private TableColumn colunaCpf;
 
     @FXML private Button botaoNovoCliente;
     @FXML private Button botaoDetalhesCliente;

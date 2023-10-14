@@ -11,10 +11,10 @@ public class TelaOrcamentosController extends TelaPrincipalController{
 
     @FXML private TextField searchBar;
     @FXML private TableView tabelaOrcamentos;
-    @FXML private TableColumn Automovel;
-    @FXML private TableColumn Placa;
-    @FXML private TableColumn Cliente;
-    @FXML private TableColumn Data;
+    @FXML private TableColumn colunaAutomovel;
+    @FXML private TableColumn colunaPlaca;
+    @FXML private TableColumn colunaCliente;
+    @FXML private TableColumn colunaData;
 
     @FXML private Button botaoDetalhesOrcamento;
 

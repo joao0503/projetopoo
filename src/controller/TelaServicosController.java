@@ -12,8 +12,8 @@ public class TelaServicosController extends TelaPrincipalController{
 
     @FXML private TextField searchBar;
     @FXML private TableView tabelaClientes;
-    @FXML private TableColumn Descricao;
-    @FXML private TableColumn Valor;
+    @FXML private TableColumn colunaDescricao;
+    @FXML private TableColumn colunaValor;
 
     @FXML private Button botaoDetalhes;
     @FXML private Button botaoExcluirServico;

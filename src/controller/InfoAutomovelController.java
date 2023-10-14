@@ -15,11 +15,11 @@ public class InfoAutomovelController {
     @FXML private TextField campoPlaca;
     @FXML private TableView tabelaServicos;
 
-    @FXML private TableColumn Descricao;
-    @FXML private TableColumn Valor;
-    @FXML private TableColumn Status;
-    @FXML private TableColumn Encarregado;
-    @FXML private TableColumn Peca;
+    @FXML private TableColumn colunaDescricao;
+    @FXML private TableColumn colunaValor;
+    @FXML private TableColumn colunaStatus;
+    @FXML private TableColumn colunaEncarregado;
+    @FXML private TableColumn colunaPeca;
 
     @FXML private Button botaoEditarAuto;
     @FXML private Button botaoEditarServico;
