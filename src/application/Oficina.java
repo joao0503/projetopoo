@@ -18,13 +18,6 @@ public class Oficina {
 	public static void main(String[] args) throws NaoEncontradoException, InserirException {
 		System.out.println("Oficina mecânica de Sr. Zezé");
 		
-		// Mostrando como testar o DAO:
-		// Observação importante: Não mandei id na hora de inserir uma peça porque
-		// configurei a tabela do banco de dados para incrementar o id automaticamente.
-		// vocês vão ter que fazer essa config no de vocês também.
-		
-		// PecasDAO:
-		// inserindo algumas peças no banco de dados
 		PecaVO pe = new PecaVO("Motor", 5, "Ford", 1200.52, 0L);
 		PecaDAO pdao = new PecaDAO();
 		pdao.inserir(pe);
