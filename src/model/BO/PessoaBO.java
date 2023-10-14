@@ -60,9 +60,9 @@ public class PessoaBO<VO extends PessoaVO> implements BaseBO<VO>{
 	public void atualizar(VO vo) throws InserirException {
 		try {
 			PessoaVO pessoa = new PessoaVO();
-			pessoa = pessoaDAO.buscar(vo);
+			//pessoa = pessoaDAO.buscar(vo);
 			System.out.println("Pessoa é: " + pessoa);
-			if(pessoa != null) {
+			if(vo != null) {
 				pessoaDAO.alterar(vo);
 			} else {
 				throw new InserirException("Não foi possível alterar a pessoa porque"

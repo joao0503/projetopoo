@@ -39,18 +39,9 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="campoNomeCliente" layoutX="33.0" layoutY="124.0" prefHeight="25.0" prefWidth="379.0" />
+      <TextField fx:id="campoNome" layoutX="33.0" layoutY="124.0" prefHeight="25.0" prefWidth="379.0" />
       <TextField fx:id="campoCPF" layoutX="467.0" layoutY="124.0" prefHeight="25.0" prefWidth="159.0" />
       <TextField fx:id="campoEndereco" layoutX="33.0" layoutY="198.0" prefHeight="25.0" prefWidth="379.0" />
-      <TreeTableView fx:id="tabelaAutomoveis" layoutX="29.0" layoutY="274.0" prefHeight="200.0" prefWidth="594.0">
-        <columns>
-          <TreeTableColumn fx:id="colunaMarca" prefWidth="170.0" text="Marca" />
-          <TreeTableColumn fx:id="colunaAno" minWidth="7.0" prefWidth="78.0" text="Ano" />
-            <TreeTableColumn fx:id="colunaPlaca" prefWidth="142.0" text="Placa" />
-            <TreeTableColumn fx:id="colunaCor" minWidth="0.0" text="Cor" />
-            <TreeTableColumn fx:id="colunaQuilometragem" prefWidth="123.0" text="Quilometragem" />
-        </columns>
-      </TreeTableView>
       <Button fx:id="botaoAddCliente" layoutX="189.0" layoutY="486.0" mnemonicParsing="false" onAction="#salvarCliente" prefHeight="30.0" prefWidth="119.0" text="Salvar">
          <font>
             <Font size="14.0" />
@@ -61,6 +52,5 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="botaoNovoAutomovel" layoutX="534.0" layoutY="245.0" mnemonicParsing="false" onAction="#addAutomovel" text="Novo registro" />
    </children>
 </Pane>

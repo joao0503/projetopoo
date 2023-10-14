@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.VO.AutomovelVO;
 import model.VO.ClienteVO;
 
 public class ClienteDAO extends PessoaDAO<ClienteVO> {
@@ -48,11 +49,11 @@ public class ClienteDAO extends PessoaDAO<ClienteVO> {
     @Override
     public void alterar(ClienteVO vo) {
         Connection con = getConnection();
-        String sql = "update clientes set desconto = ?, set pessoa_id = ? where cliente_id = ?";
+        String sql = "update clientes set desconto = ? where cliente_id = ?";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setDouble(1, vo.getDesconto());
-            ps.setLong(2, vo.getPessoaId());
+            //ps.setDouble(1, vo.getDesconto());
+            ps.setDouble(1, 10000);
             ps.setLong(2, vo.getClienteId());
             ps.executeUpdate();
             ps.close();
@@ -67,7 +68,7 @@ public class ClienteDAO extends PessoaDAO<ClienteVO> {
     public ClienteVO buscar(ClienteVO vo) {
     	super.buscar(vo);
         Connection con = getConnection();
-        String sql = "select * from tb_clientes where cliente_id = ?";
+        String sql = "select * from clientes where cliente_id = ?";
         ResultSet rs = null;
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -87,6 +88,7 @@ public class ClienteDAO extends PessoaDAO<ClienteVO> {
         return null;
     }
 
+    
     @Override
     public List<ClienteVO> listar() {
         Connection con = getConnection();
@@ -100,8 +102,11 @@ public class ClienteDAO extends PessoaDAO<ClienteVO> {
             while (rs.next()) {
                 ClienteVO cliente = new ClienteVO();
                 cliente.setNome(rs.getString("nome"));
-                cliente.setEndereco(rs.getString("endereco"));
                 cliente.setCpf(rs.getString("cpf"));
+                cliente.setEndereco(rs.getString("endereco"));
+                cliente.setNumeroCelular(rs.getString("numero_celular"));
+                cliente.setPessoaId(rs.getLong("pessoa_id"));
+                cliente.setDesconto(rs.getLong("desconto"));
                 cliente.setClienteId(rs.getLong("cliente_id"));
                 clientes.add(cliente);
             }

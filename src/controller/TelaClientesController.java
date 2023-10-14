@@ -36,7 +36,8 @@ public class TelaClientesController extends TelaPrincipalController implements I
     ObservableList<ClienteVO> todos = FXCollections.observableArrayList();
 
     public void initialize(URL location, ResourceBundle resources) {
-        id.setCellValueFactory(new PropertyValueFactory<>("clienteId"));
+        //id.setCellValueFactory(new PropertyValueFactory<>("clienteId"));
+    	id.setCellValueFactory(new PropertyValueFactory<>("pessoaId"));
         nome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         endereco.setCellValueFactory(new PropertyValueFactory<>("endereco"));
         cpf.setCellValueFactory(new PropertyValueFactory<>("cpf"));
@@ -64,6 +65,8 @@ public class TelaClientesController extends TelaPrincipalController implements I
         ClienteVO cliente = tabelaClientes.getSelectionModel().getSelectedItem();
         if (cliente != null) {
             try {
+            	System.out.println("O pessoaId em infoCliente é: " + cliente.getPessoaId()
+            	+"o clienteId é: "+ cliente.getClienteId());
                 Telas.telaEditarCliente(cliente);
             } catch (Exception e) {
                 e.printStackTrace();

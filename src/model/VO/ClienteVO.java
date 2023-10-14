@@ -45,8 +45,8 @@ public class ClienteVO extends PessoaVO {
 		return clienteId;
 	}
 	public void setClienteId(Long clienteId) {
-		if(clienteId > 0) {
+		//if(clienteId > 0) {
 			this.clienteId = clienteId;
-		}
+		//}
 	}
 }

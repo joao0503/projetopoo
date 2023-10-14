@@ -137,9 +137,12 @@ public class Oficina {
     	ClienteBO cliBO = new ClienteBO();
     	List<ClienteVO> clientes = new ArrayList<ClienteVO>();
     	clientes = cliBO.listarTodos();
+    	System.out.println("Alguns dados de listar cliente do bo: ");
     	for(ClienteVO cli : clientes) {
     		System.out.println("Nome: " + cli.getNome());
     		System.out.println("Desconto: " + cli.getDesconto());
+    		System.out.println("pessoaId: " + cli.getClienteId());
+    		System.out.println("pessoaId: " + cli.getPessoaId());
     	}
     	
     	List<AutomovelVO> automoveis = new ArrayList<AutomovelVO>();

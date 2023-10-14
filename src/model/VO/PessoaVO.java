@@ -64,9 +64,7 @@ public class PessoaVO {
 	}
 	
 	public void setPessoaId(Long pessoaId) {
-		//if(pessoaId > 0) {
 			this.pessoaId = pessoaId;
-		//}
 	}
 	
 	@Override

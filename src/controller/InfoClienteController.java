@@ -55,6 +55,8 @@ public class InfoClienteController {
             this.cliente.setNome(cliente.getNome());
             this.cliente.setEndereco(cliente.getEndereco());
             this.cliente.setCpf(cliente.getCpf());
+            // o erro era que faltava setar o pessoaId para fazer a consulta
+            this.cliente.setPessoaId(cliente.getPessoaId());
             
             campoNomeCliente.setText(cliente.getNome());
             campoEndereco.setText(cliente.getEndereco());
@@ -71,6 +73,8 @@ public class InfoClienteController {
     }
 
     public void atualizarCliente() {
+    	System.out.println("O pessoaId em infoCliente é: " + cliente.getPessoaId()
+    	+"o clienteId é: "+ cliente.getClienteId());
         if (cliente != null) {
             
             String nomeTexto = campoNomeCliente.getText();

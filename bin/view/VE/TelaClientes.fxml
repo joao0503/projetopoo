@@ -110,7 +110,8 @@
       </Button>
       <TableView fx:id="tabelaClientes" layoutX="27.0" layoutY="237.0" prefHeight="458.0" prefWidth="1162.0">
         <columns>
-          <TableColumn fx:id="nome" prefWidth="394.0" text="Nome" />
+            <TableColumn fx:id="id" prefWidth="50.0" text="ID" />
+          <TableColumn fx:id="nome" prefWidth="419.0" text="Nome" />
           <TableColumn fx:id="endereco" prefWidth="478.0" text="Endereço" />
             <TableColumn fx:id="cpf" prefWidth="289.0" text="CPF" />
         </columns>
