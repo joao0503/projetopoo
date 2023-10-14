@@ -4,24 +4,32 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import view.Telas;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+
+
 
 public class TelaClientesController extends TelaPrincipalController{
 
     @FXML private TextField searchBar;
     @FXML private TableView tabelaClientes;
+    @FXML private TableColumn Nome;
+    @FXML private TableColumn Endereco;
+    @FXML private TableColumn CPF;
+
     @FXML private Button botaoNovoCliente;
-
-    public void buscar(ActionEvent event){
-
-    }
-
-    @FXML
-    public void addCliente(ActionEvent event) throws Exception{
-        Telas.telaAdicionarCliente();
-    }   
+    @FXML private Button botaoDetalhesCliente;
+    @FXML private Button botaoRemoverCliente;
 
     public void infoCliente(ActionEvent event){
-        // criar popup de info do cliente
+        System.out.println("Info do cliente");
     }   
+
+    public void removerCliente(ActionEvent event) {
+        
+    }   
+
+    public void addCliente(ActionEvent event){
+
+    }
 }
