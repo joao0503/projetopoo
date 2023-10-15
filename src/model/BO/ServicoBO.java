@@ -74,7 +74,7 @@ public class ServicoBO implements BaseBO<ServicoVO> {
 			if (servico != null) {
 				servDAO.alterar(vo);
 			} else {
-				throw new NaoEncontradoException(
+				throw new InserirException(
 						"Não foi possível alterar o serviço porque ele não " + "existe no banco de dados");
 			}
 		} catch (Exception e) {

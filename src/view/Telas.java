@@ -1,12 +1,14 @@
 package view;
 
 import controller.InfoClienteController;
+import controller.InfoPecaController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.VO.ClienteVO;
+import model.VO.PecaVO;
 import model.VO.UsuarioVO;
 
 public class Telas extends Application {
@@ -84,8 +86,6 @@ public class Telas extends Application {
 
 		primaryStage.setScene(cena);
 		cena.getWindow().centerOnScreen();
-
-		
 	}
 
 	public static void telaAdicionarCliente() throws Exception {
@@ -124,7 +124,6 @@ public class Telas extends Application {
 		
 		Scene cena = new Scene(root);
 		
-		
 		primaryStage.setScene(cena);
 		cena.getWindow().centerOnScreen();
 	}
@@ -143,7 +142,6 @@ public class Telas extends Application {
 		
 		Scene cena = new Scene(root);
 		
-		
 		primaryStage.setScene(cena);
 		cena.getWindow().centerOnScreen();
 	}
@@ -152,7 +150,6 @@ public class Telas extends Application {
 		Parent root = FXMLLoader.load(Telas.class.getResource("VE/TelaPecas.fxml"));
 		
 		Scene cena = new Scene(root);
-		
 		
 		primaryStage.setScene(cena);
 		cena.getWindow().centerOnScreen();
@@ -163,16 +160,27 @@ public class Telas extends Application {
 		
 		Scene cena = new Scene(root);
 		
-		
 		primaryStage.setScene(cena);
 		cena.getWindow().centerOnScreen();
 	}
 	
+	public static void telaEditarPeca(PecaVO peca) throws Exception {
+		FXMLLoader loader = new FXMLLoader(Telas.class.getResource("VE/InfoPeca.fxml"));
+		Parent root = loader.load();
+
+		InfoPecaController controller = loader.getController();
+		
+		controller.setPeca(peca);
+
+		Scene cena = new Scene(root);
+		primaryStage.setScene(cena);
+		cena.getWindow().centerOnScreen();
+	}
+
 	public static void telaLoginAut() throws Exception {
 		Parent root = FXMLLoader.load(Telas.class.getResource("VE/TelaPrincipal.fxml"));
 		
 		Scene cena = new Scene(root);
-		
 
 		primaryStage.setScene(cena);
 		cena.getWindow().centerOnScreen();

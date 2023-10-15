@@ -5,12 +5,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import exception.InserirException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBar.ButtonData;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -24,7 +29,7 @@ public class TelaPecasController extends TelaPrincipalController implements Init
     @FXML private TextField searchBar;
     @FXML private TableView<PecaVO> tabelaPecas;
     @FXML private TableColumn<PecaVO, Double> colunaId;
-    @FXML private TableColumn<PecaVO, Integer> colunaQuantidade; // no PecaVO ta como int, ver se dá problema de compatibilidade
+    @FXML private TableColumn<PecaVO, Integer> colunaQuantidade;
     @FXML private TableColumn<PecaVO, String> colunaNome;
     @FXML private TableColumn<PecaVO, String> colunaFabricante;
     @FXML private TableColumn<PecaVO, Double> colunaPreco;
@@ -61,15 +66,37 @@ public class TelaPecasController extends TelaPrincipalController implements Init
         }
     }
 
-    public void detalharPeca(ActionEvent event) throws Exception{
-        System.out.println("detalhar peca");
-    }
-
     public void addPeca(ActionEvent event) throws Exception{
         Telas.telaAdicionarPeca();
-
     }
-    public void removerPeca(ActionEvent event){
-        
+
+    public void detalharPeca(ActionEvent event) throws Exception{
+        PecaVO peca = tabelaPecas.getSelectionModel().getSelectedItem();
+        if (peca != null) {
+            try {
+                Telas.telaEditarPeca(peca);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void removerPeca(ActionEvent event) throws Exception{ //incompleto, pois depende de serviço por uma foreign key
+        PecaVO peca = tabelaPecas.getSelectionModel().getSelectedItem();
+        try{
+            if (peca != null) {
+                pecaBO.remover(peca);
+                Alert alert = new Alert(AlertType.INFORMATION);
+                alert.setTitle("Sucesso");
+                alert.setHeaderText("REMOVIDO COM SUCESSO");
+                alert.setContentText("A peça foi removida com sucesso.");
+                ButtonType ok = new ButtonType("OK", ButtonData.OK_DONE);
+                alert.getButtonTypes().setAll(ok);
+                alert.showAndWait();
+            }
+        } catch (InserirException iE){
+            iE.printStackTrace();
+        }
+        Telas.telaPecas();
     }
 }

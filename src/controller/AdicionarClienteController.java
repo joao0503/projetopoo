@@ -58,7 +58,6 @@ public class AdicionarClienteController {
         } catch (Exception e){
             e.printStackTrace();
         }
-
     }
 
     public void addAutomovel(ActionEvent event){
