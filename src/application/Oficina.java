@@ -5,7 +5,10 @@ import java.util.List;
 
 import exception.InserirException;
 import exception.NaoEncontradoException;
+import model.BO.AutomovelBO;
 import model.BO.ServicoBO;
+import model.VO.AutomovelVO;
+import model.VO.ClienteVO;
 import model.VO.PecaVO;
 import model.VO.ServicoVO;
 
@@ -192,5 +195,25 @@ public class Oficina {
     	servv = servBO.buscarPorId(servv);
     	System.out.println("\nServiço buscado: \n" + servv.getNome() + "\n" 
     	+ servv.getPeca().getNome());
+    	
+    	AutomovelBO autoBO = new AutomovelBO();
+    	
+    	ClienteVO clii = new ClienteVO();
+    	clii.setClienteId((long) 1);
+    	clii.setPessoaId((long) 4);
+    	AutomovelVO automovel = new AutomovelVO();
+    	automovel.setAutomovelId((long) 1);
+    	automovel.setAnoDoModelo(1982);
+    	automovel.setQuilometragem(123);
+    	automovel.setCliente(clii);
+    	autoBO.atualizar(automovel);
+    	
+    
+		// testar o listar
+		List<AutomovelVO> automoveis = new ArrayList<AutomovelVO>();	
+		automoveis = autoBO.listarTodos();
+		for (AutomovelVO aut : automoveis){
+			System.out.println("Os automoveis aqui tropa são: " + aut.getPlaca());
+		}
 	}
 }
