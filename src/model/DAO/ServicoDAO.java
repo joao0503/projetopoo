@@ -152,15 +152,16 @@ public class ServicoDAO extends BaseDAOImpl<ServicoVO> {
                     peca.setPreco(rs.getDouble("preco"));
                     peca.setPecaId(rs.getLong("peca_id"));
 
-                	ServicoVO serv = new ServicoVO();
-                	serv.setNome(rs.getString("nome"));
-                	serv.setValor(rs.getInt("valor"));
-                	serv.setStatus(rs.getInt("status"));
-                	serv.setPeca(peca);
-                	serv.setFuncionarioId(rs.getLong("funcionario_id"));
-                	serv.setClienteId(rs.getLong("cliente_id"));
-                	serv.setServicoId(rs.getLong("servico_id"));
-                	servicos.add(serv);
+                    ServicoVO servico = new ServicoVO();
+                    servico.setNome(rs.getString("nome"));
+                    servico.setValor(rs.getInt("valor"));
+                    servico.setStatus(rs.getInt("status"));
+                    servico.setPeca(peca);
+                    servico.setDataInicio("data_inicio");
+                    servico.setDataFim("data_fim");
+                    servico.setFuncionarioId(rs.getLong("funcionario_id"));
+                    servico.setClienteId(rs.getLong("cliente_id"));
+                    servico.setServicoId(rs.getLong("servico_id"));
             }
             return servicos;
         } catch (SQLException e) {
