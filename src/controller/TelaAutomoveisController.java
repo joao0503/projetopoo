@@ -20,13 +20,13 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import model.BO.AutomovelBO;
 import model.VO.AutomovelVO;
-import model.VO.ClienteVO;
 import view.Telas;
 
 public class TelaAutomoveisController extends TelaPrincipalController implements Initializable{
-    @FXML private TextField SearchBar;
+    @FXML private TextField searchBar;
     @FXML private TableView<AutomovelVO> tabelaAutomoveis;
 
     @FXML private TableColumn<AutomovelVO, Long> id;
@@ -52,7 +52,7 @@ public class TelaAutomoveisController extends TelaPrincipalController implements
         colunaPlaca.setCellValueFactory(new PropertyValueFactory<>("placa"));
         colunaCor.setCellValueFactory(new PropertyValueFactory<>("cor"));
         colunaQuilometragem.setCellValueFactory(new PropertyValueFactory<>("quilometragem"));
-        colunaProprietario.setCellValueFactory(new PropertyValueFactory<>("cliente")); // falta selecionar só o nome
+        colunaProprietario.setCellValueFactory(new PropertyValueFactory<>("cliente"));
         List<AutomovelVO> automoveis = new ArrayList<>();
 
         try {
@@ -101,6 +101,32 @@ public class TelaAutomoveisController extends TelaPrincipalController implements
             }catch (Exception e){
                 e.printStackTrace();
             }
+        }
+    }
+
+    @FXML
+    private void filtrar(KeyEvent event){
+        String busca = searchBar.getText().toLowerCase(); // se quiser case sensitive, tirar lowercase
+        if (busca.isEmpty()){
+            tabelaAutomoveis.setItems(lista);
+        }
+        else{
+            List<AutomovelVO> resultados = new ArrayList<>();
+
+            for (AutomovelVO automovel : lista){
+                if (String.valueOf(automovel.getAutomovelId()).contains(busca)
+                    ||automovel.getMarca().toLowerCase().contains(busca)
+                    ||automovel.getCor().toLowerCase().contains(busca)
+                    ||automovel.getPlaca().toLowerCase().contains(busca)
+                    ||automovel.getCliente().getNome().toLowerCase().contains(busca)
+                    ||String.valueOf(automovel.getAnoDoModelo()).contains(busca)){
+                        resultados.add(automovel);
+                }
+            }
+
+            ObservableList<AutomovelVO> resultadosObservable = FXCollections.observableArrayList();
+            resultadosObservable.addAll(resultados);
+            tabelaAutomoveis.setItems(resultadosObservable);
         }
     }
 }

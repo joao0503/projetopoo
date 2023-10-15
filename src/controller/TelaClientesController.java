@@ -3,6 +3,7 @@ package controller;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+
 import java.util.ResourceBundle;
 
 import exception.InserirException;
@@ -13,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import model.BO.ClienteBO;
 import model.VO.ClienteVO;
 import view.Telas;
@@ -111,4 +113,55 @@ public class TelaClientesController extends TelaPrincipalController implements I
         }
         Telas.telaClientes();
     }
+
+    @FXML
+    private void filtrar(KeyEvent event){
+        String busca = searchBar.getText().toLowerCase(); // se quiser case sensitive, tirar lowercase
+
+        if (busca.isEmpty()){
+            tabelaClientes.setItems(lista);
+        }
+        else{
+            List<ClienteVO> resultados = new ArrayList<>();
+
+            for (ClienteVO cliente : lista){
+                if (String.valueOf(cliente.getPessoaId()).contains(busca)
+                    || cliente.getNome().toLowerCase().contains(busca)
+                    || cliente.getEndereco().toLowerCase().contains(busca)
+                    || cliente.getCpf().contains(busca)){
+                        resultados.add(cliente);
+                }
+            }
+
+            ObservableList<ClienteVO> resultadosObservable = FXCollections.observableArrayList();
+            resultadosObservable.addAll(resultados);
+            tabelaClientes.setItems(resultadosObservable);
+        }
+    }
 }
+/*
+ private void onSearchKeyReleased(KeyEvent event) {
+        String searchTerm = searchTextField.getText().toLowerCase();
+
+        if (searchTerm.isEmpty()) {
+            // Campo de pesquisa vazio, exiba todos os dados originais
+            tableClientes.setItems(allClientes);
+        } else {
+            // Realize a pesquisa e atualize a TableView com os resultados
+            List<Cliente> resultados = new ArrayList<>();
+
+            for (Cliente cliente : allClientes) {
+                if (String.valueOf(cliente.getId()).contains(searchTerm)
+                        || cliente.getNome().toLowerCase().contains(searchTerm)
+                        || cliente.getCpf().toLowerCase().contains(searchTerm)) {
+                    resultados.add(cliente);
+                }
+            }
+
+            ObservableList<Cliente> resultadosObservable = FXCollections.observableArrayList();
+            resultadosObservable.addAll(resultados);
+
+            tableClientes.setItems(resultadosObservable);
+        }
+    }
+ */
