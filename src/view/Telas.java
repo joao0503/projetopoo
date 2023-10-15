@@ -1,5 +1,6 @@
 package view;
 
+import controller.InfoAutomovelController;
 import controller.InfoClienteController;
 import controller.InfoPecaController;
 import javafx.application.Application;
@@ -7,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import model.VO.AutomovelVO;
 import model.VO.ClienteVO;
 import model.VO.PecaVO;
 import model.VO.UsuarioVO;
@@ -119,6 +121,18 @@ public class Telas extends Application {
 		cena.getWindow().centerOnScreen();
 	}
 	
+	public static void telaEditarAutomovel(AutomovelVO automovel) throws Exception{
+		FXMLLoader loader = new FXMLLoader(Telas.class.getResource("VE/InfoAutomovel.fxml"));
+		Parent root = loader.load();
+
+		InfoAutomovelController controller = loader.getController();
+		controller.setAutomovel(automovel);
+
+		Scene cena = new Scene(root);
+		primaryStage.setScene(cena);
+		cena.getWindow().centerOnScreen();
+	}
+
 	public static void telaServicos() throws Exception {
 		Parent root = FXMLLoader.load(Telas.class.getResource("VE/TelaServicos.fxml"));
 		

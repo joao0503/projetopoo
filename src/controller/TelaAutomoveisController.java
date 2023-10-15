@@ -51,7 +51,7 @@ public class TelaAutomoveisController extends TelaPrincipalController implements
         colunaPlaca.setCellValueFactory(new PropertyValueFactory<>("placa"));
         colunaCor.setCellValueFactory(new PropertyValueFactory<>("cor"));
         colunaQuilometragem.setCellValueFactory(new PropertyValueFactory<>("quilometragem"));
-        colunaProprietario.setCellValueFactory(new PropertyValueFactory<>("proprietario"));
+        colunaProprietario.setCellValueFactory(new PropertyValueFactory<>("cliente"));
         List<AutomovelVO> automoveis = new ArrayList<>();
 
         try {
@@ -93,6 +93,13 @@ public class TelaAutomoveisController extends TelaPrincipalController implements
     }
 
     public void infoAutomovel(ActionEvent event){
-        
+        AutomovelVO automovel = tabelaAutomoveis.getSelectionModel().getSelectedItem();
+        if (automovel != null){
+            try{
+                Telas.telaEditarAutomovel(automovel);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
     }
 }
