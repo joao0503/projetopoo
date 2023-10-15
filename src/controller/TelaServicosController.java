@@ -16,7 +16,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.BO.ServicoBO;
-import model.VO.ClienteVO;
 import model.VO.ServicoVO;
 import view.Telas;
 
@@ -40,7 +39,19 @@ public class TelaServicosController extends TelaPrincipalController implements I
         colunaDescricao.setCellValueFactory(new PropertyValueFactory<>("nome"));
         colunaValor.setCellValueFactory(new PropertyValueFactory<>("valor"));
         List<ServicoVO> servicos = new ArrayList<>();
-
+        
+        try {
+            servicos = servicoBO.listarTodos();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (servicos != null) {
+            lista.addAll(servicos);
+            tabelaServicos.setItems(lista);
+            todos.addAll(servicos);
+        } else {
+            System.out.println("Deu erro confia.");
+        }
     }
 
     public void detalharServico(ActionEvent event){
