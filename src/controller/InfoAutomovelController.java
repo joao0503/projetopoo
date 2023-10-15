@@ -10,8 +10,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonBar.ButtonData;
+import model.BO.AutomovelBO;
 import model.VO.AutomovelVO;
 import model.VO.ServicoVO;
+import view.Telas;
 
 public class InfoAutomovelController {
     @FXML private TextField campoMarca;
@@ -65,7 +67,34 @@ public class InfoAutomovelController {
     }
 
     public void atualizarAutomovel() throws Exception{
+        if(automovel != null){
 
+            String marcaText = campoMarca.getText();
+            String anoText = campoAno.getText();
+            String corText = campoCor.getText();
+            String quilometragemText = campoQuilometragem.getText();
+            String placaText = campoPlaca.getText();
+
+            try{
+                automovel.setMarca(marcaText);
+                automovel.setAnoDoModelo(Integer.parseInt(anoText));
+                automovel.setCor(corText);
+                automovel.setQuilometragem(Integer.parseInt(quilometragemText));
+                automovel.setPlaca(placaText);
+
+                AutomovelBO autoBO = new AutomovelBO();
+                autoBO.atualizar(automovel);
+                Alert alert = new Alert(AlertType.INFORMATION);
+                alert.setTitle("Sucesso");
+                alert.setContentText("O automovel foi atualizado com sucesso.");
+                ButtonType ok = new ButtonType("OK", ButtonData.OK_DONE);
+                alert.getButtonTypes().setAll(ok);
+                alert.showAndWait();
+                Telas.telaAutomoveis();
+            }  catch (Exception e){
+                e.printStackTrace();
+            }
+        }
     }
     
     public void novoServico(ActionEvent event){
