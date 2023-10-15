@@ -97,7 +97,7 @@ public class ServicoDAO extends BaseDAOImpl<ServicoVO> {
         }
     }
 
-    
+	
     @Override
     public ServicoVO buscar(ServicoVO serv) {
         Connection con = getConnection();
@@ -116,7 +116,8 @@ public class ServicoDAO extends BaseDAOImpl<ServicoVO> {
                 peca.setPecaId(rs.getLong("peca_id"));
 
             	ServicoVO servico = new ServicoVO();
-            	servico.setNome(rs.getString("nome"));
+            	servico.setNome(rs.getString("nome_servico"));
+            	servico.setDescricao(rs.getString("descricao"));
             	servico.setValor(rs.getInt("valor"));
             	servico.setStatus(rs.getInt("status"));
             	servico.setPeca(peca);
@@ -124,6 +125,7 @@ public class ServicoDAO extends BaseDAOImpl<ServicoVO> {
             	servico.setDataFim("data_fim");
             	servico.setFuncionarioId(rs.getLong("funcionario_id"));
             	servico.setClienteId(rs.getLong("cliente_id"));
+            	servico.setAutomovelId(rs.getLong("automovel_id"));
             	servico.setServicoId(rs.getLong("servico_id"));
                 return servico;
             }
@@ -139,28 +141,32 @@ public class ServicoDAO extends BaseDAOImpl<ServicoVO> {
     public List<ServicoVO> listar() {
         Connection con = getConnection();
         //String sql = "select * from servicos union select * from tb_pecas";
-        String sql = "select * from servicos inner join pecas";
+        String sql = "select * from servicos inner join pecas on servicos.peca_id = pecas.peca_id";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             List<ServicoVO> servicos = new ArrayList<ServicoVO>();
             while (rs.next()) {
-                    PecaVO peca = new PecaVO();
-                    peca.setNome(rs.getString("nome"));
-                    peca.setQuantidadePeca(rs.getInt("quantidade_peca"));
-                    peca.setFabricante(rs.getString("fabricante"));
-                    peca.setPreco(rs.getDouble("preco"));
-                    peca.setPecaId(rs.getLong("peca_id"));
+                PecaVO peca = new PecaVO();
+                peca.setNome(rs.getString("nome"));
+                peca.setQuantidadePeca(rs.getInt("quantidade_peca"));
+                peca.setFabricante(rs.getString("fabricante"));
+                peca.setPreco(rs.getDouble("preco"));
+                peca.setPecaId(rs.getLong("peca_id"));
 
-                	ServicoVO serv = new ServicoVO();
-                	serv.setNome(rs.getString("nome"));
-                	serv.setValor(rs.getInt("valor"));
-                	serv.setStatus(rs.getInt("status"));
-                	serv.setPeca(peca);
-                	serv.setFuncionarioId(rs.getLong("funcionario_id"));
-                	serv.setClienteId(rs.getLong("cliente_id"));
-                	serv.setServicoId(rs.getLong("servico_id"));
-                	servicos.add(serv);
+            	ServicoVO servico = new ServicoVO();
+            	servico.setNome(rs.getString("nome_servico"));
+            	servico.setDescricao(rs.getString("descricao"));
+            	servico.setValor(rs.getInt("valor"));
+            	servico.setStatus(rs.getInt("status"));
+            	servico.setPeca(peca);
+            	servico.setDataInicio("data_inicio");
+            	servico.setDataFim("data_fim");
+            	servico.setFuncionarioId(rs.getLong("funcionario_id"));
+            	servico.setClienteId(rs.getLong("cliente_id"));
+            	servico.setAutomovelId(rs.getLong("automovel_id"));
+            	servico.setServicoId(rs.getLong("servico_id"));
+            	servicos.add(servico);
             }
             return servicos;
         } catch (SQLException e) {

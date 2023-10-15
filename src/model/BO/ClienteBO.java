@@ -34,6 +34,7 @@ public class ClienteBO extends PessoaBO<ClienteVO> {
 
 	@Override
 	public void remover(ClienteVO vo) throws InserirException {
+		super.remover(vo);
 		try {
 			// ao buscar com pessoaDAO, o vo que
 			ClienteVO cliente = new ClienteVO();

@@ -5,26 +5,16 @@ import java.util.List;
 
 import exception.InserirException;
 import exception.NaoEncontradoException;
-import model.BO.AutomovelBO;
-import model.BO.ClienteBO;
-import model.BO.PessoaBO;
 import model.BO.ServicoBO;
-import model.BO.UsuarioBO;
-import model.DAO.PecaDAO;
-import model.VO.AutomovelVO;
-import model.VO.ClienteVO;
-import model.VO.FuncionarioVO;
 import model.VO.PecaVO;
-import model.VO.PessoaVO;
 import model.VO.ServicoVO;
-import model.VO.UsuarioVO;
 
 public class Oficina {
 
 	public static void main(String[] args) throws NaoEncontradoException, InserirException {
 		System.out.println("Oficina mecânica de Sr. Zezé");
 		
-		PecaVO pe = new PecaVO("Motor", 5, "Ford", 1200.52, 0L);
+		/*PecaVO pe = new PecaVO("Motor", 5, "Ford", 1200.52, 0L);
 		PecaDAO pdao = new PecaDAO();
 		pdao.inserir(pe);
 		
@@ -154,7 +144,7 @@ public class Oficina {
     	}
     	
     	// Vou testar o ServicoBO cadastrar
-    	PecaVO peca = new PecaVO();
+    	/*PecaVO peca = new PecaVO();
     	peca.setPecaId((long) 2);
     	ServicoVO servico = new ServicoVO();
     	// estou mandando a data com sting vazia porque o setter vai verificar se é vazio
@@ -176,9 +166,9 @@ public class Oficina {
     	//servico.getPeca().setPecaId((long) 1);
     	
     	ServicoBO servBO = new ServicoBO();
-    	servBO.cadastrar(servico);
+    	servBO.cadastrar(servico);*/
     	
-    	servico.setServicoId((long) 3);
+    	/*servico.setServicoId((long) 3);
     	servico.setNome("Nome da pecinha alteradaaa aa a");
     	servBO.atualizar(servico);
     	
@@ -186,6 +176,21 @@ public class Oficina {
     	servBO.remover(servico);
     	
     	servico.setServicoId((long) 3);
-    	servBO.finalizarServico(servico);
+    	servBO.finalizarServico(servico);*/
+    	
+    	ServicoBO servBO = new ServicoBO();
+    	List<ServicoVO> servicos = new ArrayList<ServicoVO>();
+    	servicos = servBO.listarTodos();
+    	for(ServicoVO se : servicos) {
+    		System.out.println("Nomeee" + se.getNome());
+    	}
+    	
+    	ServicoVO servv = new ServicoVO();
+    	PecaVO peeca = new PecaVO();
+    	peeca.setPecaId((long) 1);
+    	servv.setPeca(peeca);
+    	servv = servBO.buscarPorId(servv);
+    	System.out.println("\nServiço buscado: \n" + servv.getNome() + "\n" 
+    	+ servv.getPeca().getNome());
 	}
 }

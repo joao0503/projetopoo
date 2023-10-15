@@ -103,7 +103,12 @@ public class ServicoBO implements BaseBO<ServicoVO> {
 		try {
 			List<ServicoVO> servicos = new ArrayList<ServicoVO>();
 			servicos = servDAO.listar();
-			return servicos;
+			if(servicos != null) {
+				return servicos;
+			} else {
+				System.out.println("Os serviços estão f");
+			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
