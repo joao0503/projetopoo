@@ -8,7 +8,7 @@ import exception.NaoEncontradoException;
 
 public interface BaseBO<VO> {
 	public void cadastrar(VO vo) throws InserirException;
-	public void remover(VO vo) throws InserirException, NaoEncontradoException;
+	public void remover(VO vo) throws InserirException;
 	public void atualizar(VO vo) throws InserirException;
 	public VO buscarPorId(VO vo) throws NaoEncontradoException;
 	//public List<VO> listarTodos() throws SQLException;

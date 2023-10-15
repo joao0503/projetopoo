@@ -29,7 +29,7 @@ public class PecaBO implements BaseBO<PecaVO>{
     }
 
     @Override
-    public void remover(PecaVO vo) throws NaoEncontradoException {
+    public void remover(PecaVO vo) throws InserirException {
         try {
             PecaVO peca = new PecaVO();
             peca = pecaDAO.buscar(vo);

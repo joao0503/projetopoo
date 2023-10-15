@@ -1,10 +1,11 @@
 package model.DAO;
 
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.List;
 
 public interface BaseDAO<VO> {
-	public void inserir(VO entity) throws SQLException;
+	public void inserir(VO entity) throws SQLException, ParseException;
 	public void deletar(VO entity) throws SQLException;
 	public void alterar(VO entity) throws SQLException;
 	public VO buscar(VO entity) throws SQLException;

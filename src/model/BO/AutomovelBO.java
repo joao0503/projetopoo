@@ -70,16 +70,26 @@ public class AutomovelBO implements BaseBO<AutomovelVO>{
 
 	@Override
 	public AutomovelVO buscarPorId(AutomovelVO vo) throws NaoEncontradoException {
-		AutomovelVO automovel = new AutomovelVO();
-		automovel = automovelDAO.buscar(vo);
-		return automovel;
+		try {
+			AutomovelVO automovel = new AutomovelVO();
+			automovel = automovelDAO.buscar(vo);
+			return automovel;
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	@Override
 	public List<AutomovelVO> listarTodos() {
-		List<AutomovelVO> automoveis = new ArrayList<AutomovelVO>();
-		automoveis = automovelDAO.listar();
-		return automoveis;
+		try {
+			List<AutomovelVO> automoveis = new ArrayList<AutomovelVO>();
+			automoveis = automovelDAO.listar();
+			return automoveis;
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 	
 }

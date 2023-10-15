@@ -70,12 +70,12 @@ public class PecaDAO extends BaseDAOImpl<PecaVO>{
     }
 
     @Override
-    public PecaVO buscar(PecaVO entity) {
+    public PecaVO buscar(PecaVO vo) {
         Connection con = getConnection();
         String sql = "select * from pecas where peca_id = ?";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setLong(1, entity.getPecaId());
+            ps.setLong(1, vo.getPecaId());
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 PecaVO peca = new PecaVO();
