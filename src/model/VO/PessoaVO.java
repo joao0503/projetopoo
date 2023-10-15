@@ -17,7 +17,11 @@ public class PessoaVO {
 	}
 	public PessoaVO() {}
 	
-	
+	@Override
+	public String toString(){
+		return getNome();
+	}
+
 	public String getNome() {
 		return nome;
 	}
@@ -67,9 +71,10 @@ public class PessoaVO {
 			this.pessoaId = pessoaId;
 	}
 	
-	@Override
-	public String toString() {
-		return "Nome: " + getNome() + "\nCpf: " + getCpf() + "\nEndereco: " + getEndereco() 
-		+ "\nNumero de Celular: " + getNumeroCelular() + "\nPessoaId: " + getPessoaId();
-	}
+	
+	// @Override
+	// public String toString() {
+	// 	return "Nome: " + getNome() + "\nCpf: " + getCpf() + "\nEndereco: " + getEndereco() 
+	// 	+ "\nNumero de Celular: " + getNumeroCelular() + "\nPessoaId: " + getPessoaId();
+	// }
 }

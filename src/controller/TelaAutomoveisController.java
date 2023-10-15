@@ -22,6 +22,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.BO.AutomovelBO;
 import model.VO.AutomovelVO;
+import model.VO.ClienteVO;
 import view.Telas;
 
 public class TelaAutomoveisController extends TelaPrincipalController implements Initializable{
@@ -51,7 +52,7 @@ public class TelaAutomoveisController extends TelaPrincipalController implements
         colunaPlaca.setCellValueFactory(new PropertyValueFactory<>("placa"));
         colunaCor.setCellValueFactory(new PropertyValueFactory<>("cor"));
         colunaQuilometragem.setCellValueFactory(new PropertyValueFactory<>("quilometragem"));
-        colunaProprietario.setCellValueFactory(new PropertyValueFactory<>("cliente"));
+        colunaProprietario.setCellValueFactory(new PropertyValueFactory<>("cliente")); // falta selecionar só o nome
         List<AutomovelVO> automoveis = new ArrayList<>();
 
         try {
