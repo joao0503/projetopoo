@@ -3,6 +3,7 @@ package model.DAO;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.List;
 
 public abstract class BaseDAOImpl<VO> implements BaseDAO<VO>{
@@ -36,7 +37,7 @@ public abstract class BaseDAOImpl<VO> implements BaseDAO<VO>{
 		
 	}
 	
-	public abstract void inserir(VO vo);
+	public abstract void inserir(VO vo) throws ParseException;
 	public abstract void deletar(VO vo);
 	public abstract void alterar(VO vo);
 	public abstract VO buscar(VO vo);

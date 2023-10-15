@@ -1,53 +1,133 @@
 package model.BO;
 
-import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import exception.InserirException;
 import exception.NaoEncontradoException;
+import model.DAO.PecaDAO;
 import model.DAO.ServicoDAO;
+import model.VO.PecaVO;
 import model.VO.ServicoVO;
 
-public class ServicoBO implements BaseBO<ServicoVO>{
+public class ServicoBO implements BaseBO<ServicoVO> {
 	static private ServicoDAO servDAO = new ServicoDAO();
-	
+	static private PecaDAO pecDAO = new PecaDAO();
+
 	@Override
 	public void cadastrar(ServicoVO vo) throws InserirException {
-		ServicoVO servico = new ServicoVO();
-		servico = servDAO.buscar(servico);
-		if(servico == null) {
-			servDAO.inserir(vo);
-		} else {
-			throw new InserirException("Não foi possível cadastrar o serviço porque ele já existe"
-					+ "no banco de dados");
+
+		System.out.println("Nome do serviço no começo do servicobo" + vo.getNome());
+		System.out.println("Valor" + vo.getValor());
+		// ServicoVO servico = new ServicoVO();
+		// servico = servDAO.buscar(servico);
+		try {
+			PecaVO pecaa = new PecaVO();
+			pecaa.setPecaId(vo.getPeca().getPecaId());
+			System.out.println("\nPeca so 1: " + pecaa.getPecaId());
+
+			pecaa = pecDAO.buscar(pecaa);
+			System.out.println("\nPeca so 2: " + pecaa.getPecaId());
+			System.out.println("\n Qtd da peca: " + pecaa.getQuantidadePeca());
+			if (pecaa.getQuantidadePeca() > 0) {
+				System.out.println("\nPeca so 3: " + pecaa.getPecaId());
+				pecaa.setQuantidadePeca(pecaa.getQuantidadePeca() - 1);
+				pecDAO.alterar(pecaa);
+				try {
+					System.out.println("Nome do serviço" + vo.getNome());
+					servDAO.inserir(vo);
+					System.out.println("Cadastrou o serviço meu consagrado");
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+
+			} else {
+				throw new InserirException("Não foi possível cadastrar o serviço porque não tem"
+						+ "a peça necessária para realizar o serviço");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
+
 	@Override
-	public void remover(ServicoVO vo) throws InserirException, NaoEncontradoException {
-		// TODO Auto-generated method stub
-		
+	public void remover(ServicoVO vo) throws InserirException {
+		try {
+			ServicoVO servico = new ServicoVO();
+			servico = servDAO.buscar(vo);
+			if (servico != null) {
+				servDAO.deletar(vo);
+			} else {
+				throw new NaoEncontradoException(
+						"Não foi possível deletar o serviço porque ele não " + "existe no banco de dados");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
+
 	@Override
 	public void atualizar(ServicoVO vo) throws InserirException {
-		// TODO Auto-generated method stub
-		
+		try {
+			ServicoVO servico = new ServicoVO();
+			servico = servDAO.buscar(vo);
+			if (servico != null) {
+				servDAO.alterar(vo);
+			} else {
+				throw new NaoEncontradoException(
+						"Não foi possível alterar o serviço porque ele não " + "existe no banco de dados");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
+
 	@Override
 	public ServicoVO buscarPorId(ServicoVO vo) throws NaoEncontradoException {
-		// TODO Auto-generated method stub
+		try {
+			ServicoVO servico = new ServicoVO();
+			servico = servDAO.buscar(vo);
+			if(servico != null) {
+				return servico;
+			} else {
+				throw new NaoEncontradoException("Serviço não encontrado");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return null;
 	}
+
 	@Override
-	public List<?> listarTodos() throws SQLException {
-		// TODO Auto-generated method stub
+	public List<ServicoVO> listarTodos() {
+		try {
+			List<ServicoVO> servicos = new ArrayList<ServicoVO>();
+			servicos = servDAO.listar();
+			return servicos;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return null;
 	}
-	// pensar se vai ter status 1,2 e 3
-	public void iniciarServico(ServicoVO serv) {
-		// verificar se tem peça disponivel no banco de dados
-	}
-	public void finalizarServico(ServicoVO serv) throws SQLException {
-			serv.setStatus(2);
-			servDAO.alterar(serv);
+
+
+	public void finalizarServico(ServicoVO vo) throws InserirException, NaoEncontradoException {
+		try {
+			ServicoVO servico = new ServicoVO();
+			servico = servDAO.buscar(vo);
+			if(servico != null) {
+				if(vo.getStatus() == 1) {
+					vo.setStatus(2);
+					servDAO.finalizarServico(vo);
+				} else {
+					throw new InserirException("Não foi possível finalizar o serviço porque esse"
+							+ "serviço não existe");
+				}
+			} else {
+				throw new NaoEncontradoException("Serviço não encontrado");
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

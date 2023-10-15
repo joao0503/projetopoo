@@ -153,20 +153,39 @@ public class Oficina {
     		System.out.println("Modelo: " + cli.getModelo());
     	}
     	
-    	/* Vou testar o ServicoBO cadastrar
-    	 * PecaVO peca = new PecaVO();
-    	peca.setPecaId((long) 1);
+    	// Vou testar o ServicoBO cadastrar
+    	PecaVO peca = new PecaVO();
+    	peca.setPecaId((long) 2);
     	ServicoVO servico = new ServicoVO();
-    	servico.setPeca(peca);
-    	servico.setDataInicio("");
-    	System.out.println(servico.getDataInicio());
+    	// estou mandando a data com sting vazia porque o setter vai verificar se é vazio
+    	// caso seja ele vai pegar a data atual e settar
     	
+    	servico.setNome("Troca da embragemk");
+    	servico.setDescricao("Melhor embreagem");
+    	servico.setValor(585.15);
+    	servico.setStatus(1);
+    	servico.setPeca(peca);
+    	//servico.setDataInicio("");
+    	//System.out.println(servico.getDataInicio());
+    	//servico.setDataFim(null);
+    	//System.out.println(servico.getDataFim());
     	servico.setFuncionarioId((long) 2);
     	servico.setClienteId((long) 2);
     	servico.setAutomovelId((long) 1);
-    	servico.setServicoId(null);
+    	//servico.setServicoId(null);
+    	//servico.getPeca().setPecaId((long) 1);
     	
     	ServicoBO servBO = new ServicoBO();
-    	servBO.cadastrar(servico);*/
+    	servBO.cadastrar(servico);
+    	
+    	servico.setServicoId((long) 3);
+    	servico.setNome("Nome da pecinha alteradaaa aa a");
+    	servBO.atualizar(servico);
+    	
+    	servico.setServicoId((long) 1);
+    	servBO.remover(servico);
+    	
+    	servico.setServicoId((long) 3);
+    	servBO.finalizarServico(servico);
 	}
 }
