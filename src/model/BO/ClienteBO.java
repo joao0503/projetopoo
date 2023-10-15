@@ -41,6 +41,7 @@ public class ClienteBO extends PessoaBO<ClienteVO> {
 			cliente = cliDAO.buscar(vo);
 			if (cliente != null) {
 				cliDAO.deletar(vo);
+				super.remover(vo);
 			} else {
 				throw new InserirException("Não foi possível deletar o cliente porque" 
 			+ "não existe no banco de dados");
