@@ -10,11 +10,11 @@ public class AutomovelVO {
 	private String placa;
 	private Integer quilometragem;
 	private Long automovelId;
-	private Long clienteId;
+	private ClienteVO cliente;
 	
 	public AutomovelVO(String marca, String modelo, Integer anoDoModelo, String cor, 
-			String placa, Integer quilometragem, ClienteVO proprietario, 
-			Long id, Long automovelId, Long clienteId) {
+			String placa, Integer quilometragem, ClienteVO cliente, 
+			Long id, Long automovelId) {
 		setMarca(marca);
 		setCor(cor);
 		setPlaca(placa);
@@ -23,7 +23,7 @@ public class AutomovelVO {
 		//setProprietario(proprietario);
 		//setOrcamentoTotal(orcamentoTotal);
 		setAutomovelId(automovelId);
-		setClienteId(clienteId);
+		setCliente(cliente);
 		
 	}
 	
@@ -107,12 +107,12 @@ public class AutomovelVO {
 	}
 	
 
-	public Long getClienteId() {
-		return clienteId;
+	public ClienteVO getCliente() {
+		return cliente;
 	}
-	public void setClienteId(Long clienteId) {
-		if(clienteId > 0) {
-			this.clienteId = clienteId;
+	public void setCliente(ClienteVO cliente) {
+		if(cliente != null) {
+			this.cliente = cliente;
 		}
 	}
 	
