@@ -97,6 +97,8 @@ public class InfoAutomovelController {
         }
     }
     
+    // inicializar tabela de serviços associada ao automovel
+    
     public void novoServico(ActionEvent event){
         // talvez precise mudar de tela dnv aqui
     }

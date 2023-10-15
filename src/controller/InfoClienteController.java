@@ -101,6 +101,8 @@ public class InfoClienteController {
         }
     }
 
+    // inicializar tabela de automoveis do cliente
+
     public void editarAutomovel() {
 
     }
