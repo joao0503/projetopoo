@@ -42,7 +42,7 @@ public class AutomovelDAO extends BaseDAOImpl<AutomovelVO>{
     @Override
     public void deletar(AutomovelVO vo) {
         Connection con = getConnection();
-        String sql = "delete from automoveis where id = ?";
+        String sql = "delete from automoveis where automovel_id = ?";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setLong(1, vo.getAutomovelId());

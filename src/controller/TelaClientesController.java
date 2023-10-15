@@ -104,11 +104,11 @@ public class TelaClientesController extends TelaPrincipalController implements I
                 ButtonType ok = new ButtonType("OK", ButtonData.OK_DONE);
                 alert.getButtonTypes().setAll(ok);
                 alert.showAndWait();
-                Telas.telaClientes();
+                
             }
         } catch (InserirException iE){
             iE.printStackTrace();
         }
-        
+        Telas.telaClientes();
     }
 }
