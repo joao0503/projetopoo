@@ -1,18 +1,30 @@
 package controller;
 
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import model.BO.ServicoBO;
+import model.VO.ClienteVO;
 import model.VO.ServicoVO;
 import view.Telas;
 
-public class TelaServicosController extends TelaPrincipalController{
-
+public class TelaServicosController extends TelaPrincipalController implements Initializable{
+    public ServicoBO servicoBO = new ServicoBO();
     @FXML private TextField searchBar;
     @FXML private TableView<ServicoVO> tabelaServicos;
+    @FXML private TableColumn<ServicoVO, Long> id;
     @FXML private TableColumn<ServicoVO, String> colunaDescricao;
     @FXML private TableColumn<ServicoVO, Double> colunaValor;
 
@@ -20,8 +32,19 @@ public class TelaServicosController extends TelaPrincipalController{
     @FXML private Button botaoExcluirServico;
     @FXML private Button botaoNovoServico;
 
+    ObservableList<ServicoVO> lista = FXCollections.observableArrayList();
+    ObservableList<ServicoVO> todos = FXCollections.observableArrayList();
+
+    public void initialize(URL location, ResourceBundle resources) {
+    	id.setCellValueFactory(new PropertyValueFactory<>("servicoId"));
+        colunaDescricao.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        colunaValor.setCellValueFactory(new PropertyValueFactory<>("valor"));
+        List<ServicoVO> servicos = new ArrayList<>();
+
+    }
+
     public void detalharServico(ActionEvent event){
-        System.out.println("buscou");
+        
     }
 
     public void excluirServico(ActionEvent event){
