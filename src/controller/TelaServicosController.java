@@ -16,7 +16,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.BO.ServicoBO;
-import model.VO.ClienteVO;
 import model.VO.ServicoVO;
 import view.Telas;
 
