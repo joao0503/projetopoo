@@ -79,8 +79,8 @@ public class TelaServicosController extends TelaPrincipalController implements I
 
             for (ServicoVO servico : lista){
                 if (String.valueOf(servico.getServicoId()).contains(busca)
-                    || servico.getNome().toLowerCase().contains(busca)
-                    || servico.getValor().toString().contains(busca)){
+                    || servico.getNome().toLowerCase().contains(busca)){
+                    //|| servico.getValor().toString().contains(busca)){
                         resultados.add(servico);
                 }
             }

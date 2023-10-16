@@ -115,11 +115,12 @@ public class TelaAutomoveisController extends TelaPrincipalController implements
 
             for (AutomovelVO automovel : lista){
                 if (String.valueOf(automovel.getAutomovelId()).contains(busca)
-                    ||automovel.getMarca().toLowerCase().contains(busca)
-                    ||automovel.getCor().toLowerCase().contains(busca)
+                    //||automovel.getMarca().toLowerCase().contains(busca)
+                    //||automovel.getCor().toLowerCase().contains(busca) 
                     ||automovel.getPlaca().toLowerCase().contains(busca)
-                    ||automovel.getCliente().getNome().toLowerCase().contains(busca)
-                    ||String.valueOf(automovel.getAnoDoModelo()).contains(busca)){
+                    ||automovel.getCliente().getNome().toLowerCase().contains(busca))
+                    //||String.valueOf(automovel.getAnoDoModelo()).contains(busca))
+                    {
                         resultados.add(automovel);
                 }
             }
