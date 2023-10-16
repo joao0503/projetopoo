@@ -114,9 +114,9 @@ public class TelaPecasController extends TelaPrincipalController implements Init
             for (PecaVO peca : lista){
                 if (String.valueOf(peca.getPecaId()).contains(busca)
                     || peca.getNome().toLowerCase().contains(busca)
-                    || peca.getFabricante().toLowerCase().contains(busca)
-                    || peca.getPreco().toString().contains(busca)
-                    || peca.getQuantidadePeca().toString().contains(busca)){
+                    || peca.getFabricante().toLowerCase().contains(busca)){
+                    //|| peca.getPreco().toString().contains(busca)
+                    //|| peca.getQuantidadePeca().toString().contains(busca)){
                         resultados.add(peca);
                 }
             }

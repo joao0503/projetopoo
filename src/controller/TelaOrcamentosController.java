@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import model.VO.OrcamentoVO;
 
 public class TelaOrcamentosController extends TelaPrincipalController{
@@ -23,5 +24,11 @@ public class TelaOrcamentosController extends TelaPrincipalController{
 
     public void infoOrcamento(ActionEvent event){
         
+    }
+
+    public void filtrar(KeyEvent event){
+        String busca = searchBar.getText().toLowerCase(); // se quiser case sensitive, tirar lowercase
+
+        // dependente do initializer, que depende do sql dessa tabela
     }
 }
