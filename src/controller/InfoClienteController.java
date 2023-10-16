@@ -1,20 +1,30 @@
 package controller;
 
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar.ButtonData;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.control.TreeTableColumn;
-import javafx.scene.control.TreeTableView;
+import model.BO.AutomovelBO;
 import model.BO.ClienteBO;
 import model.VO.AutomovelVO;
 import model.VO.ClienteVO;
 import view.Telas;
 
-public class InfoClienteController {
+public class InfoClienteController implements Initializable{
     @FXML
     private TextField campoNomeCliente;
     @FXML
@@ -23,18 +33,21 @@ public class InfoClienteController {
     private TextField campoCPF;
 
     @FXML
-    private TreeTableView<AutomovelVO> tabelaAutomoveis;
+    private TableView<AutomovelVO> tabelaAutomoveis;
+
 
     @FXML
-    private TreeTableColumn<AutomovelVO, String> colunaMarca;
+    private TableColumn<AutomovelVO, Long> id;
     @FXML
-    private TreeTableColumn<AutomovelVO, Integer> colunaAno;
+    private TableColumn<AutomovelVO, String> colunaMarca;
     @FXML
-    private TreeTableColumn<AutomovelVO, String> colunaPlaca;
+    private TableColumn<AutomovelVO, Integer> colunaAno;
     @FXML
-    private TreeTableColumn<AutomovelVO, String> colunaCor;
+    private TableColumn<AutomovelVO, String> colunaPlaca;
     @FXML
-    private TreeTableColumn<AutomovelVO, String> colunaQuilometragem;
+    private TableColumn<AutomovelVO, String> colunaCor;
+    @FXML
+    private TableColumn<AutomovelVO, String> colunaQuilometragem;
 
     @FXML
     private Button botaoEditarCliente;
@@ -46,11 +59,47 @@ public class InfoClienteController {
     private Button botaoNovoRegistro;
 
     private ClienteVO cliente = new ClienteVO();
+    public AutomovelBO automovelBO = new AutomovelBO();
 
+    ObservableList<AutomovelVO> lista = FXCollections.observableArrayList();
+    ObservableList<AutomovelVO> todos = FXCollections.observableArrayList();
+
+    /*
+     * Observações:
+     a função initialize é (aparentemente) carregada antes da setCliente
+     o cliente, portanto, é completamente nulo até chegar no setCliente
+     a tabela precisa do ID do cliente selecionado pra funcionar
+     */
+
+    @FXML
+    public void initialize(URL location, ResourceBundle resources){
+        colunaMarca.setCellValueFactory(new PropertyValueFactory<>("marca"));
+        colunaCor.setCellValueFactory(new PropertyValueFactory<>("cor"));
+        colunaAno.setCellValueFactory(new PropertyValueFactory<>("ano"));
+        colunaCor.setCellValueFactory(new PropertyValueFactory<>("cor"));
+        colunaPlaca.setCellValueFactory(new PropertyValueFactory<>("placa"));
+        colunaQuilometragem.setCellValueFactory(new PropertyValueFactory<>("quilometragem"));
+        List<AutomovelVO> automoveis = new ArrayList<>();
+
+        try{
+            automoveis = automovelBO.buscarPorCliente(cliente);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    
+        if (automoveis != null){
+            lista.addAll(automoveis);
+            tabelaAutomoveis.setItems(lista);
+            todos.addAll(automoveis);
+        }
+        else{
+            System.out.println("Ocorreu um problema ao popular a tabela");
+        }
+    }
     
     public void setCliente(ClienteVO cliente) {
         try {
-            this.cliente.setClienteId(cliente.getClienteId());
+            id.setCellValueFactory(new PropertyValueFactory<>("automovelId"));
             this.cliente.setNome(cliente.getNome());
             this.cliente.setEndereco(cliente.getEndereco());
             this.cliente.setCpf(cliente.getCpf());
@@ -100,8 +149,6 @@ public class InfoClienteController {
             }
         }
     }
-
-    // inicializar tabela de automoveis do cliente
 
     public void editarAutomovel() {
 

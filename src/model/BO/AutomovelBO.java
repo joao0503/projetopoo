@@ -8,6 +8,7 @@ import exception.InserirException;
 import exception.NaoEncontradoException;
 import model.DAO.AutomovelDAO;
 import model.VO.AutomovelVO;
+import model.VO.ClienteVO;
 
 public class AutomovelBO implements BaseBO<AutomovelVO>{
 	static private AutomovelDAO automovelDAO = new AutomovelDAO();
@@ -75,6 +76,17 @@ public class AutomovelBO implements BaseBO<AutomovelVO>{
 			automovel = automovelDAO.buscar(vo);
 			return automovel;
 		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public List<AutomovelVO> buscarPorCliente(ClienteVO cliente){
+		try{
+			List<AutomovelVO> automoveisDoCliente = new ArrayList<AutomovelVO>();
+			automoveisDoCliente = automovelDAO.listarAutomoveisPorProprietario(cliente);
+			return automoveisDoCliente;
+		} catch (Exception e){
 			e.printStackTrace();
 		}
 		return null;
