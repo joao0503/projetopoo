@@ -20,6 +20,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import model.BO.PecaBO;
 import model.VO.PecaVO;
 import view.Telas;
@@ -99,4 +100,31 @@ public class TelaPecasController extends TelaPrincipalController implements Init
         }
         Telas.telaPecas();
     }
+
+    @FXML
+    public void filtrar(KeyEvent event){
+         String busca = searchBar.getText().toLowerCase(); // se quiser case sensitive, tirar lowercase
+
+        if (busca.isEmpty()){
+            tabelaPecas.setItems(lista);
+        }
+        else{
+            List<PecaVO> resultados = new ArrayList<>();
+
+            for (PecaVO peca : lista){
+                if (String.valueOf(peca.getPecaId()).contains(busca)
+                    || peca.getNome().toLowerCase().contains(busca)
+                    || peca.getFabricante().toLowerCase().contains(busca)
+                    || peca.getPreco().toString().contains(busca)
+                    || peca.getQuantidadePeca().toString().contains(busca)){
+                        resultados.add(peca);
+                }
+            }
+
+            ObservableList<PecaVO> resultadosObservable = FXCollections.observableArrayList();
+            resultadosObservable.addAll(resultados);
+            tabelaPecas.setItems(resultadosObservable);
+        }
+    }
 }
+

@@ -2,13 +2,13 @@ package model.VO;
 
 public class PecaVO {
 	private String nome;
-	private int quantidadePeca;
+	private Integer quantidadePeca;
 	private String fabricante;
-	private double preco;
+	private Double preco;
 	private Long pecaId;
 	
-	public PecaVO(String nome, int quantidadePeca, String fabricante, 
-			double preco, Long pecaId) {
+	public PecaVO(String nome, Integer quantidadePeca, String fabricante, 
+			Double preco, Long pecaId) {
 		setNome(nome);
 		setQuantidadePeca(quantidadePeca);
 		setFabricante(fabricante);
@@ -29,11 +29,11 @@ public class PecaVO {
 		}
 	}
 	
-	public int getQuantidadePeca() {
+	public Integer getQuantidadePeca() {
 		return quantidadePeca;
 	}
 	
-	public void setQuantidadePeca(int quantidadePeca) {
+	public void setQuantidadePeca(Integer quantidadePeca) {
 		if(quantidadePeca > 0) {
 			this.quantidadePeca = quantidadePeca;
 		}
@@ -52,10 +52,11 @@ public class PecaVO {
 	}
 	
 	
-	public double getPreco() {
+	public Double getPreco() {
 		return preco;
 	}
-	public void setPreco(double preco) {
+
+	public void setPreco(Double preco) {
 		if(preco > 0) {
 			this.preco = preco;
 		} else {

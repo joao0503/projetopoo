@@ -117,7 +117,7 @@ public class ServicoDAO extends BaseDAOImpl<ServicoVO> {
 				ServicoVO servico = new ServicoVO();
 				servico.setNome(rs.getString("nome_servico"));
 				servico.setDescricao(rs.getString("descricao"));
-				servico.setValor(rs.getInt("valor"));
+				servico.setValor(rs.getDouble("valor"));
 				servico.setStatus(rs.getInt("status"));
 				servico.setPeca(peca);
 				servico.setDataInicio("data_inicio");
@@ -156,7 +156,7 @@ public class ServicoDAO extends BaseDAOImpl<ServicoVO> {
 				ServicoVO servico = new ServicoVO();
 				servico.setNome(rs.getString("nome_servico"));
 				servico.setDescricao(rs.getString("descricao"));
-				servico.setValor(rs.getInt("valor"));
+				servico.setValor(rs.getDouble("valor"));
 				servico.setStatus(rs.getInt("status"));
 				servico.setPeca(peca);
 				servico.setDataInicio("data_inicio");

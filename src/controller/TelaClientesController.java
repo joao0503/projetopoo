@@ -139,29 +139,3 @@ public class TelaClientesController extends TelaPrincipalController implements I
         }
     }
 }
-/*
- private void onSearchKeyReleased(KeyEvent event) {
-        String searchTerm = searchTextField.getText().toLowerCase();
-
-        if (searchTerm.isEmpty()) {
-            // Campo de pesquisa vazio, exiba todos os dados originais
-            tableClientes.setItems(allClientes);
-        } else {
-            // Realize a pesquisa e atualize a TableView com os resultados
-            List<Cliente> resultados = new ArrayList<>();
-
-            for (Cliente cliente : allClientes) {
-                if (String.valueOf(cliente.getId()).contains(searchTerm)
-                        || cliente.getNome().toLowerCase().contains(searchTerm)
-                        || cliente.getCpf().toLowerCase().contains(searchTerm)) {
-                    resultados.add(cliente);
-                }
-            }
-
-            ObservableList<Cliente> resultadosObservable = FXCollections.observableArrayList();
-            resultadosObservable.addAll(resultados);
-
-            tableClientes.setItems(resultadosObservable);
-        }
-    }
- */

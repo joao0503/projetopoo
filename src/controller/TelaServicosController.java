@@ -15,6 +15,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import model.BO.ServicoBO;
 import model.VO.ServicoVO;
 import view.Telas;
@@ -64,5 +65,29 @@ public class TelaServicosController extends TelaPrincipalController implements I
 
     public void addServico(ActionEvent event) throws Exception {
         Telas.telaAdicionarServico();
+    }
+
+    @FXML
+    public void filtrar(KeyEvent event){
+        String busca = searchBar.getText().toLowerCase(); // se quiser case sensitive, tirar lowercase
+
+        if (busca.isEmpty()){
+            tabelaServicos.setItems(lista);
+        }
+        else{
+            List<ServicoVO> resultados = new ArrayList<>();
+
+            for (ServicoVO servico : lista){
+                if (String.valueOf(servico.getServicoId()).contains(busca)
+                    || servico.getNome().toLowerCase().contains(busca)
+                    || servico.getValor().toString().contains(busca)){
+                        resultados.add(servico);
+                }
+            }
+
+            ObservableList<ServicoVO> resultadosObservable = FXCollections.observableArrayList();
+            resultadosObservable.addAll(resultados);
+            tabelaServicos.setItems(resultadosObservable);
+        }
     }
 }

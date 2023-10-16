@@ -90,7 +90,7 @@ public class OrcamentoDAO extends BaseDAOImpl<OrcamentoVO>{
 
             	ServicoVO servico = new ServicoVO();
                 servico.setNome(rs.getString("nome"));
-                servico.setValor(rs.getInt("valor"));
+                servico.setValor(rs.getDouble("valor"));
                 servico.setStatus(rs.getInt("status"));
                 servico.setPeca(peca);
                 servico.setFuncionarioId(rs.getLong("funcionario_id"));
@@ -132,7 +132,7 @@ public class OrcamentoDAO extends BaseDAOImpl<OrcamentoVO>{
 
             	ServicoVO servico = new ServicoVO();
                 servico.setNome(rs.getString("nome"));
-                servico.setValor(rs.getInt("valor"));
+                servico.setValor(rs.getDouble("valor"));
                 servico.setStatus(rs.getInt("status"));
                 servico.setPeca(peca);
                 servico.setFuncionarioId(rs.getLong("funcionario_id"));
@@ -175,7 +175,7 @@ public class OrcamentoDAO extends BaseDAOImpl<OrcamentoVO>{
 
             	ServicoVO servico = new ServicoVO();
                 servico.setNome(rs.getString("nome"));
-                servico.setValor(rs.getInt("valor"));
+                servico.setValor(rs.getDouble("valor"));
                 servico.setStatus(rs.getInt("status"));
                 servico.setPeca(peca);
                 servico.setFuncionarioId(rs.getLong("funcionario_id"));

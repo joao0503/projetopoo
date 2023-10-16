@@ -5,7 +5,7 @@ package model.VO;
 public class ServicoVO {
 	private String nome;
 	private String descricao;
-	private double valor;
+	private Double valor;
 	private int status;
 	private PecaVO peca;
 	private String dataInicio;
@@ -15,7 +15,7 @@ public class ServicoVO {
 	private Long automovelId;
 	private Long servicoId;
 
-	public ServicoVO(String nome, String descricao, double valor, int status, PecaVO peca, String dataInicio,
+	public ServicoVO(String nome, String descricao, Double valor, int status, PecaVO peca, String dataInicio,
 			String dataFim, Long funcionarioId, Long clienteId, Long servicoId) {
 		setNome(nome);
 		setDescricao(descricao);
@@ -52,11 +52,11 @@ public class ServicoVO {
 		this.descricao = descricao;
 	}
 
-	public double getValor() {
+	public Double getValor() {
 		return valor;
 	}
 
-	public void setValor(double valor) {
+	public void setValor(Double valor) {
 		if (valor > 0) {
 			this.valor = valor;
 		}
