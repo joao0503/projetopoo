@@ -104,19 +104,15 @@
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="botaoDetalhes" layoutX="832.0" layoutY="179.0" mnemonicParsing="false" onAction="#detalharServico" text="Detalhes">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Button>
-      <TableView fx:id="tabelaServicos" layoutX="216.0" layoutY="236.0" prefHeight="458.0" prefWidth="876.0">
+      <TableView fx:id="tabelaServicos" layoutX="26.0" layoutY="236.0" prefHeight="458.0" prefWidth="1066.0">
         <columns>
-          <TableColumn fx:id="id" prefWidth="50.0" text="ID"/>
-          <TableColumn fx:id="colunaDescricao" prefWidth="637.0" text="Descrição" />
-          <TableColumn fx:id="colunaValor" prefWidth="238.0" text="Valor" />
+          <TableColumn fx:id="id" prefWidth="50.0" text="ID" />
+          <TableColumn fx:id="colunaNome" prefWidth="324.0" text="Nome" />
+          <TableColumn fx:id="colunaValor" prefWidth="186.0" text="Valor" />
+            <TableColumn fx:id="colunaDescricao" prefWidth="505.0" text="Descrição" />
         </columns>
       </TableView>
-      <Button fx:id="botaoExcluirServico" layoutX="906.0" layoutY="179.0" mnemonicParsing="false" onAction="#excluirServico" text="Excluir">
+      <Button fx:id="botaoExcluirServico" layoutX="921.0" layoutY="179.0" mnemonicParsing="false" onAction="#excluirServico" text="Excluir">
          <font>
             <Font size="13.0" />
          </font>
