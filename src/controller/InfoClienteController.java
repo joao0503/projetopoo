@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -69,6 +70,7 @@ public class InfoClienteController implements Initializable{
      a função initialize é (aparentemente) carregada antes da setCliente
      o cliente, portanto, é completamente nulo até chegar no setCliente
      a tabela precisa do ID do cliente selecionado pra funcionar
+
      */
 
     @FXML
@@ -148,6 +150,10 @@ public class InfoClienteController implements Initializable{
                 e.printStackTrace();
             }
         }
+    }
+
+    public void voltarParaClientes(ActionEvent event) throws Exception{
+        Telas.telaClientes();
     }
 
     public void editarAutomovel() {
