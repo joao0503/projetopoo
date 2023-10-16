@@ -25,7 +25,7 @@ import model.VO.AutomovelVO;
 import model.VO.ClienteVO;
 import view.Telas;
 
-public class InfoClienteController{
+public class InfoClienteController implements Initializable{
     @FXML
     private TextField campoNomeCliente;
     @FXML
