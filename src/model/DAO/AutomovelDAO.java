@@ -220,7 +220,9 @@ public class AutomovelDAO extends BaseDAOImpl<AutomovelVO>{
                 automovel.setPlaca(rs.getString("placa"));
                 automovel.setQuilometragem(rs.getInt("quilometragem"));
                 automovel.setAutomovelId(rs.getLong("automovel_id"));
-                automovel.getCliente().setClienteId(rs.getLong("cliente_id"));
+                automovel.setCliente(cli);
+
+                //automovel.getCliente().setClienteId(rs.getLong("cliente_id"));
                 automoveis.add(automovel);
             }
         } catch (SQLException e) {

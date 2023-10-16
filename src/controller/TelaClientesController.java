@@ -83,8 +83,7 @@ public class TelaClientesController extends TelaPrincipalController implements I
         ClienteVO cliente = tabelaClientes.getSelectionModel().getSelectedItem();
         if (cliente != null) {
             try {
-                // System.out.println("O pessoaId em infoCliente é: " + cliente.getPessoaId()
-                // +"o clienteId é: "+ cliente.getClienteId());
+                System.out.println(cliente.getClienteId());
                 Telas.telaEditarCliente(cliente);
             } catch (Exception e) {
                 e.printStackTrace();
