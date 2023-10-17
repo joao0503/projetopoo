@@ -78,6 +78,7 @@ public class InfoClienteController implements Initializable{
             this.cliente.setCpf(cliente.getCpf());
             // o erro era que faltava setar o pessoaId para fazer a consulta
             this.cliente.setPessoaId(cliente.getPessoaId());
+            this.cliente.setClienteId(cliente.getClienteId());
             
             campoNomeCliente.setText(cliente.getNome());
             campoEndereco.setText(cliente.getEndereco());

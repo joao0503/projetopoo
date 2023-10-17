@@ -17,7 +17,7 @@ public class AutomovelDAO extends BaseDAOImpl<AutomovelVO>{
 	public void inserir(AutomovelVO vo) {
 		Connection con = getConnection();
 		
-		String sql = "insert into automoveis (marca, modelo, ano_modelo, cor, placa, quilometragem, cliente_id)"
+		String sql = "insert into automoveis (marca, modelo, ano_do_modelo, cor, placa, quilometragem, cliente_id)"
 				+ "values (?,?,?,?,?,?,?)";
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
