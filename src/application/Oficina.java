@@ -7,6 +7,7 @@ import exception.InserirException;
 import exception.NaoEncontradoException;
 import model.BO.AutomovelBO;
 import model.BO.ServicoBO;
+import model.DAO.AutomovelDAO;
 import model.VO.AutomovelVO;
 import model.VO.ClienteVO;
 import model.VO.PecaVO;
@@ -215,5 +216,36 @@ public class Oficina {
 		for (AutomovelVO aut : automoveis){
 			System.out.println("Os automoveis aqui tropa são: " + aut.getPlaca());
 		}
+		
+		// testar o buscar de automovel bo
+		AutomovelVO autom = new AutomovelVO();
+		ClienteVO client = new ClienteVO();
+		client.setPessoaId((long) 2);
+		autom.setCliente(client);
+		//autom = autoBO.buscarPorId(autom);
+		//System.out.println("placa" + autom.getPlaca() + "marca" + autom.getMarca());
+		ClienteVO clientizada = new ClienteVO();
+		clientizada.setClienteId((long) 2);
+		/*AutomovelDAO automDAO = new AutomovelDAO();
+		List<AutomovelVO> automovei = new ArrayList<AutomovelVO>();
+		System.out.println("a  a a a a");
+		automovei = automDAO.listarAutomoveisPorProprietario(clientizada);
+		System.out.println("b  b bb b b");
+		for (AutomovelVO autt : automovei){
+			System.out.println("Os automoveis aqui com listarPorProprietario "
+					+ "tropa são: " + autt.getPlaca());
+		}*/
+		
+		AutomovelDAO automDAO = new AutomovelDAO();
+		List<AutomovelVO> automovei = new ArrayList<AutomovelVO>();
+		System.out.println("a  a a a a");
+		automovei = automDAO.listarAutomoveisPorProprietario(clientizada);
+		System.out.println("b  b bb b b");
+		for (AutomovelVO autt : automovei){
+			System.out.println("Os automoveis aqui com listarPorProprietario "
+					+ "tropa são: " + autt.getPlaca() + " quilometragem " + 
+					autt.getQuilometragem());
+		}
+		
 	}
 }

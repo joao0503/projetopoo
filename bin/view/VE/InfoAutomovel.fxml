@@ -16,8 +16,8 @@
          </font>
       </Text>
       <TextField fx:id="campoProprietario" editable="false" layoutX="27.0" layoutY="206.0" prefHeight="25.0" prefWidth="412.0" />
-      <TextField fx:id="campoCor" editable="false" layoutX="348.0" layoutY="133.0" prefHeight="25.0" prefWidth="91.0" />
-      <TextField fx:id="campoMarca" editable="false" layoutX="27.0" layoutY="132.0" prefHeight="25.0" prefWidth="159.0" />
+      <TextField fx:id="campoCor" editable="true" layoutX="348.0" layoutY="133.0" prefHeight="25.0" prefWidth="91.0" />
+      <TextField fx:id="campoMarca" editable="true" layoutX="27.0" layoutY="132.0" prefHeight="25.0" prefWidth="159.0" />
       <Text fill="#ee7200" layoutX="27.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Proprietário:" wrappingWidth="97.919921875">
          <font>
             <Font size="18.0" />
@@ -38,14 +38,14 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="campoAno" editable="false" layoutX="233.0" layoutY="134.0" prefHeight="25.0" prefWidth="66.0" />
+      <TextField fx:id="campoAno" editable="true" layoutX="233.0" layoutY="134.0" prefHeight="25.0" prefWidth="66.0" />
       <Text fill="#ee7200" layoutX="476.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quilometragem:">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="campoQuilometragem" editable="false" layoutX="476.0" layoutY="133.0" prefHeight="25.0" prefWidth="159.0" />
-      <TextField fx:id="campoPlaca" editable="false" layoutX="528.0" layoutY="207.0" prefHeight="25.0" prefWidth="107.0" />
+      <TextField fx:id="campoQuilometragem" editable="true" layoutX="476.0" layoutY="133.0" prefHeight="25.0" prefWidth="159.0" />
+      <TextField fx:id="campoPlaca" editable="true" layoutX="528.0" layoutY="207.0" prefHeight="25.0" prefWidth="107.0" />
       <Text fill="#ee7200" layoutX="528.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placa:">
          <font>
             <Font size="18.0" />

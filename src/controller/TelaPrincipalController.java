@@ -1,9 +1,12 @@
 package controller;
 
+import javafx.fxml.FXML;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import view.Telas;
 
 public class TelaPrincipalController{
+	@FXML private ImageView pecasImg;
 	
 	public void irParaTelaClientes(MouseEvent event) throws Exception {
 		Telas.telaClientes();

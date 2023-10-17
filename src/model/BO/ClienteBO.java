@@ -70,15 +70,27 @@ public class ClienteBO extends PessoaBO<ClienteVO> {
 
 	@Override
 	public ClienteVO buscarPorId(ClienteVO vo) throws NaoEncontradoException {
-		ClienteVO cliente = new ClienteVO();
-		cliente = cliDAO.buscar(vo);
-		return cliente;
+		try {
+			ClienteVO cliente = new ClienteVO();
+			cliente = cliDAO.buscar(vo);
+			if(cliente != null) {
+				return cliente;
+			} else {
+				throw new NaoEncontradoException("Cliente não encontrado");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	@Override
 	public List<ClienteVO> listarTodos() {
 		List<ClienteVO> clientes = new ArrayList<ClienteVO>();
 		clientes = cliDAO.listar();
+		for(ClienteVO cli : clientes) {
+			System.out.println("\nO clienteId aqui no listar do clienteBO é: " + cli.getClienteId());
+		}
 		return clientes;
 	}
 }

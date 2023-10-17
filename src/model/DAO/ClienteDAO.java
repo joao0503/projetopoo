@@ -108,6 +108,7 @@ public class ClienteDAO extends PessoaDAO<ClienteVO> {
                 cliente.setPessoaId(rs.getLong("pessoa_id"));
                 cliente.setDesconto(rs.getLong("desconto"));
                 cliente.setClienteId(rs.getLong("cliente_id"));
+                System.out.println("ClienteId aqui no dao de listar é: " + cliente.getClienteId());
                 clientes.add(cliente);
             }
             return clientes;

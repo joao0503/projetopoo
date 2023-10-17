@@ -81,16 +81,7 @@ public class AutomovelBO implements BaseBO<AutomovelVO>{
 		return null;
 	}
 
-	public List<AutomovelVO> buscarPorCliente(ClienteVO cliente){
-		try{
-			List<AutomovelVO> automoveisDoCliente = new ArrayList<AutomovelVO>();
-			automoveisDoCliente = automovelDAO.listarAutomoveisPorProprietario(cliente);
-			return automoveisDoCliente;
-		} catch (Exception e){
-			e.printStackTrace();
-		}
-		return null;
-	}
+
 
 	@Override
 	public List<AutomovelVO> listarTodos() {
@@ -99,6 +90,18 @@ public class AutomovelBO implements BaseBO<AutomovelVO>{
 			automoveis = automovelDAO.listar();
 			return automoveis;
 		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	
+	public List<AutomovelVO> buscarPorCliente(ClienteVO cliente){
+		try{
+			List<AutomovelVO> automoveisDoCliente = new ArrayList<AutomovelVO>();
+			automoveisDoCliente = automovelDAO.listarAutomoveisPorProprietario(cliente);
+			return automoveisDoCliente;
+		} catch (Exception e){
 			e.printStackTrace();
 		}
 		return null;

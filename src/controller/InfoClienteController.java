@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -64,37 +65,9 @@ public class InfoClienteController implements Initializable{
     ObservableList<AutomovelVO> lista = FXCollections.observableArrayList();
     ObservableList<AutomovelVO> todos = FXCollections.observableArrayList();
 
-    /*
-     * Observações:
-     a função initialize é (aparentemente) carregada antes da setCliente
-     o cliente, portanto, é completamente nulo até chegar no setCliente
-     a tabela precisa do ID do cliente selecionado pra funcionar
-     */
-
     @FXML
     public void initialize(URL location, ResourceBundle resources){
-        colunaMarca.setCellValueFactory(new PropertyValueFactory<>("marca"));
-        colunaCor.setCellValueFactory(new PropertyValueFactory<>("cor"));
-        colunaAno.setCellValueFactory(new PropertyValueFactory<>("ano"));
-        colunaCor.setCellValueFactory(new PropertyValueFactory<>("cor"));
-        colunaPlaca.setCellValueFactory(new PropertyValueFactory<>("placa"));
-        colunaQuilometragem.setCellValueFactory(new PropertyValueFactory<>("quilometragem"));
-        List<AutomovelVO> automoveis = new ArrayList<>();
-
-        try{
-            automoveis = automovelBO.buscarPorCliente(cliente);
-        } catch (Exception e){
-            e.printStackTrace();
-        }
-    
-        if (automoveis != null){
-            lista.addAll(automoveis);
-            tabelaAutomoveis.setItems(lista);
-            todos.addAll(automoveis);
-        }
-        else{
-            System.out.println("Ocorreu um problema ao popular a tabela");
-        }
+        // deixar aqui pra caso precise do initializable
     }
     
     public void setCliente(ClienteVO cliente) {
@@ -117,6 +90,32 @@ public class InfoClienteController implements Initializable{
             ButtonType ok = new ButtonType("OK", ButtonData.OK_DONE);
             alert.getButtonTypes().setAll(ok);
             alert.showAndWait();
+        }
+
+
+        //populando a tabela de automóveis do cliente
+        colunaMarca.setCellValueFactory(new PropertyValueFactory<>("marca"));
+        colunaCor.setCellValueFactory(new PropertyValueFactory<>("cor"));
+        colunaAno.setCellValueFactory(new PropertyValueFactory<>("anoDoModelo"));
+        colunaCor.setCellValueFactory(new PropertyValueFactory<>("cor"));
+        colunaPlaca.setCellValueFactory(new PropertyValueFactory<>("placa"));
+        colunaQuilometragem.setCellValueFactory(new PropertyValueFactory<>("quilometragem"));
+        List<AutomovelVO> automoveis = new ArrayList<>();
+
+        try{
+
+            automoveis = automovelBO.buscarPorCliente(cliente);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    
+        if (automoveis != null){
+            lista.addAll(automoveis);
+            tabelaAutomoveis.setItems(lista);
+            todos.addAll(automoveis);
+        }
+        else{
+            System.out.println("Ocorreu um problema ao popular a tabela");
         }
     }
 
@@ -150,8 +149,12 @@ public class InfoClienteController implements Initializable{
         }
     }
 
-    public void editarAutomovel() {
+    public void voltarParaClientes(ActionEvent event) throws Exception{
+        Telas.telaClientes();
+    }
 
+    public void editarAutomovel() {
+        
     }
 
     public void excluirAutomovel() {

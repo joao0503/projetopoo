@@ -11,7 +11,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #FF993A;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UsuarioController">
    <children>
-      <Pane layoutX="150.0" layoutY="73.0" prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: ffffff;">
+      <Pane layoutX="150.0" layoutY="73.0" prefHeight="400.0" prefWidth="484.0" style="-fx-background-color: ffffff;">
          <children>
             <Label layoutX="211.0" layoutY="24.0" text="Login" textFill="#ff993a">
                <font>
@@ -29,10 +29,7 @@
                </image>
             </ImageView>
             <Label layoutX="260.0" layoutY="266.0" onMouseClicked="#irParaTelaRecuperarSenha" prefHeight="17.0" prefWidth="104.0" text="Esqueceu a senha?" textFill="#ff993a" />
-            <Label fx:id="erroAutenticacao" alignment="CENTER" layoutX="319.0" layoutY="184.0" prefHeight="17.0" prefWidth="178.0" text="Mensagem" textAlignment="CENTER" textFill="#e10e0e" visible="false" />
-            <Label layoutX="14.0" layoutY="321.0" prefHeight="25.0" prefWidth="648.0" text="Simulação temporária de login:" />
-            <Label layoutX="14.0" layoutY="346.0" prefHeight="25.0" prefWidth="648.0" text="funcionario - usuário: usuario2, senha: senha2" />
-            <Label layoutX="14.0" layoutY="361.0" prefHeight="25.0" prefWidth="648.0" text="gerente - usuário: usuario1, senha: senha1" />
+            <Label fx:id="erroAutenticacao" alignment="CENTER" layoutX="183.0" layoutY="184.0" prefHeight="17.0" prefWidth="178.0" text="Mensagem" textFill="#e10e0e" visible="false" />
          </children>
       </Pane>
    </children>

@@ -93,7 +93,7 @@
             <Font size="28.0" />
          </font>
       </Label>
-      <TextField fx:id="searchBar" layoutX="27.0" layoutY="176.0" prefHeight="34.0" prefWidth="798.0" promptText="Filtrar...">
+      <TextField fx:id="searchBar" layoutX="27.0" layoutY="176.0" onKeyReleased="#filtrar" prefHeight="34.0" prefWidth="798.0" promptText="Filtrar...">
          <font>
             <Font size="15.0" />
          </font>

@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.shape.*?>
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TelaOrcamentosController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TelaServicosController">
    <children>
       <Pane layoutY="54.0" prefHeight="91.0" prefWidth="1280.0" style="-fx-background-color: D9D9D9;">
          <children>
@@ -56,7 +54,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <ImageView fx:id="loginImg" fitHeight="45.0" fitWidth="50.0" layoutX="672.0" layoutY="14.0" onMouseClicked="#irParaTelaLoginAut" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="loginImg" fitHeight="45.0" fitWidth="50.0" layoutX="678.0" layoutY="17.0" onMouseClicked="#irParaTelaLoginAut" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@do-utilizador%201.png" />
                </image>
@@ -99,14 +97,12 @@
             <Font size="15.0" />
          </font>
       </TextField>
-      <TableView fx:id="tabelaOrcamentos" layoutX="27.0" layoutY="237.0" prefHeight="458.0" prefWidth="1162.0">
+      <TableView fx:id="tabelaServicos" layoutX="216.0" layoutY="236.0" prefHeight="458.0" prefWidth="876.0">
         <columns>
-          <TableColumn fx:id="colunaAutomovel" prefWidth="415.0" text="Automóvel" />
-          <TableColumn fx:id="colunaPlaca" prefWidth="139.0" text="Placa" />
-            <TableColumn fx:id="colunaCliente" prefWidth="404.0" text="Cliente" />
-            <TableColumn fx:id="colunaData" prefWidth="203.0" text="Data" />
+          <TableColumn fx:id="id" prefWidth="50.0" text="ID" />
+          <TableColumn fx:id="colunaDescricao" prefWidth="637.0" text="Descrição" />
+          <TableColumn fx:id="colunaValor" prefWidth="238.0" text="Valor" />
         </columns>
       </TableView>
-      <Button fx:id="botaoDetalhesOrcamento" layoutX="1127.0" layoutY="179.0" mnemonicParsing="false" onAction="#infoOrcamento" prefHeight="29.0" prefWidth="62.0" text="Detalhes" />
    </children>
 </Pane>
