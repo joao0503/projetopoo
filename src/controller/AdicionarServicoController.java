@@ -44,7 +44,7 @@ public class AdicionarServicoController {
             ButtonType ok = new ButtonType("OK", ButtonData.OK_DONE);
             alert.getButtonTypes().setAll(ok);
             alert.showAndWait();
-            Telas.telaServicos();
+            Telas.telaServicos(1);
         } catch (Exception e) {
             e.printStackTrace();
         }
