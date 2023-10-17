@@ -59,6 +59,8 @@ public class ServicoVO {
 	public void setValor(Double valor) {
 		if (valor > 0) {
 			this.valor = valor;
+		} else {
+			System.out.println("Preço inválido");
 		}
 	}
 

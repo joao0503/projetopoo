@@ -7,9 +7,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="565.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdicionarServicoController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="565.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InfoServicoController">
    <children>
-      <Text fill="#ee7200" layoutX="164.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adicionar Serviço" wrappingWidth="237.142578125">
+      <Text fill="#ee7200" layoutX="122.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Informações do Serviço:" wrappingWidth="322.0">
          <font>
             <Font size="30.0" />
          </font>
@@ -26,7 +26,7 @@
       </Text>
       <TextField fx:id="campoDescricao" editable="true" layoutX="31.0" layoutY="211.0" prefHeight="25.0" prefWidth="322.0" />
       <TextField fx:id="campoValor" editable="true" layoutX="31.0" layoutY="285.0" prefHeight="25.0" prefWidth="119.0" />
-      <Button fx:id="botaoAdicionarServico" layoutX="190.0" layoutY="426.0" mnemonicParsing="false" onAction="#addServico" prefHeight="25.0" prefWidth="68.0" text="Adicionar" />
+      <Button fx:id="botaoAtualizar" layoutX="190.0" layoutY="426.0" mnemonicParsing="false" onAction="#atualizarServico" prefHeight="25.0" prefWidth="68.0" text="Atualizar" />
       <Button fx:id="botaoVoltar" layoutX="320.0" layoutY="426.0" mnemonicParsing="false" onAction="#voltarParaServicos" prefHeight="25.0" prefWidth="55.0" text="Voltar" />
       <Text fill="#ee7200" layoutX="31.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:">
          <font>

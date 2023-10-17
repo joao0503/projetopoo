@@ -17,7 +17,7 @@ public class ServicoBO implements BaseBO<ServicoVO> {
 	@Override
 	public void cadastrar(ServicoVO vo) throws InserirException {
 
-		System.out.println("Nome do serviço no começo do servicobo" + vo.getNome());
+		System.out.println("Nome do serviço no começo do servicoBO" + vo.getNome());
 		System.out.println("Valor" + vo.getValor());
 		// ServicoVO servico = new ServicoVO();
 		// servico = servDAO.buscar(servico);

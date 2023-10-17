@@ -164,6 +164,8 @@ public class Telas extends Application {
 		cena.getWindow().centerOnScreen();
 	}
 	
+	
+
 	public static void telaOrcamentos() throws Exception {
 		Parent root = FXMLLoader.load(Telas.class.getResource("VE/TelaOrcamentos.fxml"));
 		
