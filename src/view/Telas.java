@@ -1,5 +1,6 @@
 package view;
 
+import controller.AdicionarAutomovelController;
 import controller.InfoAutomovelController;
 import controller.InfoClienteController;
 import controller.InfoPecaController;
@@ -111,7 +112,19 @@ public class Telas extends Application {
 		primaryStage.setScene(cena);
 		cena.getWindow().centerOnScreen();
 	}
-	
+
+	public static void telaAdicionarAutomovel(ClienteVO proprietario) throws Exception{
+		FXMLLoader loader = new FXMLLoader(Telas.class.getResource("VE/AdicionarAutomovel.fxml"));
+		Parent root = loader.load();
+
+		AdicionarAutomovelController controller = loader.getController();
+		controller.setProprietario(proprietario);
+
+		Scene cena = new Scene(root);
+		primaryStage.setScene(cena);
+		cena.getWindow().centerOnScreen();
+	}
+
 	public static void telaAutomoveis() throws Exception {
 		Parent root = FXMLLoader.load(Telas.class.getResource("VE/TelaAutomoveis.fxml"));
 		

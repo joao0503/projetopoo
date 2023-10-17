@@ -94,9 +94,7 @@ public class AutomovelDAO extends BaseDAOImpl<AutomovelVO>{
         //		+ "automoveis.cliente_id = clientes.cliente_id and "
         //		+ "clientes.pessoa_id = pessoas.pessoa_id";
 
-        String sql = "SELECT * FROM pessoas INNER JOIN clientes ON pessoas.pessoa_id = "
-        		+ "clientes.pessoa_id INNER JOIN automoveis ON clientes.cliente_id = "
-        		+ "automoveis.cliente_id where pessoas.pessoa_id = ?";
+        String sql = "SELECT * FROM automoveis WHERE cliente_id = ?";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setLong(1, vo.getCliente().getPessoaId());
@@ -201,6 +199,8 @@ public class AutomovelDAO extends BaseDAOImpl<AutomovelVO>{
         Connection con = getConnection();
         String sql = "select * from automoveis where cliente_id = ?";
         
+        System.out.println("ID do cliente: " + cli.getClienteId());
+
         List<AutomovelVO> automoveis = new ArrayList<AutomovelVO>();
         
         PreparedStatement ps;
@@ -225,12 +225,13 @@ public class AutomovelDAO extends BaseDAOImpl<AutomovelVO>{
                 //automovel.getCliente().setClienteId(rs.getLong("cliente_id"));
                 automoveis.add(automovel);
             }
+            return automoveis;
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             closeConnection();
         }
-    	return automoveis;
+    	return null;
     }
 
 }

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="316.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdicionarAutomovelController">
+   <children>
+      <Text fill="#ee7200" layoutX="206.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adicionar Automóvel" wrappingWidth="282.142578125">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+      <TextField fx:id="campoProprietario" editable="false" layoutX="27.0" layoutY="206.0" prefHeight="25.0" prefWidth="412.0" />
+      <TextField fx:id="campoCor" editable="true" layoutX="348.0" layoutY="133.0" prefHeight="25.0" prefWidth="91.0" />
+      <TextField fx:id="campoMarca" editable="true" layoutX="27.0" layoutY="132.0" prefHeight="25.0" prefWidth="159.0" />
+      <Text fill="#ee7200" layoutX="27.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Proprietário:" wrappingWidth="97.919921875">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#ee7200" layoutX="348.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cor:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#ee7200" layoutX="27.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Marca:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#ee7200" layoutX="233.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ano:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="campoAno" editable="true" layoutX="233.0" layoutY="134.0" prefHeight="25.0" prefWidth="66.0" />
+      <Text fill="#ee7200" layoutX="476.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quilometragem:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="campoQuilometragem" editable="true" layoutX="476.0" layoutY="133.0" prefHeight="25.0" prefWidth="159.0" />
+      <TextField fx:id="campoPlaca" editable="true" layoutX="528.0" layoutY="207.0" prefHeight="25.0" prefWidth="107.0" />
+      <Text fill="#ee7200" layoutX="528.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Placa:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Button fx:id="botaoAdicionar" layoutX="514.0" layoutY="252.0" mnemonicParsing="false" onAction="#adicionarAutomovel" text="Adicionar" />
+      <Button fx:id="botaoVoltar" layoutX="587.0" layoutY="252.0" mnemonicParsing="false" onAction="#voltarParaClientes" text="Voltar" />
+   </children>
+</Pane>

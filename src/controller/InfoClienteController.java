@@ -67,7 +67,7 @@ public class InfoClienteController implements Initializable{
 
     @FXML
     public void initialize(URL location, ResourceBundle resources){
-        // espero que funcione
+        // deixar aqui pra caso precise do initializable
     }
     
     public void setCliente(ClienteVO cliente) {
@@ -161,7 +161,7 @@ public class InfoClienteController implements Initializable{
 
     }
 
-    public void addRegistro() {
-        System.out.println("Novo registro");
+    public void addRegistro() throws Exception{
+        Telas.telaAdicionarAutomovel(cliente);
     }
 }

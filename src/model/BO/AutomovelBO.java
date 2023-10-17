@@ -16,19 +16,25 @@ public class AutomovelBO implements BaseBO<AutomovelVO>{
 	@Override
 	public void cadastrar(AutomovelVO vo) throws InserirException {
 		try {
-			AutomovelVO automovel = new AutomovelVO();
-			automovel = automovelDAO.buscar(vo);
-			
-			if(automovel == null) {
-				if(!vo.getPlaca().isEmpty()) {
-					automovelDAO.inserir(vo);
-				} else {
-					throw new InserirException("Não foi possível cadastrar o automovel porque a"
-							+ "placa não pode ser vazia");
-				}
-			} else {
-				throw new InserirException("Não foi possível cadastrar o automovel porque ele "
+			List<AutomovelVO> automoveis = new ArrayList<AutomovelVO>();
+
+			ClienteVO teste = new ClienteVO();
+			teste = vo.getCliente();
+			automoveis = automovelDAO.listarAutomoveisPorProprietario(teste);
+
+			//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+			//erro bem aqui caralho buceta cu porra porra porra caralho
+
+			System.out.println("Nome do cliente do karalho buveta: " + teste.getNome());
+
+			for (AutomovelVO item : automoveis){
+				if (item.getPlaca().equals(vo.getPlaca())){
+					throw new InserirException("Não foi possível cadastrar o automovel porque ele "
 						+ "já existe");
+				}
+				else{
+					automovelDAO.inserir(vo);
+				}
 			}
 
 		} catch(Exception e) {

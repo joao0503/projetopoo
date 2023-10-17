@@ -49,8 +49,8 @@ public class AdicionarClienteController {
             clienteBO.cadastrar(cliente);
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Sucesso");
-            alert.setHeaderText("METIDO COM SUCESSO");
-            alert.setContentText("O cliente foi metido com sucesso.");
+            alert.setHeaderText("Cadastrado COM SUCESSO");
+            alert.setContentText("O cliente foi cadastrado com sucesso.");
             ButtonType ok = new ButtonType("OK", ButtonData.OK_DONE);
             alert.getButtonTypes().setAll(ok);
             alert.showAndWait();
