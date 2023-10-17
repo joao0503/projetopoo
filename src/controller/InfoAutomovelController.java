@@ -31,6 +31,7 @@ public class InfoAutomovelController {
     @FXML private TableColumn<ServicoVO, String> colunaPeca;
 
     @FXML private Button botaoEditarAuto;
+    @FXML private Button botaoVoltar;
     @FXML private Button botaoEditarServico;
     @FXML private Button botaoExcluirServico;
     @FXML private Button botaoAddServico;
@@ -97,18 +98,16 @@ public class InfoAutomovelController {
         }
     }
     
-    // inicializar tabela de serviços associada ao automovel
     
-    public void novoServico(ActionEvent event){
-        // talvez precise mudar de tela dnv aqui
+    public void voltarParaAutomoveis(ActionEvent event) throws Exception{
+        Telas.telaAutomoveis();
+    }
+
+    public void novoServico(ActionEvent event) throws Exception{
+        Telas.telaAdicionarServico();
     }
 
     public void excluirServico(ActionEvent event) throws Exception{
 
     }
-
-    public void editarServico(ActionEvent event){
-        //talvez isso aq não exista
-    }
-
 }

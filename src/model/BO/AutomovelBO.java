@@ -16,19 +16,21 @@ public class AutomovelBO implements BaseBO<AutomovelVO>{
 	@Override
 	public void cadastrar(AutomovelVO vo) throws InserirException {
 		try {
-			AutomovelVO automovel = new AutomovelVO();
-			automovel = automovelDAO.buscar(vo);
-			
-			if(automovel == null) {
-				if(!vo.getPlaca().isEmpty()) {
-					automovelDAO.inserir(vo);
-				} else {
-					throw new InserirException("Não foi possível cadastrar o automovel porque a"
-							+ "placa não pode ser vazia");
-				}
-			} else {
-				throw new InserirException("Não foi possível cadastrar o automovel porque ele "
+			List<AutomovelVO> automoveis = new ArrayList<AutomovelVO>();
+
+			ClienteVO teste = new ClienteVO();
+			teste = vo.getCliente();
+			automoveis = automovelDAO.listarAutomoveisPorProprietario(teste);
+
+			for (AutomovelVO item : automoveis){
+				if (item.getPlaca().equals(vo.getPlaca())){
+					throw new InserirException("Não foi possível cadastrar o automovel porque ele "
 						+ "já existe");
+				}
+				else{
+					automovelDAO.inserir(vo);
+					break;
+				}
 			}
 
 		} catch(Exception e) {
@@ -41,7 +43,7 @@ public class AutomovelBO implements BaseBO<AutomovelVO>{
 		try {
 			// ao buscar com pessoaDAO, o vo que
 			AutomovelVO automovel = new AutomovelVO();
-			automovel = automovelDAO.buscar(vo);
+			automovel = automovelDAO.buscarAutomovelPorPlaca(vo.getPlaca(), vo.getCliente());
 			if (automovel != null) {
 				automovelDAO.deletar(vo);
 			} else {

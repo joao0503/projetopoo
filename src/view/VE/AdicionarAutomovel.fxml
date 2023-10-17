@@ -3,19 +3,11 @@
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InfoAutomovelController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="316.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdicionarAutomovelController">
    <children>
-      <Text fill="#ee7200" layoutX="149.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Informações do Automóvel" wrappingWidth="362.142578125">
+      <Text fill="#ee7200" layoutX="206.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adicionar Automóvel" wrappingWidth="282.142578125">
          <font>
             <Font size="30.0" />
          </font>
@@ -56,24 +48,7 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Text fill="#ee7200" layoutX="27.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Servicos:">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Text>
-      <TableView fx:id="tabelaServicos" layoutX="24.0" layoutY="335.0" prefHeight="244.0" prefWidth="646.0">
-        <columns>
-          <TableColumn fx:id="colunaDescricao" prefWidth="168.0" text="Descrição" />
-          <TableColumn fx:id="colunaValor" minWidth="0.0" prefWidth="89.0" text="Valor" />
-            <TableColumn fx:id="colunaStatus" prefWidth="133.0" text="Status" />
-            <TableColumn fx:id="colunaEncarregado" prefWidth="138.0" text="Encarregado" />
-            <TableColumn fx:id="colunaPeca" prefWidth="101.0" text="Peça" />
-        </columns>
-      </TableView>
-      <Button fx:id="botaoAddServico" layoutX="246.0" layoutY="303.0" mnemonicParsing="false" onAction="#novoServico" text="Novo serviço" />
-      <Button fx:id="botaoExcluirServico" layoutX="187.0" layoutY="303.0" mnemonicParsing="false" onAction="#excluirServico" text="Excluir" />
-      <Button fx:id="botaoEditarServico" layoutX="136.0" layoutY="303.0" mnemonicParsing="false" text="Editar" />
-      <Button fx:id="botaoAtualizar" layoutX="514.0" layoutY="252.0" mnemonicParsing="false" onAction="#atualizarAutomovel" text="Atualizar" />
-      <Button fx:id="botaoVoltar" layoutX="587.0" layoutY="252.0" mnemonicParsing="false" onAction="#voltarParaAutomoveis" text="Voltar" />
+      <Button fx:id="botaoAdicionar" layoutX="514.0" layoutY="252.0" mnemonicParsing="false" onAction="#adicionarAutomovel" text="Adicionar" />
+      <Button fx:id="botaoVoltar" layoutX="587.0" layoutY="252.0" mnemonicParsing="false" onAction="#voltarParaClientes" text="Voltar" />
    </children>
 </Pane>

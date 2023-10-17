@@ -17,7 +17,7 @@ public class AutomovelDAO extends BaseDAOImpl<AutomovelVO>{
 	public void inserir(AutomovelVO vo) {
 		Connection con = getConnection();
 		
-		String sql = "insert into automoveis (marca, modelo, ano_modelo, cor, placa, quilometragem, cliente_id)"
+		String sql = "insert into automoveis (marca, modelo, ano_do_modelo, cor, placa, quilometragem, cliente_id)"
 				+ "values (?,?,?,?,?,?,?)";
 		try {
 			PreparedStatement ps = con.prepareStatement(sql);
@@ -94,9 +94,7 @@ public class AutomovelDAO extends BaseDAOImpl<AutomovelVO>{
         //		+ "automoveis.cliente_id = clientes.cliente_id and "
         //		+ "clientes.pessoa_id = pessoas.pessoa_id";
 
-        String sql = "SELECT * FROM pessoas INNER JOIN clientes ON pessoas.pessoa_id = "
-        		+ "clientes.pessoa_id INNER JOIN automoveis ON clientes.cliente_id = "
-        		+ "automoveis.cliente_id where pessoas.pessoa_id = ?";
+        String sql = "SELECT * FROM automoveis WHERE cliente_id = ?";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setLong(1, vo.getCliente().getPessoaId());
@@ -106,6 +104,7 @@ public class AutomovelDAO extends BaseDAOImpl<AutomovelVO>{
                 cliente.setNome(rs.getString("nome"));
                 cliente.setCpf(rs.getString("cpf"));
                 cliente.setEndereco(rs.getString("endereco"));
+                
                 cliente.setNumeroCelular(rs.getString("numero_celular"));
                 cliente.setPessoaId(rs.getLong("pessoa_id"));
                 cliente.setDesconto(rs.getLong("desconto"));
@@ -170,9 +169,9 @@ public class AutomovelDAO extends BaseDAOImpl<AutomovelVO>{
     }
     
     
-    public AutomovelVO buscarAutomovelPorPlaca(String placa) {
+    public AutomovelVO buscarAutomovelPorPlaca(String placa, ClienteVO cliente) {
         Connection con = getConnection();
-        String sql = "selct * from automoveis where placa = ?";
+        String sql = "select * from automoveis where placa = ?";
         AutomovelVO automovel = new AutomovelVO();
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -186,7 +185,7 @@ public class AutomovelDAO extends BaseDAOImpl<AutomovelVO>{
                 automovel.setPlaca(rs.getString("placa"));
                 automovel.setQuilometragem(rs.getInt("quilometragem"));
                 automovel.setAutomovelId(rs.getLong("automovel_id"));
-                automovel.getCliente().setClienteId(rs.getLong("cliente_id"));
+                automovel.setCliente(cliente);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -201,6 +200,8 @@ public class AutomovelDAO extends BaseDAOImpl<AutomovelVO>{
         Connection con = getConnection();
         String sql = "select * from automoveis where cliente_id = ?";
         
+        System.out.println("ID do cliente: " + cli.getClienteId());
+
         List<AutomovelVO> automoveis = new ArrayList<AutomovelVO>();
         
         PreparedStatement ps;
@@ -225,12 +226,13 @@ public class AutomovelDAO extends BaseDAOImpl<AutomovelVO>{
                 //automovel.getCliente().setClienteId(rs.getLong("cliente_id"));
                 automoveis.add(automovel);
             }
+            return automoveis;
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             closeConnection();
         }
-    	return automoveis;
+    	return null;
     }
 
 }

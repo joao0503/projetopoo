@@ -55,11 +55,6 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <ImageView fx:id="loginImg" fitHeight="45.0" fitWidth="50.0" layoutX="672.0" layoutY="14.0" onMouseClicked="#irParaTelaLoginAut" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@do-utilizador%201.png" />
-               </image>
-            </ImageView>
             <Label alignment="CENTER" layoutX="545.0" layoutY="60.0" prefHeight="27.0" prefWidth="70.0" text="Peças" textAlignment="CENTER">
                <font>
                   <Font size="18.0" />
@@ -80,11 +75,6 @@
                   <Image url="@usd-circle%201.png" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" layoutX="638.0" layoutY="60.0" prefHeight="27.0" prefWidth="119.0" text="Funcionários" textAlignment="CENTER">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
          </children>
       </Pane>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f67f10" height="58.0" stroke="#f67f10" strokeType="INSIDE" width="1280.0" />
@@ -98,7 +88,7 @@
             <Font size="15.0" />
          </font>
       </TextField>
-      <Button fx:id="botaoDetalhes" layoutX="949.0" layoutY="179.0" mnemonicParsing="false" onAction="#detalharPeca" text="Detalhes">
+      <Button fx:id="botaoDetalhes" layoutX="957.0" layoutY="179.0" mnemonicParsing="false" onAction="#detalharPeca" prefHeight="29.0" prefWidth="58.0" text="Editar">
          <font>
             <Font size="13.0" />
          </font>

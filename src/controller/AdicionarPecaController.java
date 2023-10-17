@@ -13,19 +13,13 @@ import model.VO.PecaVO;
 import view.Telas;
 
 public class AdicionarPecaController {
-    @FXML
-    private TextField campoNomePeca;
-    @FXML
-    private TextField campoQuantidade;
-    @FXML
-    private TextField campoFabricante;
-    @FXML
-    private TextField campoPreco;
+    @FXML private TextField campoNomePeca;
+    @FXML private TextField campoQuantidade;
+    @FXML private TextField campoFabricante;
+    @FXML private TextField campoPreco;
 
-    @FXML
-    private Button botaoAdicionarPeca;
-    @FXML
-    private Button botaoVoltar;
+    @FXML private Button botaoAdicionarPeca;
+    @FXML private Button botaoVoltar;
 
     public void salvarPeca(ActionEvent event) {
         PecaBO pecaBO = new PecaBO();
@@ -56,6 +50,6 @@ public class AdicionarPecaController {
     }
 
     public void voltarParaPecas(ActionEvent event) throws Exception {
-        Telas.telaPecas();
+        Telas.telaPecas(1);
     }
 }

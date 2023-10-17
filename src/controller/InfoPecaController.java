@@ -83,6 +83,6 @@ public class InfoPecaController {
         }
     }
     public void voltarTela(ActionEvent event) throws Exception{
-        Telas.telaPecas();
+        Telas.telaPecas(1);
     }
 }

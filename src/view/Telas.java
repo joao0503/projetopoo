@@ -1,8 +1,13 @@
 package view;
 
+import controller.AdicionarAutomovelController;
 import controller.InfoAutomovelController;
 import controller.InfoClienteController;
 import controller.InfoPecaController;
+import controller.InfoServicoController;
+import controller.TelaPecasController;
+import controller.TelaPrincipalController;
+import controller.TelaServicosController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,6 +16,7 @@ import javafx.stage.Stage;
 import model.VO.AutomovelVO;
 import model.VO.ClienteVO;
 import model.VO.PecaVO;
+import model.VO.ServicoVO;
 import model.VO.UsuarioVO;
 
 public class Telas extends Application {
@@ -49,7 +55,11 @@ public class Telas extends Application {
 	
 	public static void telaPrincipalGerente(UsuarioVO usu) throws Exception {
 		System.out.println("Chamando TelaPrincipal Gerente");
-		Parent root = FXMLLoader.load(Telas.class.getResource("VE/TelaPrincipal.fxml"));
+		FXMLLoader loader = new FXMLLoader(Telas.class.getResource("VE/TelaPrincipal.fxml"));
+		Parent root = loader.load();
+		TelaPrincipalController controller = loader.getController();
+		controller.setTipoUsuario(usu.getTipoDeUsuario());
+
 		
 		Scene cena = new Scene(root);
 		
@@ -64,8 +74,10 @@ public class Telas extends Application {
 	
 	public static void telaPrincipalFuncionario(UsuarioVO usu) throws Exception {
 		System.out.println("Chamando TelaPrincipal Funcionário");
-		
-		Parent root = FXMLLoader.load(Telas.class.getResource("VE/TelaPrincipal.fxml"));
+		FXMLLoader loader = new FXMLLoader(Telas.class.getResource("VE/TelaPrincipal.fxml"));
+		Parent root = loader.load();
+		TelaPrincipalController controller = loader.getController();
+		controller.setTipoUsuario(usu.getTipoDeUsuario());
 
 		Scene cena = new Scene(root);
 		
@@ -104,14 +116,25 @@ public class Telas extends Application {
 		Parent root = loader.load();
 
 		InfoClienteController controller = loader.getController();
-		
 		controller.setCliente(cliente);
 
 		Scene cena = new Scene(root);
 		primaryStage.setScene(cena);
 		cena.getWindow().centerOnScreen();
 	}
-	
+
+	public static void telaAdicionarAutomovel(ClienteVO proprietario) throws Exception{
+		FXMLLoader loader = new FXMLLoader(Telas.class.getResource("VE/AdicionarAutomovel.fxml"));
+		Parent root = loader.load();
+
+		AdicionarAutomovelController controller = loader.getController();
+		controller.setProprietario(proprietario);
+
+		Scene cena = new Scene(root);
+		primaryStage.setScene(cena);
+		cena.getWindow().centerOnScreen();
+	}
+
 	public static void telaAutomoveis() throws Exception {
 		Parent root = FXMLLoader.load(Telas.class.getResource("VE/TelaAutomoveis.fxml"));
 		
@@ -133,8 +156,11 @@ public class Telas extends Application {
 		cena.getWindow().centerOnScreen();
 	}
 
-	public static void telaServicos() throws Exception {
-		Parent root = FXMLLoader.load(Telas.class.getResource("VE/TelaServicos.fxml"));
+	public static void telaServicos(int tipoUsuario) throws Exception {
+		FXMLLoader loader = new FXMLLoader(Telas.class.getResource("VE/TelaServicos.fxml"));
+		Parent root = loader.load();
+		TelaServicosController controller = loader.getController();
+		controller.setPermissoes(tipoUsuario);
 		
 		Scene cena = new Scene(root);
 		
@@ -146,11 +172,23 @@ public class Telas extends Application {
 		Parent root = FXMLLoader.load(Telas.class.getResource("VE/AdicionarServico.fxml"));
 		
 		Scene cena = new Scene(root);
-	
+		
 		primaryStage.setScene(cena);
 		cena.getWindow().centerOnScreen();
 	}
 	
+	public static void telaEditarServico(ServicoVO servico) throws Exception {
+		FXMLLoader loader = new FXMLLoader(Telas.class.getResource("VE/InfoServico.fxml"));
+		Parent root = loader.load();
+
+		InfoServicoController controller = loader.getController();
+		controller.setServico(servico);
+
+		Scene cena = new Scene(root);
+		primaryStage.setScene(cena);
+		cena.getWindow().centerOnScreen();
+	}
+
 	public static void telaOrcamentos() throws Exception {
 		Parent root = FXMLLoader.load(Telas.class.getResource("VE/TelaOrcamentos.fxml"));
 		
@@ -160,8 +198,11 @@ public class Telas extends Application {
 		cena.getWindow().centerOnScreen();
 	}
 	
-	public static void telaPecas() throws Exception {
-		Parent root = FXMLLoader.load(Telas.class.getResource("VE/TelaPecas.fxml"));
+	public static void telaPecas(int tipoUsuario) throws Exception {
+		FXMLLoader loader = new FXMLLoader(Telas.class.getResource("VE/TelaPecas.fxml"));
+		Parent root = loader.load();
+		TelaPecasController controller = loader.getController();
+		controller.setPermissoes(tipoUsuario);
 		
 		Scene cena = new Scene(root);
 		

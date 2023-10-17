@@ -10,7 +10,11 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBar.ButtonData;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -25,19 +29,29 @@ public class TelaServicosController extends TelaPrincipalController implements I
     @FXML private TextField searchBar;
     @FXML private TableView<ServicoVO> tabelaServicos;
     @FXML private TableColumn<ServicoVO, Long> id;
+    @FXML private TableColumn<ServicoVO, String> colunaNome;
     @FXML private TableColumn<ServicoVO, String> colunaDescricao;
     @FXML private TableColumn<ServicoVO, Double> colunaValor;
 
-    @FXML private Button botaoDetalhes;
+    @FXML private Button botaoEditarServico;
     @FXML private Button botaoExcluirServico;
     @FXML private Button botaoNovoServico;
 
     ObservableList<ServicoVO> lista = FXCollections.observableArrayList();
     ObservableList<ServicoVO> todos = FXCollections.observableArrayList();
 
+    public void setPermissoes(int tipo){
+        if (tipo == 2){
+            botaoExcluirServico.setDisable(true);
+            botaoNovoServico.setDisable(true);
+        }
+    }
+
+    @FXML
     public void initialize(URL location, ResourceBundle resources) {
     	id.setCellValueFactory(new PropertyValueFactory<>("servicoId"));
-        colunaDescricao.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        colunaNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        colunaDescricao.setCellValueFactory(new PropertyValueFactory<>("descricao"));
         colunaValor.setCellValueFactory(new PropertyValueFactory<>("valor"));
         List<ServicoVO> servicos = new ArrayList<>();
         
@@ -55,16 +69,41 @@ public class TelaServicosController extends TelaPrincipalController implements I
         }
     }
 
-    public void detalharServico(ActionEvent event){
-        
-    }
-
     public void excluirServico(ActionEvent event){
+        ServicoVO servico = tabelaServicos.getSelectionModel().getSelectedItem();
 
+        try{
+            if (servico != null){
+                servicoBO.remover(servico);
+                Alert alert = new Alert(AlertType.INFORMATION);
+                alert.setTitle("Sucesso");
+                alert.setHeaderText("REMOVIDO COM SUCESSO");
+                alert.setContentText("O serviço foi removido com sucesso.");
+                ButtonType ok = new ButtonType("OK", ButtonData.OK_DONE);
+                alert.getButtonTypes().setAll(ok);
+                alert.showAndWait();
+            }
+            else{
+                System.out.println("Nenhum serviço foi passado para a deleção.");
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     public void addServico(ActionEvent event) throws Exception {
         Telas.telaAdicionarServico();
+    }
+
+    public void infoServico(ActionEvent event) throws Exception {
+        ServicoVO servico = tabelaServicos.getSelectionModel().getSelectedItem();
+        if (servico != null) {
+            try {
+                Telas.telaEditarServico(servico);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @FXML
@@ -80,7 +119,8 @@ public class TelaServicosController extends TelaPrincipalController implements I
             for (ServicoVO servico : lista){
                 if (String.valueOf(servico.getServicoId()).contains(busca)
                     || servico.getNome().toLowerCase().contains(busca)){
-                    //|| servico.getValor().toString().contains(busca)){
+                    //|| servico.getValor().toString().contains(busca))
+                    //|| servico.getDescricao().toLowerCase().contains(busca)){
                         resultados.add(servico);
                 }
             }
