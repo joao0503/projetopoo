@@ -54,7 +54,6 @@ public class TelaClientesController extends TelaPrincipalController implements I
     ObservableList<ClienteVO> todos = FXCollections.observableArrayList();
 
     public void initialize(URL location, ResourceBundle resources) {
-        // id.setCellValueFactory(new PropertyValueFactory<>("clienteId"));
         id.setCellValueFactory(new PropertyValueFactory<>("pessoaId"));
         nome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         endereco.setCellValueFactory(new PropertyValueFactory<>("endereco"));

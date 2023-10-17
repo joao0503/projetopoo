@@ -6,20 +6,14 @@ import java.util.List;
 
 import exception.InserirException;
 import exception.NaoEncontradoException;
-import model.DAO.FuncionarioDAO;
-import model.DAO.GerenteDAO;
 import model.DAO.PessoaDAO;
 import model.DAO.UsuarioDAO;
-import model.VO.FuncionarioVO;
-import model.VO.GerenteVO;
 import model.VO.PessoaVO;
 import model.VO.UsuarioVO;
 
 public class UsuarioBO<VO extends UsuarioVO> extends PessoaBO<VO> {
 	static private UsuarioDAO<UsuarioVO> usuarioDAO = new UsuarioDAO<UsuarioVO>();
 	static private PessoaDAO<UsuarioVO> pessoaDAO = new PessoaDAO<UsuarioVO>();
-	static private GerenteDAO gerenteDAO = new GerenteDAO();
-	static private FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
 
 	@Override
 	public void cadastrar(VO vo) throws InserirException {

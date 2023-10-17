@@ -1,44 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="565.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InfoServicoController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="648.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InfoServicoController">
    <children>
-      <Text fill="#ee7200" layoutX="122.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Informações do Serviço:" wrappingWidth="322.0">
+      <Text fill="#ee7200" layoutX="165.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Informações do Serviço" wrappingWidth="322.0">
          <font>
             <Font size="30.0" />
          </font>
       </Text>
-      <Text fill="#ee7200" layoutX="31.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descrição:">
+      <Text fill="#ee7200" layoutX="31.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descrição:">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Text fill="#ee7200" layoutX="31.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valor (R$):" wrappingWidth="97.919921875">
+      <Text fill="#ee7200" layoutX="31.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valor (R$):" wrappingWidth="97.919921875">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="campoDescricao" editable="true" layoutX="31.0" layoutY="211.0" prefHeight="25.0" prefWidth="322.0" />
-      <TextField fx:id="campoValor" editable="true" layoutX="31.0" layoutY="285.0" prefHeight="25.0" prefWidth="119.0" />
-      <Button fx:id="botaoAtualizar" layoutX="190.0" layoutY="426.0" mnemonicParsing="false" onAction="#atualizarServico" prefHeight="25.0" prefWidth="68.0" text="Atualizar" />
-      <Button fx:id="botaoVoltar" layoutX="320.0" layoutY="426.0" mnemonicParsing="false" onAction="#voltarParaServicos" prefHeight="25.0" prefWidth="55.0" text="Voltar" />
-      <Text fill="#ee7200" layoutX="31.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:">
+      <TextField fx:id="campoDescricao" editable="true" layoutX="31.0" layoutY="181.0" prefHeight="25.0" prefWidth="322.0" />
+      <TextField fx:id="campoValor" editable="true" layoutX="31.0" layoutY="255.0" prefHeight="25.0" prefWidth="119.0" />
+      <Button fx:id="botaoAtualizarServico" layoutX="231.0" layoutY="501.0" mnemonicParsing="false" onAction="#atualizarServico" prefHeight="25.0" prefWidth="68.0" text="Atualizar" />
+      <Button fx:id="botaoVoltar" layoutX="361.0" layoutY="501.0" mnemonicParsing="false" onAction="#voltarParaServicos" prefHeight="25.0" prefWidth="55.0" text="Voltar" />
+      <Text fill="#ee7200" layoutX="31.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="campoNome" editable="true" layoutX="31.0" layoutY="134.0" prefHeight="25.0" prefWidth="322.0" />
-      <ComboBox fx:id="menuPeca" layoutX="31.0" layoutY="360.0" onAction="#selectPeca" prefWidth="150.0" promptText="Escolha a peça:" />
-      <Text fill="#ee7200" layoutX="31.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Peça:" wrappingWidth="97.919921875">
+      <TextField fx:id="campoNome" editable="true" layoutX="31.0" layoutY="104.0" prefHeight="25.0" prefWidth="322.0" />
+      <Text fill="#ee7200" layoutX="31.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Peça:" wrappingWidth="97.919921875">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
+      <TableView fx:id="tabelaPeca" layoutX="31.0" layoutY="336.0" prefHeight="149.0" prefWidth="589.0">
+         <columns>
+            <TableColumn fx:id="colunaId" prefWidth="45.0" text="ID" />
+            <TableColumn fx:id="colunaNome" prefWidth="243.0" text="Nome" />
+            <TableColumn fx:id="colunaFabricante" minWidth="9.0" prefWidth="147.0" text="Fabricante" />
+            <TableColumn fx:id="colunaQuantidade" text="Quantidade" />
+            <TableColumn fx:id="colunaPreco" prefWidth="72.0" text="Preco" />
+         </columns>
+      </TableView>
    </children>
 </Pane>

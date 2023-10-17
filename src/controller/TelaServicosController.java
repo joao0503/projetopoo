@@ -33,6 +33,7 @@ public class TelaServicosController extends TelaPrincipalController implements I
     @FXML private TableColumn<ServicoVO, String> colunaDescricao;
     @FXML private TableColumn<ServicoVO, Double> colunaValor;
 
+    @FXML private Button botaoEditarServico;
     @FXML private Button botaoExcluirServico;
     @FXML private Button botaoNovoServico;
 
@@ -92,6 +93,17 @@ public class TelaServicosController extends TelaPrincipalController implements I
 
     public void addServico(ActionEvent event) throws Exception {
         Telas.telaAdicionarServico();
+    }
+
+    public void infoServico(ActionEvent event) throws Exception {
+        ServicoVO servico = tabelaServicos.getSelectionModel().getSelectedItem();
+        if (servico != null) {
+            try {
+                Telas.telaEditarServico(servico);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @FXML

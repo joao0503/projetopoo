@@ -72,7 +72,7 @@
       </TableView>
       <Button fx:id="botaoAddServico" layoutX="246.0" layoutY="303.0" mnemonicParsing="false" onAction="#novoServico" text="Novo serviço" />
       <Button fx:id="botaoExcluirServico" layoutX="187.0" layoutY="303.0" mnemonicParsing="false" onAction="#excluirServico" text="Excluir" />
-      <Button fx:id="botaoEditarServico" layoutX="136.0" layoutY="303.0" mnemonicParsing="false" onAction="#editarServico" text="Editar" />
+      <Button fx:id="botaoEditarServico" layoutX="136.0" layoutY="303.0" mnemonicParsing="false" text="Editar" />
       <Button fx:id="botaoAtualizar" layoutX="514.0" layoutY="252.0" mnemonicParsing="false" onAction="#atualizarAutomovel" text="Atualizar" />
       <Button fx:id="botaoVoltar" layoutX="587.0" layoutY="252.0" mnemonicParsing="false" onAction="#voltarParaAutomoveis" text="Voltar" />
    </children>

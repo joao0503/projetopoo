@@ -69,7 +69,7 @@ public class PecaBO implements BaseBO<PecaVO>{
 			peca = pecaDAO.buscar(vo);
 			return (PecaVO) peca;
 		} catch(Exception e) {
-			throw new NaoEncontradoException("Pessoa com id " + vo.getPecaId() 
+			throw new NaoEncontradoException("Peça " + vo.getPecaId() 
 			+" não foi encontrada no banco de dados");
 		}
     }

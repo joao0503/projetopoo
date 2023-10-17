@@ -32,7 +32,6 @@ public class InfoClienteController implements Initializable{
     private TextField campoEndereco;
     @FXML
     private TextField campoCPF;
-
     @FXML
     private TableView<AutomovelVO> tabelaAutomoveis;
 

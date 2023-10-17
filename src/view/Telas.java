@@ -4,6 +4,7 @@ import controller.AdicionarAutomovelController;
 import controller.InfoAutomovelController;
 import controller.InfoClienteController;
 import controller.InfoPecaController;
+import controller.InfoServicoController;
 import controller.TelaPecasController;
 import controller.TelaPrincipalController;
 import controller.TelaServicosController;
@@ -15,6 +16,7 @@ import javafx.stage.Stage;
 import model.VO.AutomovelVO;
 import model.VO.ClienteVO;
 import model.VO.PecaVO;
+import model.VO.ServicoVO;
 import model.VO.UsuarioVO;
 
 public class Telas extends Application {
@@ -114,7 +116,6 @@ public class Telas extends Application {
 		Parent root = loader.load();
 
 		InfoClienteController controller = loader.getController();
-		
 		controller.setCliente(cliente);
 
 		Scene cena = new Scene(root);
@@ -171,12 +172,22 @@ public class Telas extends Application {
 		Parent root = FXMLLoader.load(Telas.class.getResource("VE/AdicionarServico.fxml"));
 		
 		Scene cena = new Scene(root);
-	
+		
 		primaryStage.setScene(cena);
 		cena.getWindow().centerOnScreen();
 	}
 	
-	
+	public static void telaEditarServico(ServicoVO servico) throws Exception {
+		FXMLLoader loader = new FXMLLoader(Telas.class.getResource("VE/InfoServico.fxml"));
+		Parent root = loader.load();
+
+		InfoServicoController controller = loader.getController();
+		controller.setServico(servico);
+
+		Scene cena = new Scene(root);
+		primaryStage.setScene(cena);
+		cena.getWindow().centerOnScreen();
+	}
 
 	public static void telaOrcamentos() throws Exception {
 		Parent root = FXMLLoader.load(Telas.class.getResource("VE/TelaOrcamentos.fxml"));
