@@ -22,11 +22,6 @@ public class AutomovelBO implements BaseBO<AutomovelVO>{
 			teste = vo.getCliente();
 			automoveis = automovelDAO.listarAutomoveisPorProprietario(teste);
 
-			//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-			//erro bem aqui caralho buceta cu porra porra porra caralho
-
-			System.out.println("Nome do cliente do karalho buveta: " + teste.getNome());
-
 			for (AutomovelVO item : automoveis){
 				if (item.getPlaca().equals(vo.getPlaca())){
 					throw new InserirException("Não foi possível cadastrar o automovel porque ele "
@@ -34,6 +29,7 @@ public class AutomovelBO implements BaseBO<AutomovelVO>{
 				}
 				else{
 					automovelDAO.inserir(vo);
+					break;
 				}
 			}
 
@@ -47,7 +43,7 @@ public class AutomovelBO implements BaseBO<AutomovelVO>{
 		try {
 			// ao buscar com pessoaDAO, o vo que
 			AutomovelVO automovel = new AutomovelVO();
-			automovel = automovelDAO.buscar(vo);
+			automovel = automovelDAO.buscarAutomovelPorPlaca(vo.getPlaca(), vo.getCliente());
 			if (automovel != null) {
 				automovelDAO.deletar(vo);
 			} else {

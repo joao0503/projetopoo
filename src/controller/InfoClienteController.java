@@ -158,8 +158,24 @@ public class InfoClienteController implements Initializable{
 
     }
 
-    public void excluirAutomovel() {
+    public void excluirAutomovel(ActionEvent event) throws Exception{
+        AutomovelVO auto = tabelaAutomoveis.getSelectionModel().getSelectedItem();
 
+        try{
+            if (auto != null){
+                automovelBO.remover(auto);
+                Alert alert = new Alert(AlertType.INFORMATION);
+                alert.setTitle("Sucesso");
+                alert.setHeaderText("REMOVIDO COM SUCESSO");
+                alert.setContentText("O automóvel foi removido com sucesso.");
+                ButtonType ok = new ButtonType("OK", ButtonData.OK_DONE);
+                alert.getButtonTypes().setAll(ok);
+                alert.showAndWait();
+                Telas.telaClientes();
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     public void addRegistro() throws Exception{

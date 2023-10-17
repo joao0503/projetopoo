@@ -57,11 +57,10 @@ public class AdicionarAutomovelController {
         
         try{
             autoBO.cadastrar(automovel);
-
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Sucesso");
-            alert.setHeaderText("Cadastrado COM SUCESSO");
-            alert.setContentText("O automóvel foi cadastrado com sucesso.");
+            alert.setHeaderText("ADICIONADO COM SUCESSO");
+            alert.setContentText("O automóvel foi adicionado com sucesso.");
             ButtonType ok = new ButtonType("OK", ButtonData.OK_DONE);
             alert.getButtonTypes().setAll(ok);
             alert.showAndWait();

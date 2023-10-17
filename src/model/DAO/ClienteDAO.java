@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.VO.AutomovelVO;
 import model.VO.ClienteVO;
 
 public class ClienteDAO extends PessoaDAO<ClienteVO> {
