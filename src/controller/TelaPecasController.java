@@ -41,8 +41,18 @@ public class TelaPecasController extends TelaPrincipalController implements Init
 
     private PecaBO pecaBO = new PecaBO();
 
+    private static int tipoUsuario;
+
     ObservableList<PecaVO> lista = FXCollections.observableArrayList();
     ObservableList<PecaVO> todos = FXCollections.observableArrayList();
+
+    public void setPermissoes(int tipo){
+        if (tipo == 2){
+            botaoDetalhes.setDisable(true);
+            botaoAddPeca.setDisable(true);
+            botaoRemoverPeca.setDisable(true);
+        }
+    }
 
     public void initialize(URL location, ResourceBundle resources) {
         colunaId.setCellValueFactory(new PropertyValueFactory<>("pecaId"));
@@ -98,7 +108,7 @@ public class TelaPecasController extends TelaPrincipalController implements Init
         } catch (InserirException iE){
             iE.printStackTrace();
         }
-        Telas.telaPecas();
+        Telas.telaPecas(tipoUsuario);
     }
 
     @FXML

@@ -50,6 +50,6 @@ public class AdicionarServicoController {
         }
     }
     public void voltarParaServicos(ActionEvent event) throws Exception {
-        Telas.telaServicos();
+        Telas.telaServicos(1);
     }
 }
