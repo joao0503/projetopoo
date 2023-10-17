@@ -39,6 +39,13 @@ public class TelaServicosController extends TelaPrincipalController implements I
     ObservableList<ServicoVO> lista = FXCollections.observableArrayList();
     ObservableList<ServicoVO> todos = FXCollections.observableArrayList();
 
+    public void setPermissoes(int tipo){
+        if (tipo == 2){
+            botaoExcluirServico.setDisable(true);
+            botaoNovoServico.setDisable(true);
+        }
+    }
+
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
     	id.setCellValueFactory(new PropertyValueFactory<>("servicoId"));

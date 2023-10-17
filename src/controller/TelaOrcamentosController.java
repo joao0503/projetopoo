@@ -27,7 +27,7 @@ public class TelaOrcamentosController extends TelaPrincipalController{
     }
 
     public void filtrar(KeyEvent event){
-        String busca = searchBar.getText().toLowerCase(); // se quiser case sensitive, tirar lowercase
+        //String busca = searchBar.getText().toLowerCase(); 
 
         // dependente do initializer, que depende do sql dessa tabela
     }

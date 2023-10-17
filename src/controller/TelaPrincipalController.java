@@ -5,6 +5,12 @@ import view.Telas;
 
 public class TelaPrincipalController{
 	
+	private static int tipoUsuario;
+
+	public void setTipoUsuario(int tipo){
+		tipoUsuario = tipo;
+	}
+
 	public void irParaTelaClientes(MouseEvent event) throws Exception {
 		Telas.telaClientes();
 	}
@@ -14,7 +20,7 @@ public class TelaPrincipalController{
 	}
 	
 	public void irParaTelaServicos(MouseEvent event) throws Exception {
-		Telas.telaServicos();
+		Telas.telaServicos(tipoUsuario);
 	}
 	
 	public void irParaTelaOrcamentos(MouseEvent event) throws Exception {
@@ -22,7 +28,7 @@ public class TelaPrincipalController{
 	}
 	
 	public void irParaTelaPecas(MouseEvent event) throws Exception {
-		Telas.telaPecas();
+		Telas.telaPecas(tipoUsuario);
 	}
 	
 	public void irParaTelaLoginAut(MouseEvent event) throws Exception {

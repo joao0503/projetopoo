@@ -56,6 +56,6 @@ public class AdicionarPecaController {
     }
 
     public void voltarParaPecas(ActionEvent event) throws Exception {
-        Telas.telaPecas();
+        Telas.telaPecas(1);
     }
 }
